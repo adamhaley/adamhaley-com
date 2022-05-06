@@ -46,5 +46,5 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: | 
             cd adamhaley-com && composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist \\
-           ./.scripts/deploy.sh
+            ./.scripts/deploy.sh
             
