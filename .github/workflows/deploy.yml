@@ -44,4 +44,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /var/www/html && ./.scripts/deploy.sh"
+          script: "cd adamhaley-com && ./.scripts/deploy.sh"
