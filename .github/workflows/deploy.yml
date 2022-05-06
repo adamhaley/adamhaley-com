@@ -46,5 +46,5 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: | 
             cd adamhaley-com 
-            su -c ./.scripts/deploy.sh adam
+            ./.scripts/deploy.sh
             
