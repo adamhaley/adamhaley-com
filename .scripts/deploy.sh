@@ -31,4 +31,6 @@ npm run prod
 # Exit maintenance mode
 php artisan up
 
+echo whoami
+
 echo "Deployment finished!"
