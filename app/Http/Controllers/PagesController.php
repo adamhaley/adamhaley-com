@@ -11,4 +11,23 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    public function portfolio()
+    {
+
+        return view('portfolio');
+    }
+
+    public function blog()
+    {
+
+        return view('blog');
+    }
+
+    public function music()
+    {
+
+        return view('music');
+    }
+    
 }

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-image{
+    background-image: url(https://cdn.pixabay.com/photo/2022/05/13/14/35/sea-7193894_1280.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

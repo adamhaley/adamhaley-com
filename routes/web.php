@@ -16,8 +16,12 @@ use App\Http\Controllers\PagesController;
 
 
 Route::get('/',[PagesController::class, 'index']);
+Route::get('/portfolio',[PagesController::class, 'portfolio']);
+Route::get('/blog',[PagesController::class, 'blog']);
+Route::get('/music',[PagesController::class, 'music']);
+Route::get('/links',[PagesController::class, 'links']);
 
-Route::resource('blog', PostsController::class);
+//Route::resource('blog', PostsController::class);
 
 Auth::routes();
 
