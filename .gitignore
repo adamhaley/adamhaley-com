@@ -14,3 +14,4 @@ yarn-error.log
 /.vscode
 *.swp
 *.swo
+.DS_Store
