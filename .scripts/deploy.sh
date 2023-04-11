@@ -20,10 +20,10 @@ php artisan clear-compiled
 php artisan optimize
 
 # npm install
-npm install
+yarn install
 
 # Compile npm assets
-npm run prod
+yarn run prod
 
 # Run database migrations
 #php artisan migrate --force
