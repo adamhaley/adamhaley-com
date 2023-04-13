@@ -1,0 +1,13 @@
+h1#ah{
+    margin: 0 auto;
+    width: 50%;
+    text-align:center;
+    background-image: url(/skins/ice/images/AHorb.jpg);
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1#ah span{
+    display:none;
+}
