@@ -11,4 +11,22 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    //ah:worx page
+    public function worx()
+    {
+        return view('worx');
+    }
+
+    //ah:songs page
+    public function songs()
+    {
+        return view('songs');
+    }
+
+    //contact page
+    public function contact()
+    {
+        return view('contact');
+    }
 }

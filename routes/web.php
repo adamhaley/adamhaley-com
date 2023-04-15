@@ -17,6 +17,16 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/',[PagesController::class, 'index']);
 
+//ah:worx page
+Route::get('/worx',[PagesController::class, 'worx']);
+
+//ah:songs page
+Route::get('/songs',[PagesController::class, 'songs']);
+
+//contact page
+Route::get('/contact',[PagesController::class, 'contact']);
+
+//blog
 Route::resource('blog', PostsController::class);
 
 
