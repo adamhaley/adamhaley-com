@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProjectCategorySeeder::class,
             MediaCategorySeeder::class,
+            AlbumSeeder::class,
         ]);
     }
 }
