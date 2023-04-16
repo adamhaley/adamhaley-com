@@ -9,6 +9,12 @@ class Track extends Model
 {
     use HasFactory;
 
+    //fillable
+    protected $fillable = [
+        'title',
+        'file',
+        'album_id',
+    ];
 
     public function album()
     {
