@@ -5,24 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class MediaCategory
+ * Class Medium
  *
  * @property $id
+ * @property $category_id
  * @property $name
- * @property $description
+ * @property $path
  * @property $created_at
  * @property $updated_at
  *
- * @property Medium[] $media
+ * @property MediaCategory $mediaCategory
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class MediaCategory extends Model
+class Medium extends Model
 {
     
     static $rules = [
+		'category_id' => 'required',
 		'name' => 'required',
-		'description' => 'required',
+		'path' => 'required',
     ];
 
     protected $perPage = 20;
@@ -32,15 +34,15 @@ class MediaCategory extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','description'];
+    protected $fillable = ['category_id','name','path'];
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function media()
+    public function mediaCategory()
     {
-        return $this->hasMany('App\Models\Medium', 'category_id', 'id');
+        return $this->hasOne('App\Models\MediaCategory', 'id', 'category_id');
     }
     
 

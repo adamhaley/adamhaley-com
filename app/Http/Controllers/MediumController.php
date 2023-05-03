@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Medium;
 use Illuminate\Http\Request;
 
 /**
- * Class ProjectController
+ * Class MediumController
  * @package App\Http\Controllers
  */
-class ProjectController extends Controller
+class MediumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate();
+        $media = Medium::paginate();
 
-        return view('project.index', compact('projects'))
-            ->with('i', (request()->input('page', 1) - 1) * $projects->perPage());
+        return view('medium.index', compact('media'))
+            ->with('i', (request()->input('page', 1) - 1) * $media->perPage());
     }
 
     /**
@@ -31,8 +31,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $project = new Project();
-        return view('project.create', compact('project'));
+        $medium = new Medium();
+        return view('medium.create', compact('medium'));
     }
 
     /**
@@ -43,12 +43,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Project::$rules);
+        request()->validate(Medium::$rules);
 
-        $project = Project::create($request->all());
+        $medium = Medium::create($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project created successfully.');
+        return redirect()->route('media.index')
+            ->with('success', 'Medium created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::find($id);
+        $medium = Medium::find($id);
 
-        return view('project.show', compact('project'));
+        return view('medium.show', compact('medium'));
     }
 
     /**
@@ -72,26 +72,26 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::find($id);
+        $medium = Medium::find($id);
 
-        return view('project.edit', compact('project'));
+        return view('medium.edit', compact('medium'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Project $project
+     * @param  Medium $medium
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Medium $medium)
     {
-        request()->validate(Project::$rules);
+        request()->validate(Medium::$rules);
 
-        $project->update($request->all());
+        $medium->update($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project updated successfully');
+        return redirect()->route('media.index')
+            ->with('success', 'Medium updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $project = Project::find($id)->delete();
+        $medium = Medium::find($id)->delete();
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project deleted successfully');
+        return redirect()->route('media.index')
+            ->with('success', 'Medium deleted successfully');
     }
 }

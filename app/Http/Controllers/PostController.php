@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 /**
- * Class ProjectController
+ * Class PostController
  * @package App\Http\Controllers
  */
-class ProjectController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate();
+        $posts = Post::paginate();
 
-        return view('project.index', compact('projects'))
-            ->with('i', (request()->input('page', 1) - 1) * $projects->perPage());
+        return view('post.index', compact('posts'))
+            ->with('i', (request()->input('page', 1) - 1) * $posts->perPage());
     }
 
     /**
@@ -31,8 +31,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $project = new Project();
-        return view('project.create', compact('project'));
+        $post = new Post();
+        return view('post.create', compact('post'));
     }
 
     /**
@@ -43,12 +43,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Project::$rules);
+        request()->validate(Post::$rules);
 
-        $project = Project::create($request->all());
+        $post = Post::create($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project created successfully.');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::find($id);
+        $post = Post::find($id);
 
-        return view('project.show', compact('project'));
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -72,26 +72,26 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::find($id);
+        $post = Post::find($id);
 
-        return view('project.edit', compact('project'));
+        return view('post.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Project $project
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Post $post)
     {
-        request()->validate(Project::$rules);
+        request()->validate(Post::$rules);
 
-        $project->update($request->all());
+        $post->update($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project updated successfully');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $project = Project::find($id)->delete();
+        $post = Post::find($id)->delete();
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project deleted successfully');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post deleted successfully');
     }
 }
