@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
-    
+
     static $rules = [
 		'title' => 'required',
 		'slug' => 'required',
@@ -30,7 +30,7 @@ class Post extends Model
 		'tags' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.

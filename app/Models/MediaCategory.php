@@ -19,13 +19,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MediaCategory extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
 		'description' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.
@@ -42,6 +42,6 @@ class MediaCategory extends Model
     {
         return $this->hasMany('App\Models\Medium', 'category_id', 'id');
     }
-    
+
 
 }

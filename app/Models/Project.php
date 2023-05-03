@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Project extends Model
 {
-    
+
     static $rules = [
 		'category_id' => 'required',
 		'name' => 'required',
@@ -37,7 +37,7 @@ class Project extends Model
 		'date' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.
@@ -54,6 +54,6 @@ class Project extends Model
     {
         return $this->hasOne('App\Models\ProjectCategory', 'id', 'category_id');
     }
-    
+
 
 }

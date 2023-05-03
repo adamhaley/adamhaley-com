@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Client extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
 		'description' => 'required',
@@ -32,7 +32,7 @@ class Client extends Model
 		'url' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.

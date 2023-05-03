@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Track extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
 		'description' => 'required',
@@ -35,7 +35,7 @@ class Track extends Model
 		'file' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.
@@ -52,6 +52,6 @@ class Track extends Model
     {
         return $this->hasOne('App\Models\Album', 'id', 'album_id');
     }
-    
+
 
 }

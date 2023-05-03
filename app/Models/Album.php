@@ -21,12 +21,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Album extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.
@@ -43,6 +43,6 @@ class Album extends Model
     {
         return $this->hasMany('App\Models\Track', 'album_id', 'id');
     }
-    
+
 
 }

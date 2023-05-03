@@ -22,13 +22,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ProjectCategory extends Model
 {
-    
+
     static $rules = [
 		'name' => 'required',
 		'description' => 'required',
     ];
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * Attributes that should be mass-assignable.
@@ -45,7 +45,7 @@ class ProjectCategory extends Model
     {
         return $this->hasMany('App\Models\ProjectCategory', 'parent_id', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -53,7 +53,7 @@ class ProjectCategory extends Model
     {
         return $this->hasOne('App\Models\ProjectCategory', 'id', 'parent_id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -61,6 +61,6 @@ class ProjectCategory extends Model
     {
         return $this->hasMany('App\Models\Project', 'category_id', 'id');
     }
-    
+
 
 }
