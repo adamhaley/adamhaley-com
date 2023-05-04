@@ -26,7 +26,10 @@ yarn install
 yarn run prod
 
 # Run database migrations
-#php artisan migrate --force
+php artisan migrate --force
+
+#seed the database
+php artisan db:seed
 
 # Exit maintenance mode
 php artisan up
