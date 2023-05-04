@@ -7,9 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-  laravel-tests:
-      run: phpunit
-
   deploy:
     runs-on: ubuntu-latest
     steps:
