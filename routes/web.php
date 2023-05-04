@@ -1,33 +1,41 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/',[PagesController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-//ah:worx page
-Route::get('/worx',[PagesController::class, 'worx']);
+    Route::resource('albums', App\Http\Controllers\AlbumController::class);
+    Route::resource('clients', App\Http\Controllers\ClientController::class);
+    Route::resource('media', App\Http\Controllers\MediaController::class);
+    Route::resource('media-categories', App\Http\Controllers\MediaCategoryController::class);
+    Route::resource('tracks', App\Http\Controllers\TrackController::class);
+    Route::resource('pages', App\Http\Controllers\PagesController::class);
+    Route::resource('posts', App\Http\Controllers\PostController::class);
+    Route::resource('projects', App\Http\Controllers\ProjectController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
+});
 
-//ah:songs page
-Route::get('/songs',[PagesController::class, 'songs']);
-
-//contact page
-Route::get('/contact',[PagesController::class, 'contact']);
-
-//blog
-Route::resource('blog', PostsController::class);
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+require __DIR__.'/auth.php';

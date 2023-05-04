@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ProjectCategorySeeder::class,
             MediaCategorySeeder::class,
             AlbumSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

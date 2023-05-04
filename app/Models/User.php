@@ -24,6 +24,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * @var string[]
+     */
+    static $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    ];
+
+    protected $perPage = 10;
+
+
+    /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
