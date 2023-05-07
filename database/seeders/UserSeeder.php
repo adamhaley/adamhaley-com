@@ -13,6 +13,9 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         //create default user with admin privileges
+        //truncate users
+        \App\Models\User::truncate();
+
         $user = new \App\Models\User();
         $user->name = 'admin';
         $user->email = 'adamhaley@gmail.com';
