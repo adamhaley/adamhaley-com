@@ -12,11 +12,6 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <!--
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                       {{ __('Admin') }}
-                    </x-nav-link>
-                    -->
                     <?php $models = ['albums','clients','media','media-categories','posts','projects','project-categories','tracks','users']; ?>
                     <!--foreach models-->
                     @foreach($models as $model)
@@ -24,7 +19,6 @@
                             {{ ucfirst(__($model)) }}
                         </x-nav-link>
                     @endforeach
-
 
                 </div>
             </div>
