@@ -21,7 +21,7 @@
                     <!--foreach models-->
                     @foreach($models as $model)
                         <x-nav-link :href="route( $model . '.index')" :active="request()->routeIs($model.'.index')">
-                            {{ ucfirst(__($model.'.index')) }}
+                            {{ ucfirst(__($model)) }}
                         </x-nav-link>
                     @endforeach
 
