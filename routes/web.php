@@ -24,7 +24,7 @@ Route::get('/admin', function () {
 
 //create a route group "admin" and add the middleware "auth" and "verified" to it
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
-    Route::resource('albums', App\Http\Controllers\ClientController::class)->name('index', 'albums.index');
+    Route::resource('albums', App\Http\Controllers\AlbumController::class)->name('index', 'albums.index');
     Route::resource('clients', App\Http\Controllers\ClientController::class)->name('index', 'clients.index');
     Route::resource('media', App\Http\Controllers\MediaController::class)->name('index', 'media.index');
     Route::resource('media-categories', App\Http\Controllers\MediaCategoryController::class)->name('index', 'media-categories.index');
