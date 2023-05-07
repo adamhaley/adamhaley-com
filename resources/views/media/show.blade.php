@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $medium->name ?? "{{ __('Show') Medium" }}
+    {{ $media->name ?? "{{ __('Show') Media" }}
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Medium</span>
+                            <span class="card-title">{{ __('Show') }} Media</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('media.index') }}"> {{ __('Back') }}</a>
@@ -19,18 +19,18 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Category Id:</strong>
-                            {{ $medium->category_id }}
+                            {{ $media->category_id }}
                         </div>
                         <div class="form-group">
                             <strong>Name:</strong>
-                            {{ $medium->name }}
+                            {{ $media->name }}
                         </div>
                         <div class="form-group">
                             <strong>Path:</strong>
-                            {{ $medium->path }}
+                            {{ $media->path }}
                         </div>
 
                     </div>

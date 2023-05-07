@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\media;
+use App\Models\Media;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +18,7 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $media = media::paginate();
+        $media = Media::paginate();
 
         return view('media.index', compact('media'))
             ->with('i', (request()->input('page', 1) - 1) * $media->perPage());
@@ -31,7 +31,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        $media = new media();
+        $media = new Media();
         return view('media.create', compact('media'));
     }
 
@@ -43,9 +43,9 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(media::$rules);
+        request()->validate(Media::$rules);
 
-        $media = media::create($request->all());
+        $media = Media::create($request->all());
 
         return redirect()->route('media.index')
             ->with('success', 'media created successfully.');
@@ -59,7 +59,7 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        $media = media::find($id);
+        $media = Media::find($id);
 
         return view('media.show', compact('media'));
     }
@@ -72,7 +72,7 @@ class MediaController extends Controller
      */
     public function edit($id)
     {
-        $media = media::find($id);
+        $media = Media::find($id);
 
         return view('media.edit', compact('media'));
     }
@@ -81,7 +81,7 @@ class MediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  media $media
+     * @param  Media $media
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, media $media)
@@ -101,7 +101,7 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
-        $media = media::find($id)->delete();
+        $media = Media::find($id)->delete();
 
         return redirect()->route('media.index')
             ->with('success', 'media deleted successfully');

@@ -18,24 +18,30 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('admin');
+})->middleware(['auth', 'verified'])->name('admin');
+
+//create a route group "admin" and add the middleware "auth" and "verified" to it
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+    Route::resource('albums', App\Http\Controllers\AlbumController::class)->name('index', 'albums.index');
+    Route::resource('clients', App\Http\Controllers\ClientController::class)->name('index', 'clients.index');
+    Route::resource('media', App\Http\Controllers\MediaController::class)->name('index', 'media.index');
+    Route::resource('media-categories', App\Http\Controllers\MediaCategoryController::class)->name('index', 'media-categories.index');
+    Route::resource('tracks', App\Http\Controllers\TrackController::class)->name('index', 'tracks.index');
+    Route::resource('pages', App\Http\Controllers\PagesController::class)->name('index', 'pages.index');
+    Route::resource('posts', App\Http\Controllers\PostController::class)->name('index', 'posts.index');
+    Route::resource('projects', App\Http\Controllers\ProjectController::class)->name('index', 'projects.index');
+    Route::resource('project-categories', App\Http\Controllers\ProjectController::class)->name('index', 'project-categories.index');
+    Route::resource('users', App\Http\Controllers\UserController::class)->name('index', 'users.index');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('albums', App\Http\Controllers\AlbumController::class);
-    Route::resource('clients', App\Http\Controllers\ClientController::class);
-    Route::resource('media', App\Http\Controllers\MediaController::class);
-    Route::resource('media-categories', App\Http\Controllers\MediaCategoryController::class);
-    Route::resource('tracks', App\Http\Controllers\TrackController::class);
-    Route::resource('pages', App\Http\Controllers\PagesController::class);
-    Route::resource('posts', App\Http\Controllers\PostController::class);
-    Route::resource('projects', App\Http\Controllers\ProjectController::class);
-    Route::resource('users', App\Http\Controllers\UserController::class);
+
 });
 
 require __DIR__.'/auth.php';
