@@ -12,9 +12,20 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <!--
                     <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                        {{ __('Admin') }}
+                       {{ __('Admin') }}
                     </x-nav-link>
+                    -->
+                    <?php $models = ['albums','clients','media','media-categories','posts','projects','project-categories','tracks','users']; ?>
+                    <!--foreach models-->
+                    @foreach($models as $model)
+                        <x-nav-link :href="route( $model . '.index')" :active="request()->routeIs($model.'.index')">
+                            {{ ucfirst(__($model.'.index')) }}
+                        </x-nav-link>
+                    @endforeach
+
+
                 </div>
             </div>
 
@@ -68,7 +79,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                {{ __('Dashboard') }}
+                {{ __('Admin') }}
             </x-responsive-nav-link>
         </div>
 
