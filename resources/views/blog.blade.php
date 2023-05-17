@@ -3,5 +3,6 @@
 @include('partials.nav')
 
 @section('content')
-    WORX
+    BLOG
+
 @endsection
