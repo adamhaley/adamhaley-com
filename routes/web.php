@@ -36,6 +36,27 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::resource('users', App\Http\Controllers\UserController::class)->name('index', 'users.index');
 });
 
+//home
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+//ah worx
+Route::get('/ahworx', function () {
+    return view('worx');
+})->name('ahworx');
+//ahsongs
+Route::get('/ahsongs', function () {
+    return view('songs');
+})->name('ahsongs');
+//contact
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+//blog
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

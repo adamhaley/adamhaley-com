@@ -3,5 +3,5 @@
 @include('partials.nav')
 
 @section('content')
-    WORX
+    WELCOME
 @endsection
