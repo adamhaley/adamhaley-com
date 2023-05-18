@@ -1,5 +1,8 @@
 /node_modules
 public
+/public
+/public/*
+/public/build
 /public/hot
 /public/storage
 /public/css/app.css

@@ -1,13 +1,28 @@
-h1#ah{
-    margin: 0 auto;
-    width: 50%;
-    text-align:center;
-    background-image: url(/skins/ice/images/AHorb.jpg);
-    height: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
+h1#ah {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  background-image: url("/skins/ice/images/AHorb.jpg");
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+h1#ah span {
+  display: none;
+}
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  margin: 0;
+}
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  display: inline;
+  margin: 0 10px;
 }
 
-h1#ah span{
-    display:none;
-}
