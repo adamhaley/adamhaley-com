@@ -3,6 +3,7 @@
 @include('partials.nav')
 
 @section('content')
-    BLOG
-
+    <span class="heading">
+        BLOG
+    </span>
 @endsection

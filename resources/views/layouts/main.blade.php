@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="skins/ice/css/app.css">
     <title>AdamHaley.com</title>
 </head>
-<body>
+<body class="{{ Route::currentRouteName()?? 'splash' }}">
 <!-- center div -->
 <h1 id="ah">
     <span>AH</span>
     </div>
+</h1>
     <!-- Page Content -->
     <main>
         @yield('content')
