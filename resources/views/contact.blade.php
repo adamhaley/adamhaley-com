@@ -3,5 +3,7 @@
 @include('partials.nav')
 
 @section('content')
-    CONTACT
+    <span class="heading">
+     CONTACT
+    </span>
 @endsection

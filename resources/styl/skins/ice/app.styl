@@ -1,11 +1,20 @@
 h1#ah
+    position: absolute
+    left: 0
+    top: 20
     margin: 0 auto
     width: 50%
     text-align:center
     background-image: url(/skins/ice/images/AHorb.jpg)
     height: 150px
     background-repeat: no-repeat
+    background-position: left
+
+
+.splash h1#ah
+    position: relative
     background-position: center
+
 
 h1#ah span
     display:none
@@ -25,3 +34,23 @@ nav
             display:inline
             margin: 0 10px
 
+.heading
+    position: absolute
+    right: 30
+    top: 50
+    font-size: 2rem
+    font-weight: bold
+    color: #808080
+
+nav
+    position: absolute
+    right: 20
+    top: 7
+
+a
+    color: #808080
+    text-decoration: none
+    text-transform uppercase
+    &:hover
+        text-decoration: overline
+        color: #16bfe0

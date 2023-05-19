@@ -3,5 +3,5 @@
 @include('partials.nav')
 
 @section('content')
-    WORX
+ <span class="heading">WORX</span>
 @endsection
