@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="skins/ice/css/app.css">
     <title>AdamHaley.com</title>
 </head>
-<body class="{{ Route::currentRouteName()?? 'splash' }}">
+<body class="{{ Route::current()->getName()?? 'splash' }}">
 <!-- center div -->
 <h1 id="ah">
     <span>AH</span>
