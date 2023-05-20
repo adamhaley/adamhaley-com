@@ -15,6 +15,8 @@
     <span>AH</span>
     </div>
 </h1>
+ROUTE:
+{{ Route::current()->getName();  }}
     <!-- Page Content -->
     <main>
         @yield('content')
