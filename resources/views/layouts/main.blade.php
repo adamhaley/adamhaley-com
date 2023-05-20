@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="skins/ice/css/app.css">
     <title>AdamHaley.com</title>
 </head>
-<body class="{{ Route::current()->getName()?? 'splash' }}">
+<body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
 <!-- center div -->
 <h1 id="ah">
     <span>AH</span>
     </div>
 </h1>
-ROUTE:
 {{ Route::current()->getName();  }}
     <!-- Page Content -->
     <main>
