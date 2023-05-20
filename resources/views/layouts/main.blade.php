@@ -20,6 +20,6 @@
         @yield('content')
 
     </main>
-
+<footer>&copy; 2000-2023 Adam Haley Productions</footer>
 </body>
 </html>
