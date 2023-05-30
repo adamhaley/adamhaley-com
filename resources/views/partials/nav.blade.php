@@ -2,12 +2,11 @@
  @if(env('APP_ENV') == 'local' || env('APP_ENV') == 'development')
         <nav>
             <ul>
-               <li><a class="navlink" href="{!! route('home') !!}" @mouseover="headingtext='HOME'"  @mouseleave="""headingtext=headingtextdefault">Home</a></li>
-                <li><a class="navlink" href="{!! route('worx') !!}" @mouseover="headingtext='WORX'"  @mouseleave="headingtext=headingtextdefault">AH:Worx</a></li>
-                <li><a class="navlink" href="{!! route('songs') !!}" @mouseover="headingtext='SONGS'"  @mouseleave="headingtext=headingtextdefault">AH:Songs</a></li>
-                <li><a class="navlink" href="{{ route('blog') }}" @mouseover="headingtext='BLOG'"  @mouseleave="headingtext=headingtextdefault">Blog</a></li>
-                <li><a class="navlink" href="{!! route('contact') !!}"  @mouseover="headingtext='CONTACT'"  @mouseleave="headingtext=headingtextdefault">Contact</a></li>
-
+                @include('partials.navlink', ['link' => 'home', 'text' => 'HOME'])
+                @include('partials.navlink', ['link' => 'worx', 'text' => 'WORX'])
+                @include('partials.navlink', ['link' => 'songs', 'text' => 'SONGS'])
+                @include('partials.navlink', ['link' => 'blog', 'text' => 'BLOG'])
+                @include('partials.navlink', ['link' => 'contact', 'text' => 'CONTACT'])
             </ul>
         </nav>
 @endif

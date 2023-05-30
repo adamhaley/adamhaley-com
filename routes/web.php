@@ -22,6 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//frontend routes
+
 //home
 Route::get('/home', function () {
     return view('home');
@@ -43,6 +45,12 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
+//portfolio
+Route::get('/portfolio', function () {
+    return view('portfolio');
+})->name('portfolio');
+
+//baackend admin routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
