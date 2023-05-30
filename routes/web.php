@@ -27,13 +27,13 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 //ah worx
-Route::get('/ahworx', function () {
+Route::get('/worx', function () {
     return view('worx');
-})->name('ahworx');
+})->name('worx');
 //ahsongs
-Route::get('/ahsongs', function () {
+Route::get('/songs', function () {
     return view('songs');
-})->name('ahsongs');
+})->name('songs');
 //contact
 Route::get('/contact', function () {
     return view('contact');
