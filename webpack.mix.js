@@ -10,8 +10,10 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+//js
 
-
+mix.js('resources/js/app.js', 'public/js');
+//stylus
 mix.stylus(
     'resources/styl/skins/ice/app.styl',
     'public/skins/ice/css/app.css'
