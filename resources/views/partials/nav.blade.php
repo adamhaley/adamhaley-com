@@ -1,5 +1,5 @@
 <!-- nav -->
- @if(env('APP_ENV') == 'local')
+ @if(env('APP_ENV') == 'local' || env('APP_ENV') == 'development')
         <nav>
             <ul>
                 <li><a class="navlink" href="{!! route('home') !!}">Home</a></li>
