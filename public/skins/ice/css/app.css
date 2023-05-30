@@ -1,7 +1,22 @@
+/* Ice skin */
+/*
+@font-face
+    font-family "sofachrome"
+    font-style normal
+    font-weight normal
+    src local("../fonts/sofachrome rg it"), url("../fonts/sofachrome rg it.woff") format("woff")
+
+@font-face
+    font-family "sofachrome2"
+    font-style normal
+    font-weight normal
+    src local("../fonts/sofachrome rg"), url("../fonts/sofachrome rg.woff") format("woff")
+*/
 h1#ah {
   position: absolute;
+  display: block;
   left: 0;
-  top: 20;
+  top: 20px;
   margin: 0 auto;
   width: 50%;
   text-align: center;
@@ -14,6 +29,14 @@ h1#ah {
 .splash h1#ah {
   position: relative;
   background-position: center;
+}
+.splash nav {
+  position: absolute;
+  top: 50%;
+}
+.splash nav >ul>li: nth-child(1) {
+  left: -200px;
+  color: #f00;
 }
 h1#ah span {
   display: none;
@@ -37,10 +60,11 @@ nav ul li {
   position: absolute;
   right: 30;
   top: 10;
-  font-size: 9rem;
-  font-weight: bold;
+  font-size: 8rem;
   color: #dedede;
   z-index: 0;
+  font-weight: 100;
+  font-family: "sofachrome2", Helvetica, Arial, sans-serif;
 }
 nav {
   position: absolute;

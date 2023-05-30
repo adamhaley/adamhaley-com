@@ -1,76 +1,104 @@
+/* Ice skin */
+
+/*
+@font-face
+    font-family "sofachrome"
+    font-style normal
+    font-weight normal
+    src local("../fonts/sofachrome rg it"), url("../fonts/sofachrome rg it.woff") format("woff")
+
+@font-face
+    font-family "sofachrome2"
+    font-style normal
+    font-weight normal
+    src local("../fonts/sofachrome rg"), url("../fonts/sofachrome rg.woff") format("woff")
+*/
 h1#ah
-    position: absolute
-    left: 0
-    top: 20
-    margin: 0 auto
-    width: 50%
-    text-align:center
-    background-image: url(/skins/ice/images/AHorb.jpg)
-    height: 150px
-    background-repeat: no-repeat
-    background-position: left
-    z-index: 20
+    position absolute
+    display block
+    left 0
+    top 20px
+    margin 0 auto
+    width 50%
+    text-align center
+    background-image url(/skins/ice/images/AHorb.jpg)
+    height 150px
+    background-repeat no-repeat
+    background-position left
+    z-index 20
 
-.splash h1#ah
-    position: relative
-    background-position: center
+.splash
+    h1#ah
+        position relative
+        background-position center
 
+    nav
+        //center
+        position absolute
+        top 50%
+        >ul>li: nth-child(1)
+            left:-200px
+            color red
 
 h1#ah span
-    display:none
+    display none
 
 body
-    background-color: #fff
-    color: #333
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-    font-size: 14px
-    line-height: 1.42857
-    margin: 0
+    background-color #fff
+    color #333
+    font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-size 14px
+    line-height 1.42857
+    margin 0
 
 nav
     ul
-        list-style-type: none
+        list-style-type none
         li
-            display:inline
-            margin: 0 10px
+            display inline
+            margin 0 10px
 
 .heading
-    position: absolute
-    right: 30
-    top: 10
-    font-size: 9rem
-    font-weight: bold
-    color: #dedede
-    z-index: 0
+    position absolute
+    right 30
+    top 10
+    font-size 8rem
+    color #dedede
+    z-index 0
+    font-weight 100
+    //clean futuristic font
+    font-family "sofachrome2", Helvetica, Arial, sans-serif
+
+
 
 nav
-    position: absolute
-    right: 20
-    top: 7
-    z-index: 10
+    position absolute
+    right 20
+    top 7
+    z-index 10
 a
-    color: #808080
-    text-decoration: none
+    color #808080
+    text-decoration none
     text-transform uppercase
     &:hover
-        text-decoration: overline
-        color: #16bfe0
+        text-decoration overline
+        color #16bfe0
 
 footer
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
-    height: 30px
-    background-color: #f5f5f5
-    text-align: center
-    padding-top: 5px
-    font-size: 10px
-    color: #808080
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    height 30px
+    background-color #f5f5f5
+    text-align center
+    padding-top 5px
+    font-size 10px
+    color #808080
     a
-        color: #808080
-        text-decoration: none
+        color #808080
+        text-decoration none
         text-transform uppercase
         &:hover
-            text-decoration: overline
-            color: #16bfe0
+            text-decoration overline
+            color #16bfe0
