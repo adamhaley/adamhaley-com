@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="skins/ice/css/app.css">
     <title>AdamHaley.com</title>
+
+    <script src="js/app.js"></script>
+
 </head>
 <body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
 <!-- center div -->
