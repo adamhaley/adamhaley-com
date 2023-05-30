@@ -58,8 +58,8 @@ nav ul li {
 }
 .heading {
   position: absolute;
-  right: 30;
-  top: 10;
+  right: 30px;
+  top: 10px;
   font-size: 8rem;
   color: #dedede;
   z-index: 0;
@@ -68,8 +68,8 @@ nav ul li {
 }
 nav {
   position: absolute;
-  right: 20;
-  top: 7;
+  right: 20px;
+  top: 7px;
   z-index: 10;
 }
 a {

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
-@include('partials.nav')
 
 @section('content')
-    <span class="heading">
-        BLOG
-    </span>
+    @include('partials.heading', ['heading' => 'BLOG'])
+@endsection
+@section('nav')
+    @include('partials.nav')
 @endsection
