@@ -1,5 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
     "/js/carousel.js": "/js/carousel.js",
-    "/skins/ice/css/app.css": "/skins/ice/css/app.css"
+    "/js/app.js": "/js/app.js",
+    "/skins/ice/css/app.css": "/skins/ice/css/app.css",
+    "/css/main.css": "/css/main.css"
 }

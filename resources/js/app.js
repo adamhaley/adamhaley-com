@@ -1,12 +1,16 @@
 import './bootstrap';
 
+/**/import Flickity from 'flickity';
 import Alpine from 'alpinejs';
-import 'carousel.js';
-
-window.Alpine = Alpine;
+import { carousel, carouselFilter } from './carousel.js';
 
 Alpine.start();
 
-console.log('Hello World from app.js!');
 
-//alpine carousel from
+
+window.Alpine = Alpine;
+window.carousel = carousel;
+window.carouselFilter = carouselFilter;
+
+
+console.log('Hello World from app.js!');

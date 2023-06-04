@@ -6,10 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <link rel="stylesheet" href="skins/ice/css/app.css">
     <title>AdamHaley.com</title>
 
-    <script src="js/app.js"></script>
 
 </head>
 <body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
@@ -26,5 +29,8 @@
 
     </main>
 <footer>&copy; 2000-2023 Adam Haley Productions</footer>
+
+<script src="js/app.js"></script>
+
 </body>
 </html>
