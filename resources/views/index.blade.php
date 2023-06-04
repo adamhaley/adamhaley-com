@@ -17,7 +17,7 @@
 
 </h1>
 <footer>© 2000-2023 Adam Haley Productions</footer>
+<!-- INDEX HTML PAGE -->
 
-
-<script src="js/app.js"></script>
-</body></html>
+</body>
+</html>
