@@ -19,7 +19,7 @@
     </div>
 </h1>
     <!-- Page Content -->
-    <main x-data="{headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
+    <main x-data="{clicked:false,headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
         @yield('nav')
 
         @yield('content')

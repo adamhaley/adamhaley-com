@@ -1,1 +1,1 @@
-<li><a class="navlink" href="{!! route($link) !!}"  @mouseover="headingtext='{!! $text !!}'" @click="headingtext='{!! $text !!}'"  @mouseleave="headingtext=headingtextdefault">{!! ucfirst(strtolower($text)) !!}</a></li>
+<li><a class="navlink" href="{!! route($link) !!}"  @mouseover="headingtext='{!! $text !!}'" @click="clicked=true;headingtext='{!! $text !!}'"  @mouseleave="if(clicked===false)headingtext=headingtextdefault">{!! ucfirst(strtolower($text)) !!}</a></li>
