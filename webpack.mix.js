@@ -12,7 +12,9 @@ const mix = require('laravel-mix');
  */
 //js
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/carousel.js', 'public/js');
+
 //stylus
 mix.stylus(
     'resources/styl/skins/ice/app.styl',
