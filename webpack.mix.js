@@ -18,3 +18,8 @@ mix.stylus(
     'resources/styl/skins/ice/app.styl',
     'public/skins/ice/css/app.css'
 );
+var LiveReloadPlugin = require('webpack-livereload-plugin');
+
+mix.webpackConfig({
+    plugins: [new LiveReloadPlugin()]
+});

@@ -34,11 +34,38 @@ h1#ah
 
     nav
         //center
-        position absolute
-        top 50%
-        >ul>li: nth-child(1)
-            left:-200px
+        position relative
+        left 50%
+        top 50px
+        li:nth-child(1)
+            position absolute
+            left -300px
+            top 0px
             color red
+
+        li:nth-child(2)
+            position absolute
+            left -150px
+            top 150px
+            color green
+
+        li:nth-child(3)
+            position absolute
+            left 50px
+            top 160px
+            color blue
+
+        li:nth-child(4)
+            position absolute
+            left 200px
+            top 100px
+            color yellow
+
+        li:nth-child(5)
+            position absolute
+            left 300px
+            top 0px
+            color orange
 
 h1#ah span
     display none

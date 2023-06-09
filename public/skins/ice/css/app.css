@@ -31,12 +31,39 @@ h1#ah {
   background-position: center;
 }
 .splash nav {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  left: 50%;
+  top: 50px;
 }
-.splash nav >ul>li: nth-child(1) {
-  left: -200px;
+.splash nav li:nth-child(1) {
+  position: absolute;
+  left: -300px;
+  top: 0px;
   color: #f00;
+}
+.splash nav li:nth-child(2) {
+  position: absolute;
+  left: -150px;
+  top: 150px;
+  color: #008000;
+}
+.splash nav li:nth-child(3) {
+  position: absolute;
+  left: 50px;
+  top: 160px;
+  color: #00f;
+}
+.splash nav li:nth-child(4) {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  color: #ff0;
+}
+.splash nav li:nth-child(5) {
+  position: absolute;
+  left: 300px;
+  top: 0px;
+  color: #ffa500;
 }
 h1#ah span {
   display: none;
