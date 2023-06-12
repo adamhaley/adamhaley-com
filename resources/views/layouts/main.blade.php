@@ -13,7 +13,7 @@
 </head>
 <body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
 <!-- center div -->
-<a href="{{ route('home') }}">A
+<a href="/">
 <h1 id="ah">
     <span>AH</span>
 </h1>
