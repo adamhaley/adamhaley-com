@@ -13,10 +13,11 @@
 </head>
 <body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
 <!-- center div -->
+<a href="{{ route('home') }}">A
 <h1 id="ah">
-    <span>a[href="{{ route('home') }}"AH</span>
-    </div>
+    <span>AH</span>
 </h1>
+</a>
     <!-- Page Content -->
     <main x-data="{clicked:false,headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
         @yield('nav')
