@@ -14,7 +14,7 @@
 <body class="{{ (empty(Route::current()->getName()) || strstr(Route::current()->getName(),'generated'))? 'splash' : Route::current()->getName() }}">
 <!-- center div -->
 <h1 id="ah">
-    <span>AH</span>
+    <span>a[href="{{ route('home') }}"AH</span>
     </div>
 </h1>
     <!-- Page Content -->
