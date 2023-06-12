@@ -31,12 +31,34 @@ h1#ah {
   background-position: center;
 }
 .splash nav {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  left: 50%;
+  top: 50px;
 }
-.splash nav >ul>li: nth-child(1) {
-  left: -200px;
-  color: #f00;
+.splash nav li:nth-child(1) {
+  position: absolute;
+  left: -350px;
+  top: 0px;
+}
+.splash nav li:nth-child(2) {
+  position: absolute;
+  left: -150px;
+  top: 150px;
+}
+.splash nav li:nth-child(3) {
+  position: absolute;
+  left: 90px;
+  top: 150px;
+}
+.splash nav li:nth-child(4) {
+  position: absolute;
+  left: 300px;
+  top: 0px;
+}
+.splash nav li:nth-child(5) {
+  position: absolute;
+  left: 300px;
+  top: -150px;
 }
 h1#ah span {
   display: none;

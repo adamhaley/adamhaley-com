@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('splash');
 
 Route::get('/admin', function () {
     return view('admin');
