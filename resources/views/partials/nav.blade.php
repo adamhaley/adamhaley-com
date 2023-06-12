@@ -1,6 +1,5 @@
 <!-- nav -->
-@if(Route::getCurrentRoute() === 'splash' && env('APP_ENV') !== 'local')
-    hi
+@if(strstr(Route::current()->getName(),'splash') && env('APP_ENV') !== 'local')
 @else
     <nav>
             <ul>
