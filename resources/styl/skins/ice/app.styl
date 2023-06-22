@@ -13,6 +13,10 @@
     font-weight normal
     src local("../fonts/sofachrome rg"), url("../fonts/sofachrome rg.woff") format("woff")
 */
+
+$grey = #808080
+$blue = #16bfe0
+
 h1#ah
     position absolute
     display block
@@ -26,6 +30,9 @@ h1#ah
     background-repeat no-repeat
     background-position left
     z-index 20
+
+    .lines
+        display none
 
 .splash
     h1#ah
@@ -61,6 +68,33 @@ h1#ah
             position absolute
             left 300px
             top -150px
+
+    .lines
+        display block
+        position absolute
+        left 50%
+        top 50px
+        width 700px
+        height 500px
+        //z-index 1000
+
+        div.hide
+            visibility hidden
+            border-bottom 1px solid $blue
+        div.show
+            visibility visible
+        .line1
+            width 248px
+            height 50px
+            -webkit-transform translateY(70px) translateX(-310px) rotate(-24deg)
+            position absolute
+        .line2
+            width 112px
+            height 50px
+            -webkit-transform translateY(20px) translateX(5px) rotate(-26deg)
+            position absolute
+            top -33px
+            left -13px
 
 h1#ah span
     display none
