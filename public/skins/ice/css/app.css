@@ -83,6 +83,8 @@ h1#ah .lines {
   height: 50px;
   -webkit-transform: translateY(70px) translateX(-310px) rotate(-24deg);
   position: absolute;
+  top: -10px;
+  left: 10px;
 }
 .splash .lines .line2 {
   width: 242px;
@@ -90,7 +92,23 @@ h1#ah .lines {
   -webkit-transform: translateY(20px) translateX(5px) rotate(-70deg);
   position: absolute;
   top: 133px;
-  left: -200px;
+  left: -215px;
+}
+.splash .lines .line3 {
+  width: 242px;
+  height: 50px;
+  -webkit-transform: translateY(20px) translateX(5px) rotate(65deg);
+  position: absolute;
+  top: 133px;
+  left: -40px;
+}
+.splash .lines .line4 {
+  width: 242px;
+  height: 50px;
+  -webkit-transform: translateY(20px) translateX(5px) rotate(20deg);
+  position: absolute;
+  top: 50px;
+  left: 60px;
 }
 h1#ah span {
   display: none;
