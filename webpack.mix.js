@@ -12,12 +12,13 @@ const mix = require('laravel-mix');
  */
 //js
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/app.js', 'public/js').version();
 //stylus
 mix.stylus(
     'resources/styl/skins/ice/app.styl',
     'public/skins/ice/css/app.css'
-);
+).version();
+
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 mix.webpackConfig({

@@ -11,3 +11,11 @@
     </nav>
 @endif
 <!-- end nav -->
+
+<!--lines effect for splash page -->
+    <div class="lines">
+        <div class="line1 hide" :class="headingtext==='WORX'?'show':'hide'"> </div>
+        <div class="line2 hide" :class="headingtext==='SONGS'?'show':'hide'"></div>
+        <div class="line3 hide" :class="headingtext==='BLOG'?'show':'hide'"></div>
+        <div class="line4 hide" :class="headingtext==='CONTACT'?'show':'hide'"></div>
+    </div>
