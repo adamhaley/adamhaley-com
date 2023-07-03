@@ -77,6 +77,7 @@ h1#ah .lines {
 }
 .splash .lines div.show {
   visibility: visible;
+  opacity: 0.7;
 }
 .splash .lines .line1 {
   width: 248px;
