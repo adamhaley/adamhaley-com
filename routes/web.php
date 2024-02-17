@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('index');
 })->name('splash');
 
+/*
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth', 'verified'])->name('admin');
@@ -35,6 +36,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::resource('project-categories', App\Http\Controllers\ProjectController::class)->name('index', 'project-categories.index');
     Route::resource('users', App\Http\Controllers\UserController::class)->name('index', 'users.index');
 });
+ */
 
 //frontend routes
 
