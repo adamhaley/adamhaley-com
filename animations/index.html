@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>AH TimePiece</title>
+
+    <!-- Stylesheets -->
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>	
+
+   
+</head>
+<body>
+	
+	<nav>
+		<ul>
+			<li><a id="stop">Stop</a></li>
+			<li><a id="smooth-orbits-1">Free Orbits 1</a></li>
+			<li><a id="opening">Opening</a></li>
+			<li><a id="act1">Act I</a></li>
+			<li><a id="act2">Act II</a></li>
+			<li><a id="act3">Act III</a></li>
+			<li><a id="act4">Act IV - Contortion</a></li>
+			<li><a id="act5">Act V - Jester</a></li>
+			<li><a id="act6">Act VI - Kate and Mei</a></li>
+			<li><a id="act7">Act VII - AH Solo</a></li>
+			<li><a id="act8">Act VIII - Innocent</a></li>
+			<li><a id="big-bang">Big Bang/ brief history of time</a></li>
+			<li><a id="finale">Finale - Last Of Kind</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main Body -->
+	<div id="animations" class="home">
+		<div id="group1">
+			<div class="container">
+				<div class="sphere" id="sphere1">
+				</div>
+				<div class="sphere" id="sphere2">
+				</div>
+			</div>
+		</div>
+		<div id="group2">
+			<div class="container">	
+				<div class="sphere" id="sphere1">
+				</div>
+				<div class="sphere" id="sphere2">
+				</div>
+				<div id="orbit1">
+					<div class="sphere" id="sphere3">
+					</div>
+				</div>
+				<div id="orbit2">
+					<div class="sphere" id="sphere4">
+					</div>
+				</div>
+				<div id="orbit3">
+					<div class="sphere" id="sphere5">
+					</div>
+					<div class="sphere" id="sphere6">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	$(document).ready(function(){
+	
+		var steps = {
+			
+		}
+
+
+		$('nav a').click(function(){
+			// $('#animations').attr('class','big-bang');
+			var id = $(this).attr('id');
+
+			$('#animations').attr('class',id); 
+		});
+
+
+	});	
+
+</script>
+</body>
+</html>
