@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="skins/ice/css/app.css">
+    <link rel="stylesheet" href="css/animations.css">
     <title>AdamHaley.com</title>
 
 
@@ -18,6 +19,40 @@
     <span>AH</span>
 </h1>
 </a>
+<!-- end center div -->
+<!-- Main Body -->
+<div id="animations" class="home">
+    <div id="group1">
+        <div class="container">
+            <div class="sphere" id="sphere1">
+            </div>
+            <div class="sphere" id="sphere2">
+            </div>
+        </div>
+    </div>
+    <div id="group2">
+        <div class="container">
+            <div class="sphere" id="sphere1">
+            </div>
+            <div class="sphere" id="sphere2">
+            </div>
+            <div id="orbit1">
+                <div class="sphere" id="sphere3">
+                </div>
+            </div>
+            <div id="orbit2">
+                <div class="sphere" id="sphere4">
+                </div>
+            </div>
+            <div id="orbit3">
+                <div class="sphere" id="sphere5">
+                </div>
+                <div class="sphere" id="sphere6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Page Content -->
     <main x-data="{clicked:false,headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
         @yield('nav')

@@ -16,8 +16,9 @@ mix.js('resources/js/app.js', 'public/js').version();
 //stylus
 mix.stylus(
     'resources/styl/skins/ice/app.styl',
-    'public/skins/ice/css/app.css'
-).version();
+    'public/skins/ice/css/app.css')
+    .stylus('resources/styl/animations.styl', 'public/css')
+    .version();
 
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 
