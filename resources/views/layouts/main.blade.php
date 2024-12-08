@@ -21,6 +21,7 @@
 </a>
 <!-- end center div -->
 <!-- Main Body -->
+@if(!strstr(Route::current()->getName(),'splash'))
 <div id="animations" class="home">
     <div id="group1">
         <div class="container">
@@ -53,6 +54,7 @@
         </div>
     </div>
 </div>
+@endif
     <!-- Page Content -->
     <main x-data="{clicked:false,headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
         @yield('nav')
