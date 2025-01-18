@@ -1,5 +1,19 @@
 window._ = require('lodash');
 
+import { createMemoryHistory, createRouter } from 'vue-router'
+
+import Splash from './Splash.vue'
+import Home from './Home.vue'
+
+const routes = [
+    { path: '/', component:Splash },
+    { path: '/home', component: Home },
+]
+
+const router = createRouter({
+    history: createMemoryHistory(),
+    routes,
+})
 try {
     require('bootstrap');
 } catch (e) {}

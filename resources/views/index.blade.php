@@ -1,8 +1,22 @@
-@extends('layouts.main')
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-@section('content')
-@endsection
+    <link rel="stylesheet" href="skins/ice/css/app.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <title>AdamHaley.com</title>
 
-@section('nav')
-    @include('partials.nav')
-@endsection
+
+</head>
+<body>
+<div id="app">
+    <router-view></router-view>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

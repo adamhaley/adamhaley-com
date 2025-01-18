@@ -1,0 +1,31 @@
+<template>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="skins/ice/css/app.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <title>AdamHaley.com</title>
+
+
+    </head>
+    <body>
+    <div id="app">
+        <router-view></router-view>
+    </div>
+
+    </body>
+    </html>
+</template>
+
+<script>
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        }
+    }
+</script>
