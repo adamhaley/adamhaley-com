@@ -25,7 +25,7 @@
         @yield('content')
 
     </main>
-<footer>&copy;2024 Adam Haley Productions</footer>
+<footer>&copy;2025 Adam Haley Productions</footer>
 
 
 <script src="js/app.js"></script>
