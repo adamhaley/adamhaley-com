@@ -1,10 +1,7 @@
-@extends('layouts.main')
-
+@extends('layouts.app')
 
 @section('content')
-    @include('partials.heading', ['heading' => 'HOME'])
-@endsection
-
-@section('nav')
-    @include('partials.nav')
+    <div class="container-fluid">
+        <h1 class="text-black-50">You are logged in!</h1>
+    </div>
 @endsection
