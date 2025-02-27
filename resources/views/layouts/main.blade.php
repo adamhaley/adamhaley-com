@@ -20,7 +20,7 @@
 </a>
     <!-- Page Content -->
     <main x-data="{clicked:false,headingtext:'{{strtoupper(Route::current()->getName())}}',headingtextdefault:'{{strtoupper(Route::current()->getName())}}'}">
-        @yield('nav')
+{{--        @yield('nav')--}}
 
         @yield('content')
 
