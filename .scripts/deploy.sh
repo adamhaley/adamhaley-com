@@ -3,6 +3,8 @@ set -e
 
 echo "Deployment started ..."
 
+git config --global --add safe.directory /home/***/***haley-com
+
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 (php artisan down) || true
