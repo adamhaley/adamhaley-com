@@ -3,9 +3,8 @@ set -e
 
 echo "Deployment started ..."
 
-su adam
+export COMPOSER_ALLOW_SUPERUSER=1
 
-echo whoami
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 (php artisan down) || true
