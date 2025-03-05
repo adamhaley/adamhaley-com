@@ -18,6 +18,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd adamhaley-com
+            cd /home/adam/adamhaley-com/
             .scripts/deploy.sh
 
