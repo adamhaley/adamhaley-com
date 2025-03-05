@@ -3,9 +3,12 @@ set -e
 
 echo "Deployment started ..."
 
+su adam
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 (php artisan down) || true
+
+
 
 # Pull the latest version of the app
 git pull origin master
