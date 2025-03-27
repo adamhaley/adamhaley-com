@@ -41,7 +41,7 @@ class PortfolioController extends Controller
                 'id' => 4,
                 'title' => 'Homefront Map',
                 'client' => 'Eyestorm Creative for THQ',
-                'description' => 'Homefront Map was a rich online gameified experience created to promote the release of "Homefront: The Revolution". I was tasked with creating an online map of Philadelphia that was sect    ioned off into game zones that would be unlocked one at a time as the user progressed through decision trees to win prizes.  I used Open Street Maps and GDAL Scripts to generate map tile    s, and then overlaid polylines rendered as SVGs over the map. The functionality of the game was created using BackboneJS and a rich data model driven by a backend API written in Laravel.',
+                'description' => 'Homefront Map was a rich online gameified experience created to promote the release of "Homefront: The Revolution". I was tasked with creating an online map of Philadelphia that was sectioned off into game zones that would be unlocked one at a time as the user progressed through decision trees to win prizes. I used Open Street Maps and GDAL Scripts to generate map tiles, and then overlaid polylines rendered as SVGs over the map. The functionality of the game was created using BackboneJS and a rich data model driven by a backend API written in Laravel.',
                 'technologies' => ['Javascript', 'HTML5', 'GDAL/OGR', 'Python', 'OpenStreetMap', 'SVG', 'CSS', 'Backbone/Marionette','Laravel', 'PHP/MySQL'],
                 'image' => asset('storage/projects/hftr-11.png'),
                 'video' => 'https://www.youtube.com/watch?v=sTZHS2CIfTU',
