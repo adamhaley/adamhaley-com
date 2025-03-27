@@ -17,6 +17,7 @@ class PortfolioController extends Controller
                 'technologies' => ['Javascript', 'Stylus', 'CSS3', 'PHP/MySQL','Wordpress', 'WooCommerce', 'WP Cli'],
                 'image' => asset('storage/projects/monkmagazine.com.png'),
                 'video' => asset('storage/projects/monk-magazine.mp4'),
+                'live_demo' => 'https://monkmagazine.com',
             ],
             [
                 'id' => 2,
