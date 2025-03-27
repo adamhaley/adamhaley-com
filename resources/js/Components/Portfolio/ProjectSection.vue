@@ -35,7 +35,7 @@
 
     <!-- Modal -->
     <Modal :is-open="isModalOpen" @close="closeModal">
-      <div class="aspect-video">
+      <div v-if="project.video" class="aspect-video">
         <template v-if="isYoutubeVideo(project.video)">
           <iframe
             class="w-full h-full"
