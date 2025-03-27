@@ -35,7 +35,7 @@
 
     <!-- Modal -->
     <Modal :is-open="isModalOpen" @close="closeModal">
-      <div v-if="project.video" class="aspect-video">
+      <div class="aspect-video">
         <template v-if="isYoutubeVideo(project.video)">
           <iframe
             class="w-full h-full"
@@ -49,6 +49,7 @@
         <template v-else-if="project.video">
           <video 
             controls 
+            autoplay
             class="w-full h-full"
           >
             <source :src="project.video" type="video/mp4">
@@ -107,7 +108,7 @@ const getYoutubeEmbedUrl = (url) => {
     
     if (!videoId) return null
     
-    return `https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0`
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
   } catch (error) {
     console.error('Error parsing YouTube URL:', error)
     return null
