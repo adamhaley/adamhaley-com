@@ -10,7 +10,7 @@
         <img 
           :src="project.image" 
           :alt="project.title"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-contain"
         />
       </div>
     </div>
@@ -36,13 +36,25 @@
     <!-- Modal -->
     <Modal :is-open="isModalOpen" @close="closeModal">
       <div v-if="project.video" class="aspect-video">
-        <video 
-          controls 
-          class="w-full h-full"
-        >
-          <source :src="project.video" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <template v-if="isYoutubeVideo(project.video)">
+          <iframe
+            class="w-full h-full"
+            :src="getYoutubeEmbedUrl(project.video)"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </template>
+        <template v-else-if="project.video">
+          <video 
+            controls 
+            class="w-full h-full"
+          >
+            <source :src="project.video" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </template>
       </div>
       <div v-else-if="project.carousel" class="aspect-video">
         <!-- Add carousel component here if needed -->
@@ -75,5 +87,30 @@ const openModal = () => {
 
 const closeModal = () => {
   isModalOpen.value = false
+}
+
+const isYoutubeVideo = (url) => {
+  if (!url) return false
+  return url.includes('youtube.com') || url.includes('youtu.be')
+}
+
+const getYoutubeEmbedUrl = (url) => {
+  try {
+    let videoId = ''
+    
+    if (url.includes('youtube.com/watch')) {
+      const urlParams = new URLSearchParams(new URL(url).search)
+      videoId = urlParams.get('v')
+    } else if (url.includes('youtu.be')) {
+      videoId = url.split('/').pop()
+    }
+    
+    if (!videoId) return null
+    
+    return `https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0`
+  } catch (error) {
+    console.error('Error parsing YouTube URL:', error)
+    return null
+  }
 }
 </script> 
