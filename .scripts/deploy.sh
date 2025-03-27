@@ -3,7 +3,7 @@ set -e
 
 echo "Deployment started ..."
 
-export COMPOSER_ALLOW_SUPERUSER=1
+git config --global --add safe.directory /home/***/***haley-com
 
 # Enter maintenance mode or return true
 # if already is in maintenance mode
