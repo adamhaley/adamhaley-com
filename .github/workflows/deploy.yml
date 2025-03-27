@@ -11,13 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        env:
+          COMPOSER_ALLOW_SUPERUSER: 1
       - name: Deploy to server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.2.1
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd adamhaley-com
-            ./.scripts/deploy.sh
+            cd /home/adam/adamhaley-com/
+            .scripts/deploy.sh
 
