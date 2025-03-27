@@ -26,7 +26,7 @@ class PortfolioController extends Controller
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 'technologies' => ['Javascript', 'HTML5', 'CSS', 'Backbone/Marionette','Jasmine'],
                 'image' => asset('storage/projects/jurassicworld.test.png'),
-                'video' => asset('storage/projects/jurassic-world.mp4'),
+                'video' => asset('storage/projects/jurassic-world-reel.mp4'),
             ],
             [
                 'id' => 3,
