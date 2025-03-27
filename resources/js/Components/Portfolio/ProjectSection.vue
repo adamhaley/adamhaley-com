@@ -1,19 +1,13 @@
 <template>
   <div class="flex flex-col md:flex-row items-center gap-8" 
        :class="{ 'md:flex-row-reverse': reverse }">
-    <!-- Media Section (Image/Video) -->
+    <!-- Media Section (Image) -->
     <div class="w-full md:w-1/2">
-      <div class="relative aspect-video rounded-lg overflow-hidden shadow-xl">
-        <video 
-          v-if="project.video"
-          class="w-full h-full object-cover"
-          controls
-        >
-          <source :src="project.video" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div 
+        class="relative aspect-video rounded-lg overflow-hidden shadow-xl cursor-pointer transform transition hover:scale-[1.02]"
+        @click="openModal"
+      >
         <img 
-          v-else-if="project.image"
           :src="project.image" 
           :alt="project.title"
           class="w-full h-full object-cover"
@@ -24,7 +18,7 @@
     <!-- Content Section -->
     <div class="w-full md:w-1/2 space-y-6">
       <h2 class="text-3xl font-bold text-gray-900">{{ project.title }}</h2>
-      
+      <div class="text-lg text-gray-600">Client: {{ project.client }}</div>
       <p class="text-lg text-gray-600">{{ project.description }}</p>
       
       <!-- Technologies -->
@@ -37,26 +31,30 @@
           {{ tech }}
         </span>
       </div>
-
-      <!-- Links -->
-      <div class="flex gap-4 pt-4">
-        <a
-          v-if="project.live_demo"
-          :href="project.live_demo"
-          target="_blank"
-          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
-        >
-          <ExternalLinkIcon class="h-5 w-5 mr-2" />
-          Live Demo
-        </a>
-      </div>
     </div>
+
+    <!-- Modal -->
+    <Modal :is-open="isModalOpen" @close="closeModal">
+      <div v-if="project.video" class="aspect-video">
+        <video 
+          controls 
+          class="w-full h-full"
+        >
+          <source :src="project.video" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div v-else-if="project.carousel" class="aspect-video">
+        <!-- Add carousel component here if needed -->
+        <ImageCarousel :images="project.carousel" />
+      </div>
+    </Modal>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-import ExternalLinkIcon from '@/Components/Icons/ExternalLinkIcon.vue'
+import { ref } from 'vue'
+import Modal from '@/Components/Modal.vue'
 
 const props = defineProps({
   project: {
@@ -68,4 +66,14 @@ const props = defineProps({
     default: false
   }
 })
+
+const isModalOpen = ref(false)
+
+const openModal = () => {
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
 </script> 
