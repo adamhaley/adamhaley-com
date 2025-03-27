@@ -11,6 +11,15 @@ class PortfolioController extends Controller
         $projects = [
             [
                 'id' => 1,
+                'title' => 'Jurassic World',
+                'client' => 'Universal Pictures',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'technologies' => ['Javascript', 'HTML5', 'CSS', 'Backbone/Marionette','Jasmine'],
+                'image' => asset('storage/projects/jurassicworld.test.png'),
+                'video' => asset('storage/projects/jurassic-world.mp4'),
+            ],
+            [
+                'id' => 2,
                 'title' => 'Monk Magazine',
                 'client' => 'Monk Media',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -18,15 +27,6 @@ class PortfolioController extends Controller
                 'image' => asset('storage/projects/monkmagazine.com.png'),
                 'video' => asset('storage/projects/monk-magazine.mp4'),
                 'live_demo' => 'https://monkmagazine.com',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Jurassic World',
-                'client' => 'Trailer Park for Universal Pictures',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                'technologies' => ['Javascript', 'HTML5', 'CSS', 'Backbone/Marionette','Jasmine TDD'],
-                'image' => asset('storage/projects/jurassicworld.test.png'),
-                'video' => asset('storage/projects/jurassic-world-reel.mp4'),
             ],
             [
                 'id' => 3,
