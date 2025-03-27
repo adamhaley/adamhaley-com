@@ -1,9 +1,19 @@
 import './bootstrap';
+import '../css/app.css';
 
-import Alpine from 'alpinejs';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
-window.Alpine = Alpine;
-
-Alpine.start();
-
-console.log('Hello World from app.js!');
+createInertiaApp({
+    title: (title) => `${title} - Your Site Name`,
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    setup({ el, App, props, plugin }) {
+        return createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el);
+    },
+    progress: {
+        color: '#4B5563',
+    },
+});
