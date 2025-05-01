@@ -13,7 +13,6 @@
         "laravel/sanctum": "^3.3.3",
         "laravel/tinker": "^2.10.1",
         "laravelcollective/html": "^6.4.1",
-        "open-admin-org/open-admin": "^1.0.27",
         "tightenco/ziggy": "^2.5.2",
         "tijsverkoyen/css-to-inline-styles": "^2.3"
     },
