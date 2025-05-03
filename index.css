@@ -112,7 +112,7 @@ h1 {
 h3 {
   font-family: 'Open Sans', sans-serif;
 }
-workExperience>ul>li ul {
+.workExperience>ul>li ul {
   padding-left: 0.5cm;
   list-style-type: disc;
 }
@@ -153,7 +153,16 @@ workExperience>ul>li ul {
 }
 .jobPosition span, 
 .projectName span {
-  font-family: 'Source Sans Pro', sans-serif;
 }
-
-
+.item{
+    font-size: .9em;
+}
+.item.bottomLineSeparator a{
+    font-size: .9em;
+}
+body{
+    font-size: 1em;
+}
+p{
+    font-size: .9em;
+}
