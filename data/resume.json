@@ -68,5 +68,25 @@
     "Technologies": "Javascript, Backbone/Marionette, Handlebars, Laravel, PHP, MySQL, CSS3",
     "Description": "Lead Developer on http://homefrontmap.com a rich client-side interactive experience\n·   \tLed team of 3 developers, organized sprints and ran daily standup meetings\n·   \tPlanned project in  JIRA, setup and maintained GIT/bitbucket workflow\n·   \tWorked with Product Owner to establish requirements and guide project to successful completion under tight deadline.\n·   \tWrote production quality Javascript/HTML5 code for high visibility, high traffic entertainment product.\n·   \tConfigured production server on Rackspace",
     "Category": "Tech"
+  },
+  {
+    "row_number": 9,
+    "Company": "Trigger Digital",
+    "Title": "Javascript Developer",
+    "Start_Date": "2/1/2015",
+    "End_Date": "5/1/2015",
+    "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
+    "Description": "Worked directly with client Trigger Global, LLC to develop Tumblr E-Zine for the Age Of Adaline Theatrical Digital campaign.\n·   \tChose innovative SPA Approach using Backbone / Marionette on against Tumblr API instead of using the typical Tumblr Theming system. This allowed us significantly more freedom to create an innovative UI outside of the usual constraints of a Tumblr Theming Interface.\n·   \tWorked with and gave direction to remote offsite developers to deliver the project on tight deadlines.",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 10,
+    "Company": "New Wave Entertainment",
+    "Title": "Javascript Developer",
+    "Start_Date": "7/4/2014",
+    "End_Date": "9/1/2014",
+    "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
+    "Description": "·   \tCreated Event-based architecture for Javascript site that uses a rendered HTML5 video background to create the illusion of an immersive 3D world. http://nick.com/fruitsnackia\n·   \tCreated Tumblr theme for St Vincent movie starring Bill Murray\nhttp://stvincentfilm.com",
+    "Category": "Tech"
   }
 ]
