@@ -149,77 +149,47 @@
                             </div>
                         </div>
                         <div class="workExperience">
-                            <h2>
-                            Work experience
-                            </h2>
-                            <ul>
-                                <li>
-                                    <div class="jobPosition smallText">
-                                    <span class="bolded">
-                                      Accountant
-                                    </span>
-                                    <span>
-                                      Jun 2014 - Sept 2015
-                                    </span>
-                                  </div>
-                                  <div class="projectName bolded smallText">
-                                    <span>
-                                      Accounting project name | Company name
-                                    </span>
-                                  </div>
-                                <div class="smallText">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                </div>
-
-                                </li> 
-                                <li>
-                                    <div class="jobPosition smallText">
-                                    <span class="bolded">
-Digital Marketing Expert
-                                    </span>
-                                    <span>
-                                      Jun 2014 - Sept 2015
-                                    </span>
-                                  </div>
-                                  <div class="projectName bolded smallText">
-                                    <span>
-                                      Accounting project name | Company name
-                                    </span>
-                                  </div>
-                                <div class="smallText">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                </div>
-
-                                </li>
-                                 <li>
-                                    <div class="jobPosition smallText">
-                                    <span class="bolded">
-Digital Marketing Expert
-                                    </span>
-                                    <span class="smallText">
-                                      Jun 2014 - Sept 2015
-                                    </span>
-                                  </div>
-                                  <div class="projectName bolded smallText">
-                                    <span>
-                                      Accounting project name | Company name
-                                    </span>
-                                  </div>
-                                <div class="smallText">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                </div>
-
-                                </li>
-                            </ul>
+                          <h2>Work experience</h2>
+                          <ul id="work-experience"></ul>
                         </div>
                     </div>
             </div>
-        </page>
+          </page>
+          <script id="work-experience-template" type="text/x-handlebars-template">
+              {{#each jobs}}
+                <li>
+                  <div class="jobPosition smallText">
+                    <span class="bolded">{{Title}}</span>
+                    <span>{{Start_Date}} - {{End_Date}}</span>
+                  </div>
+                  <div class="projectName bolded smallText">
+                    <span>{{Company}}</span>
+                  </div>
+                  <div class="smallText">
+                    <p>{{Description}}</p>
+                  </div>
+                </li>
+              {{/each}}
+          </script>
+          <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+          <script>
+            // Fetch the resume data
+            fetch('data/resume.json')
+              .then(response => response.json())
+              .then(data => {
+                // Filter for only "Tech" category jobs (if you want only tech jobs)
+                const jobs = data.filter(job => job.Category === "Tech");
+
+                // Compile the Handlebars template
+                const source = document.getElementById('work-experience-template').innerHTML;
+                const template = Handlebars.compile(source);
+
+                // Render the template with the data
+                const html = template({ jobs });
+
+                // Insert the rendered HTML into the page
+                document.getElementById('work-experience').innerHTML = html;
+              });
+          </script>
     </body>
 </html>
