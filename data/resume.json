@@ -6,7 +6,7 @@
     "Start_Date": "2/1/2025",
     "End_Date": "",
     "Technologies": "n8n, Python, Langchain, OpenAI, Javascript, Ollama, docker",
-    "Description": "Digital Agency specializing in AI Automation, and digital marketing. Created RAG Systems (Retrieval Augmented Generation) using python/langchain and n8n. Also Voice AI pipelines with Transcription and TTS. Offerings include CX:Tools - Smart chatbot for your website, Automations , and AI Consulting services. Digital Cloning and building your \"second brain\" ",
+    "Description": "Digital Agency specializing in AI Automation, and research. Created RAG Systems (Retrieval Augmented Generation) using python/langchain and n8n. Also Voice AI pipelines with Transcription and TTS. Offerings include CX:Tools - Smart chatbot for your website, Automations , and AI Consulting services. Digital Cloning and building your \"second brain\" ",
     "Category": "Tech"
   },
   {
@@ -40,53 +40,13 @@
     "Category": "Tech"
   },
   {
-    "row_number": 6,
-    "Company": "Axis Studios",
-    "Title": "Javascript Consultant ",
-    "Start_Date": "10/1/2016",
-    "End_Date": "12/1/2016",
-    "Technologies": "VueJS, Javascript, HTML5, CSS3",
-    "Description": "·   \tDeveloped Javascript-based 5 page brochure site using Vue.js https://www.daileyla.com/\n·   \tWrote all production JS, CSS, HTML code for SPA\n·   \tWorked with Backend developers on creating API for loading data from CMS",
-    "Category": "Tech"
-  },
-  {
-    "row_number": 7,
-    "Company": "Space150",
-    "Title": "Senior Software Engineer",
-    "Start_Date": "5/23/2016",
-    "End_Date": "9/20/2016",
-    "Technologies": "Javascript, RxJS, nodeJS, HTML5, Angular, CSS3, Electron",
-    "Description": "·   \tDeveloped  app in NodeJS RxJS and Electron to listen and respond to  realtime operations of “Soarin” mobile game in use at Walt Disney World in Orlando, FL. ·   \tDeveloped Menu of “Soarin” mobile app in AngularJS/ CSS\n·   \tPresented on topics in emerging tech and popular programming paradigms to the team.\n·   \tMentored Junior Devs on programming techniques, frameworks, best practices",
-    "Category": "Tech"
-  },
-  {
-    "row_number": 8,
-    "Company": "EyeStorm Productions",
-    "Title": "",
-    "Start_Date": "12/1/2015",
-    "End_Date": "3/20/2016",
-    "Technologies": "Javascript, Backbone/Marionette, Handlebars, Laravel, PHP, MySQL, CSS3",
-    "Description": "Lead Developer on http://homefrontmap.com a rich client-side interactive experience\n·   \tLed team of 3 developers, organized sprints and ran daily standup meetings\n·   \tPlanned project in  JIRA, setup and maintained GIT/bitbucket workflow\n·   \tWorked with Product Owner to establish requirements and guide project to successful completion under tight deadline.\n·   \tWrote production quality Javascript/HTML5 code for high visibility, high traffic entertainment product.\n·   \tConfigured production server on Rackspace",
-    "Category": "Tech"
-  },
-  {
-    "row_number": 9,
-    "Company": "Trigger Digital",
+    "row_number": 11,
+    "Company": "Deutsch",
     "Title": "Javascript Developer",
-    "Start_Date": "2/1/2015",
-    "End_Date": "5/1/2015",
+    "Start_Date": "3/1/2013",
+    "End_Date": "11/1/2013",
     "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
-    "Description": "Worked directly with client Trigger Global, LLC to develop Tumblr E-Zine for the Age Of Adaline Theatrical Digital campaign.\n·   \tChose innovative SPA Approach using Backbone / Marionette on against Tumblr API instead of using the typical Tumblr Theming system. This allowed us significantly more freedom to create an innovative UI outside of the usual constraints of a Tumblr Theming Interface.\n·   \tWorked with and gave direction to remote offsite developers to deliver the project on tight deadlines.",
-    "Category": "Tech"
-  },
-  {
-    "row_number": 10,
-    "Company": "New Wave Entertainment",
-    "Title": "Javascript Developer",
-    "Start_Date": "7/4/2014",
-    "End_Date": "9/1/2014",
-    "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
-    "Description": "·   \tCreated Event-based architecture for Javascript site that uses a rendered HTML5 video background to create the illusion of an immersive 3D world. http://nick.com/fruitsnackia\n·   \tCreated Tumblr theme for St Vincent movie starring Bill Murray\nhttp://stvincentfilm.com",
+    "Description": "·   \tDeveloped extensive Javascript / CSS3 for the web-based portion of smiledrive and parts of vw.com 3.0\nhttp://www.vw.com\n·   \tCreated server-side solutions using node.js and Python\n·   \tMentored Junior developers in best coding practices and architecture.\n·   \tDesigned and set up MVC-based frontend architecture using Backbone.js, underscore.js, Mustache.js, LESS CSS.\n·   \thttp://smiledrive.vw.com\n·   \tnode.js, backbone.js, require.js, Google App Engine, Python\n",
     "Category": "Tech"
   }
 ]
