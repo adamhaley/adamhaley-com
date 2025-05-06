@@ -2,7 +2,7 @@
   {
     "row_number": 2,
     "Company": "AH Media",
-    "TItle": "Principal",
+    "Title": "Principal",
     "Start Date": "2/1/2025",
     "End Date": "",
     "Technologies": "n8n, Python, Langchain, OpenAI, Javascript, Ollama, docker",
@@ -12,7 +12,7 @@
   {
     "row_number": 3,
     "Company": "SingleWire Software",
-    "TItle": "Software Engineer",
+    "Title": "Software Engineer",
     "Start Date": "2/9/2023",
     "End Date": "2/31/2025",
     "Technologies": "PHP/Laravel, MySQL, VueJS, Javascript, CSS3",
@@ -22,7 +22,7 @@
   {
     "row_number": 4,
     "Company": "Apple",
-    "TItle": "Software Developer (Contract)",
+    "Title": "Software Developer (Contract)",
     "Start Date": "4/1/2023",
     "End Date": "12/20/2023",
     "Technologies": "PHP/Laravel, MySQL, VueJS, Javascript, CSS3",
@@ -32,7 +32,7 @@
   {
     "row_number": 5,
     "Company": "Nelson Publishing",
-    "TItle": "Senior Software Developer, Agile Coach",
+    "Title": "Senior Software Developer, Agile Coach",
     "Start Date": "3/1/2017",
     "End Date": "12/18/2022",
     "Technologies": "PHP/Laravel, MySQL, VueJS, React, Javascript, CSS3, docker, Cucumber, Selenium Webdriver, Electron",
@@ -42,7 +42,7 @@
   {
     "row_number": 6,
     "Company": "Axis Studios",
-    "TItle": "Javascript Consultant ",
+    "Title": "Javascript Consultant ",
     "Start Date": "10/1/2016",
     "End Date": "12/1/2016",
     "Technologies": "VueJS, Javascript, HTML5, CSS3",
@@ -52,7 +52,7 @@
   {
     "row_number": 7,
     "Company": "Space150",
-    "TItle": "Senior Software Engineer",
+    "Title": "Senior Software Engineer",
     "Start Date": "5/23/2016",
     "End Date": "9/20/2016",
     "Technologies": "Javascript, RxJS, nodeJS, HTML5, Angular, CSS3, Electron",
@@ -62,7 +62,7 @@
   {
     "row_number": 8,
     "Company": "EyeStorm Productions",
-    "TItle": "",
+    "Title": "",
     "Start Date": "12/1/2015",
     "End Date": "3/20/2016",
     "Technologies": "Javascript, Backbone/Marionette, Handlebars, Laravel, PHP, MySQL, CSS3",
@@ -72,7 +72,7 @@
   {
     "row_number": 9,
     "Company": "Trigger Digital",
-    "TItle": "Javascript Developer",
+    "Title": "Javascript Developer",
     "Start Date": "2/1/2015",
     "End Date": "5/1/2015",
     "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
@@ -82,7 +82,7 @@
   {
     "row_number": 10,
     "Company": "New Wave Entertainment",
-    "TItle": "Javascript Developer",
+    "Title": "Javascript Developer",
     "Start Date": "7/4/2014",
     "End Date": "9/1/2014",
     "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
@@ -92,7 +92,7 @@
   {
     "row_number": 11,
     "Company": "Deutsch",
-    "TItle": "Javascript Developer",
+    "Title": "Javascript Developer",
     "Start Date": "3/1/2013",
     "End Date": "11/1/2013",
     "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
@@ -102,7 +102,7 @@
   {
     "row_number": 12,
     "Company": "Trailer Park",
-    "TItle": "Web Developer/Agile Coach",
+    "Title": "Web Developer/Agile Coach",
     "Start Date": "8/1/2014",
     "End Date": "8/1/2015",
     "Technologies": "Backbone.js, coffeescript, Marionette.js, node.js, Greensock, Jquery, HTML5/CSS3, PHP, ",
@@ -112,7 +112,7 @@
   {
     "row_number": 13,
     "Company": "Walt Disney Television Animation",
-    "TItle": "Senior Software Developer ",
+    "Title": "Senior Software Developer ",
     "Start Date": "11/1/2004",
     "End Date": "8/1/2008",
     "Technologies": "PHP/MySQL, XML/XSLT, CSS",
@@ -122,7 +122,7 @@
   {
     "row_number": 14,
     "Company": "Ripe Media",
-    "TItle": "Developer, Putiton.com ",
+    "Title": "Developer, Putiton.com ",
     "Start Date": "2/1/2009",
     "End Date": "5/1/2009",
     "Technologies": "PHP/MySQL, CodeIgniter, HTML, CSS,",
@@ -132,7 +132,7 @@
   {
     "row_number": 15,
     "Company": "Walt Disney DIMG (",
-    "TItle": "Frontend Developer",
+    "Title": "Frontend Developer",
     "Start Date": "10/1/2010",
     "End Date": "4/1/2011",
     "Technologies": "HTML, CSS, Javascript",
@@ -142,7 +142,7 @@
   {
     "row_number": 16,
     "Company": "Added Value",
-    "TItle": "Lead Frontend Developer",
+    "Title": "Lead Frontend Developer",
     "Start Date": "4/1/2012",
     "End Date": "10/1/2012",
     "Technologies": "Javascript, TDD, BDD, scrum, jquery, jasmine, require.js, d3, Backbone.js",
@@ -152,7 +152,7 @@
   {
     "row_number": 17,
     "Company": "Walt Disney Studios",
-    "TItle": "Javascript Developer",
+    "Title": "Javascript Developer",
     "Start Date": "3/1/2014",
     "End Date": "7/1/2014",
     "Technologies": "AngularJS, CSS3, SASS/compass, underscore, Bootstrap",
@@ -162,7 +162,7 @@
   {
     "row_number": 18,
     "Company": "Cirque Ingenieux",
-    "TItle": "Guitarist/Keyboardist",
+    "Title": "Guitarist/Keyboardist",
     "Start Date": "5/10/1997",
     "End Date": "7/4/1998",
     "Technologies": "",
@@ -172,7 +172,7 @@
   {
     "row_number": 19,
     "Company": "Musicians Institute",
-    "TItle": "Guitar Instructor",
+    "Title": "Guitar Instructor",
     "Start Date": "7/1/1996",
     "End Date": "1/1/2000",
     "Technologies": "",
@@ -182,11 +182,11 @@
   {
     "row_number": 20,
     "Company": "Dream World Cirque",
-    "TItle": "Music Director/Guitarist",
-    "Start Date": "",
-    "End Date": "",
+    "Title": "Music Director/Guitarist",
+    "Start Date": "9/1/2009",
+    "End Date": "11/1/2021",
     "Technologies": "",
-    "Description": "",
-    "Category": ""
+    "Description": "Composer / Producer for Botuique Cirque company",
+    "Category": "Music"
   }
 ]
