@@ -71,125 +71,115 @@
                         </div>
 
                         <div class="item bottomLineSeparator">
-                              <h2>
-                                SKILLS
-                              </h2>
-                              <div class="smallText">
-                                <div class="skill">
-                                  <div>
-                                    <span>Accounting</span>
-                                  </div>
-                                  <div class="yearsOfExperience">
-                                    <span class="alignright">14</span>
-                                    <span class="alignleft">years</span>
-                                  </div>
-                                </div>
-                                <div class="skill">
-                                  <div>
-                                    <span>Word</span>
-                                  </div>
-                                  <div class="yearsOfExperience">
-                                    <span class="alignright">3</span>
-                                    <span class="alignleft">years</span>
-                                  </div>
-                                </div>
-                                <div class="skill">
-                                  <div>
-                                    <span>Powerpoint</span>
-                                  </div>
-                                  <div class="yearsOfExperience">
-                                    <span class="alignright">1</span>
-                                    <span class="alignleft">year</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!--
-                            <div class="item">
-                                <h2>
-                                    EDUCATION
-                                </h2>
-                                <div class="smallText">
-                                    <p class="bolded white">
-                                        Bachelor of Economics
-                                    </p>
-                                    <p>
-                                        The University of Sydney
-                                    </p>
-                                    <p>
-                                        2010 - 2014
-                                    </p>
-                                </div>
-                            </div>
-                            -->
+                          <h2>
+                            SKILLS
+                          </h2>
+                          <div id="skills-container"></div>
                         </div>
                     </div>
-                    <div class="rightPanel">
-                        <div>
-                            <h1>
-                            Adam Haley
-                            </h1>
-                            <div class="smallText">
-                                <h3>
-                                Full Stack Developer /  AI Automator
-                                </h3>
-                            </div>
-                        </div>
-                        <div>
-                            <h2>
-                            About me
-                            </h2>
-                            <div class="smallText">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis, justo sed feugiat pulvinar., quam ipsum tincidunt enim, ac gravida est metus sit amet neque. Curabitur ut arcu ut nunc finibus accumsan id id elit.
-                                </p>
-                                <p>
-                                  Vivamus non magna quis neque viverra finibus quis a tortor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="workExperience">
-                          <h2>Work experience</h2>
-                          <ul id="work-experience"></ul>
+                </div>
+                <div class="rightPanel">
+                    <div>
+                        <h1>
+                        Adam Haley
+                        </h1>
+                        <div class="smallText">
+                            <h3>
+                            Full Stack Developer /  AI Automator
+                            </h3>
                         </div>
                     </div>
-            </div>
-          </page>
-          <script id="work-experience-template" type="text/x-handlebars-template">
-              {{#each jobs}}
-                <li>
-                  <div class="jobPosition smallText">
-                    <span class="bolded">{{Title}}</span>
-                    <span>{{Start_Date}} - {{End_Date}}</span>
+                    <div>
+                        <h2>About me</h2>
+                        <div id="about-container"></div>
+                    </div>
+                    <div class="workExperience">
+                      <h2>Work experience</h2>
+                      <ul id="work-experience"></ul>
+                    </div>
+                </div>
+        </div>
+      </page>
+      <script id="about-template" type="text/x-handlebars-template">
+        <div class="smallText">
+          <p>{{body}}</p>
+        </div>
+      </script>
+      <script id="skills-template" type="text/x-handlebars-template">
+        {{#each this}}
+          <div class="item bottomLineSeparator">
+            <h2>{{@key}}</h2>
+            <div class="smallText">
+              {{#each this}}
+                <div class="skill">
+                  <div>
+                    <span>{{this}}</span>
                   </div>
-                  <div class="projectName bolded smallText">
-                    <span>{{Company}}</span>
-                  </div>
-                  <div class="smallText">
-                    <p>{{Description}}</p>
-                  </div>
-                </li>
+                </div>
               {{/each}}
-          </script>
-          <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-          <script>
-            // Fetch the resume data
-            fetch('data/resume.json')
-              .then(response => response.json())
-              .then(data => {
-                // Filter for only "Tech" category jobs (if you want only tech jobs)
-                const jobs = data.filter(job => job.Category === "Tech");
+            </div>
+          </div>
+        {{/each}}
+      </script>
+      <script id="work-experience-template" type="text/x-handlebars-template">
+          {{#each jobs}}
+            <li>
+              <div class="jobPosition smallText">
+                <span class="bolded">{{Title}}</span>
+                <span>{{Start_Date}} - {{End_Date}}</span>
+              </div>
+              <div class="projectName bolded smallText">
+                <span>{{Company}}</span>
+              </div>
+              <div class="smallText">
+                <p>{{Description}}</p>
+              </div>
+            </li>
+          {{/each}}
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+      <script>
+        // Function to load and render work experience
+        const loadWorkExperience = () => {
+          fetch('data/resume.json')
+            .then(response => response.json())
+            .then(data => {
+              const jobs = data.filter(job => job.Category === "Tech");
+              const source = document.getElementById('work-experience-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template({ jobs });
+              document.getElementById('work-experience').innerHTML = html;
+            });
+        };
 
-                // Compile the Handlebars template
-                const source = document.getElementById('work-experience-template').innerHTML;
-                const template = Handlebars.compile(source);
+        // Function to load and render skills
+        const loadSkills = () => {
+          fetch('data/skills.json')
+            .then(response => response.json())
+            .then(data => {
+              const source = document.getElementById('skills-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template(data);
+              document.getElementById('skills-container').innerHTML = html;
+            });
+        };
 
-                // Render the template with the data
-                const html = template({ jobs });
+        // Function to load and render about section
+        const loadAbout = () => {
+          fetch('data/about.json')
+            .then(response => response.json())
+            .then(data => {
+              const source = document.getElementById('about-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template(data);
+              document.getElementById('about-container').innerHTML = html;
+            });
+        };
 
-                // Insert the rendered HTML into the page
-                document.getElementById('work-experience').innerHTML = html;
-              });
-          </script>
+        // Load all sections
+        loadWorkExperience();
+        loadSkills();
+        loadAbout();
+      </script>
     </body>
 </html>

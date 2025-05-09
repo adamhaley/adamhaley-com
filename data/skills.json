@@ -1,0 +1,72 @@
+{
+  "Backend Development": [
+    "PHP",
+    "Laravel",
+    "PHPUnit",
+    "Backpack for Laravel",
+    "MySQL",
+    "WordPress"
+  ],
+  "Frontend Development": [
+    "JavaScript",
+    "Vue.js",
+    "React",
+    "AngularJS",
+    "Backbone.js",
+    "Marionette",
+    "Mustache.js",
+    "LESS",
+    "CSS3",
+    "HTML5",
+    "responsive design",
+    "media queries"
+  ],
+  "Fullstack & Scripting": [
+    "Node.js",
+    "Electron",
+    "RxJS",
+    "Python",
+    "Google App Engine"
+  ],
+  "AI & Automation": [
+    "LangChain",
+    "n8n",
+    "Retrieval-Augmented Generation (RAG)",
+    "Voice AI",
+    "TTS",
+    "Transcription",
+    "Digital Cloning"
+  ],
+  "Testing & QA": [
+    "PHPUnit",
+    "Jasmine",
+    "Cucumber.js",
+    "BDD",
+    "TDD"
+  ],
+  "DevOps & Infrastructure": [
+    "Git",
+    "Bitbucket",
+    "CI/CD",
+    "Atlassian Bamboo",
+    "AWS",
+    "Kubernetes"
+  ],
+  "Tools & APIs": [
+    "Tumblr API",
+    "TimeView",
+    "Backpack for Laravel"
+  ],
+  "Project & Team": [
+    "Jira",
+    "Scrum",
+    "XP",
+    "Agile Coaching",
+    "sprint planning",
+    "story grooming",
+    "mentoring",
+    "stakeholder communication",
+    "fast prototyping"
+  ]
+}
+
