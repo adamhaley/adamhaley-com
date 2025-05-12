@@ -1,9 +1,9 @@
 {
   "Backend Development": [
     "PHP",
+    "Python",
     "Laravel",
     "PHPUnit",
-    "Backpack for Laravel",
     "MySQL",
     "WordPress"
   ],
@@ -16,17 +16,10 @@
     "Marionette",
     "Mustache.js",
     "LESS",
+    "Stylus",
     "CSS3",
     "HTML5",
     "responsive design",
-    "media queries"
-  ],
-  "Fullstack & Scripting": [
-    "Node.js",
-    "Electron",
-    "RxJS",
-    "Python",
-    "Google App Engine"
   ],
   "AI & Automation": [
     "LangChain",
@@ -35,27 +28,20 @@
     "Voice AI",
     "TTS",
     "Transcription",
-    "Digital Cloning"
+    "Digital Cloning",
   ],
-  "Testing & QA": [
-    "PHPUnit",
-    "Jasmine",
-    "Cucumber.js",
-    "BDD",
-    "TDD"
-  ],
-  "DevOps & Infrastructure": [
+  "DevOps": [
     "Git",
     "Bitbucket",
     "CI/CD",
     "Atlassian Bamboo",
     "AWS",
-    "Kubernetes"
-  ],
-  "Tools & APIs": [
-    "Tumblr API",
-    "TimeView",
-    "Backpack for Laravel"
+    "Kubernetes",
+    "PHPUnit",
+    "Jasmine",
+    "Cucumber.js",
+    "BDD",
+    "TDD"
   ],
   "Project & Team": [
     "Jira",
@@ -69,4 +55,3 @@
     "fast prototyping"
   ]
 }
-
