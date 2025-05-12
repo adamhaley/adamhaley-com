@@ -1,0 +1,7 @@
+.env
+*.swp
+*.swo
+venv
+vendor
+node_modules
+
