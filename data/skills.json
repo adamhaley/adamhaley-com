@@ -19,7 +19,7 @@
     "Stylus",
     "CSS3",
     "HTML5",
-    "responsive design",
+    "responsive design"
   ],
   "AI & Automation": [
     "LangChain",
@@ -28,7 +28,7 @@
     "Voice AI",
     "TTS",
     "Transcription",
-    "Digital Cloning",
+    "Digital Cloning"
   ],
   "DevOps": [
     "Git",
@@ -42,16 +42,5 @@
     "Cucumber.js",
     "BDD",
     "TDD"
-  ],
-  "Project & Team": [
-    "Jira",
-    "Scrum",
-    "XP",
-    "Agile Coaching",
-    "sprint planning",
-    "story grooming",
-    "mentoring",
-    "stakeholder communication",
-    "fast prototyping"
   ]
 }
