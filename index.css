@@ -189,7 +189,7 @@ p{
     right: 20px;
     width: 350px;
     height: 500px;
-    background: var(--light-bg);
+    background: var(--dark-bg);
     border: 1px solid var(--neon-blue);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
