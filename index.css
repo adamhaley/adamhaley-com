@@ -72,6 +72,9 @@ img {
   color: #bebebe;
   text-decoration: none;
 }
+.leftPanel a:hover {
+  color: #00ffff;
+}
 
 .skill {
   display: flex;

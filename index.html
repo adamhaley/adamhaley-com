@@ -26,6 +26,7 @@
           size: 21cm 29.7cm;
           margin: 0mm;
         }
+
         </style>
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +48,7 @@
                           <div class="smallText">
                             <p>
                               <i class="fa fa-phone contactIcon" aria-hidden="true"></i>
-                              (323) 384-3493
+                              <a href="#"><span>(323) 384-3493</span></a>
                             </p>
                             <p>
                               <i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
@@ -55,7 +56,7 @@
                             </p>
                             <p>
                               <i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
-                              Los Angeles, CA
+                              <a href="#"><span>Los Angeles, CA</span></a>
                             </p>
                             <p>
                               <i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
@@ -113,7 +114,7 @@
               {{#each this}}
                 <div class="skill">
                   <div>
-                    <span>{{this}}</span>
+                    <a href="#"><span>{{this}}</span></a>
                   </div>
                 </div>
               {{/each}}
