@@ -209,72 +209,74 @@
                     </div>
                 </div>
             </div>
-            <div class="chat-container">
-                <button class="close-button">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="chat-messages" id="chat-messages"></div>
-                <div class="chat-input-container">
-                    <input type="text" id="chat-input" placeholder="Type your message..." class="chat-input">
-                    <button id="send-button" class="send-button">
-                        <i class="fas fa-paper-plane"></i>
+                <!--
+                <div class="chat-container">
+                    <button class="close-button">
+                        <i class="fas fa-times"></i>
                     </button>
+                    <div class="chat-messages" id="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Type your message..." class="chat-input">
+                        <button id="send-button" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <button class="reopen-chat-button">
-                <i class="fas fa-comments"></i>
-            </button>
-        </page>
-        <script src="chat.js"></script>
-        <script id="about-template" type="text/x-handlebars-template">
-            <div class="smallText">
-                <p>{{body}}</p>
-            </div>
-        </script>
-      <script id="skills-template" type="text/x-handlebars-template">
-        {{#each this}}
-          <div class="item bottomLineSeparator">
-            <h2>{{@key}}</h2>
-            <div class="smallText">
-              {{#each this}}
-                <div class="skill">
-                  <div>
-                    <a href="#"><span>{{this}}</span></a>
+                <button class="reopen-chat-button">
+                    <i class="fas fa-comments"></i>
+                </button>
+                -->
+            </page>
+            <script src="chat.js"></script>
+            <script id="about-template" type="text/x-handlebars-template">
+                <div class="smallText">
+                    <p>{{body}}</p>
+                </div>
+            </script>
+          <script id="skills-template" type="text/x-handlebars-template">
+            {{#each this}}
+              <div class="item bottomLineSeparator">
+                <h2>{{@key}}</h2>
+                <div class="smallText">
+                  {{#each this}}
+                    <div class="skill">
+                      <div>
+                        <a href="#"><span>{{this}}</span></a>
+                      </div>
+                    </div>
+                  {{/each}}
+                </div>
+              </div>
+            {{/each}}
+          </script>
+          <script id="work-experience-template" type="text/x-handlebars-template">
+              {{#each jobs}}
+                <li>
+                  <div class="jobPosition smallText">
+                    <span class="bolded">{{Title}}</span>
+                    <span>{{formatDate Start_Date}} - {{formatDate End_Date}}</span>
                   </div>
-                </div>
+                  <div class="projectName bolded smallText">
+                    <span>{{Company}}</span>
+                  </div>
+                  <div class="smallText">
+                    <p>{{Description}}</p>
+                  </div>
+                </li>
               {{/each}}
-            </div>
-          </div>
-        {{/each}}
-      </script>
-      <script id="work-experience-template" type="text/x-handlebars-template">
-          {{#each jobs}}
-            <li>
-              <div class="jobPosition smallText">
-                <span class="bolded">{{Title}}</span>
-                <span>{{formatDate Start_Date}} - {{formatDate End_Date}}</span>
-              </div>
-              <div class="projectName bolded smallText">
-                <span>{{Company}}</span>
-              </div>
-              <div class="smallText">
-                <p>{{Description}}</p>
-              </div>
-            </li>
-          {{/each}}
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-      <script>
-        // Register a Handlebars helper to format dates
-        Handlebars.registerHelper('formatDate', function(dateStr) {
-          if (!dateStr) return 'Present';
-          const date = new Date(dateStr);
-          return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-        });
+          </script>
+          <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+          <script>
+            // Register a Handlebars helper to format dates
+            Handlebars.registerHelper('formatDate', function(dateStr) {
+              if (!dateStr) return 'Present';
+              const date = new Date(dateStr);
+              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            });
 
-        // Function to load and render work experience
-        const loadWorkExperience = () => {
+            // Function to load and render work experience
+            const loadWorkExperience = () => {
           fetch('data/resume.json')
             .then(response => response.json())
             .then(data => {
