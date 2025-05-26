@@ -85,7 +85,7 @@
                         </h1>
                         <div class="smallText">
                             <h3>
-                            Full Stack Developer /  AI Automator
+                            Full Stack Developer /  AI Engineer
                             </h3>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
             <li>
               <div class="jobPosition smallText">
                 <span class="bolded">{{Title}}</span>
-                <span>{{Start_Date}} - {{End_Date}}</span>
+                <span>{{formatDate Start_Date}} - {{formatDate End_Date}}</span>
               </div>
               <div class="projectName bolded smallText">
                 <span>{{Company}}</span>
@@ -139,6 +139,13 @@
       </script>
       <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
       <script>
+        // Register a Handlebars helper to format dates
+        Handlebars.registerHelper('formatDate', function(dateStr) {
+          if (!dateStr) return 'Present';
+          const date = new Date(dateStr);
+          return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        });
+
         // Function to load and render work experience
         const loadWorkExperience = () => {
           fetch('data/resume.json')
