@@ -1,3 +1,11 @@
+:root {
+    --neon-pink: #ff00ff;
+    --neon-blue: #00ffff;
+    --neon-purple: #bc13fe;
+    --dark-bg: #484444;
+    --light-bg: #ffffff;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -170,6 +178,10 @@ body{
 p{
     font-size: .9em;
 }
+.fa-solid,.fas {
+    font-weight: 900;
+}
+
 /* Chat Window Styles */
 .chat-container {
     position: fixed;
@@ -177,7 +189,7 @@ p{
     right: 20px;
     width: 350px;
     height: 500px;
-    background: var(--dark-bg);
+    background: var(--light-bg);
     border: 1px solid var(--neon-blue);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
