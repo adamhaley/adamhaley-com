@@ -122,12 +122,30 @@
                     </div>
                 </div>
         </div>
-      </page>
-      <script id="about-template" type="text/x-handlebars-template">
-        <div class="smallText">
-          <p>{{body}}</p>
+        <div class="chat-container">
+            <button class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Type your message..." class="chat-input">
+                <button id="send-button" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
-      </script>
+
+    <button class="reopen-chat-button">
+        <i class="fas fa-comments"></i>
+    </button>
+
+      </page>
+        <script src="chat.js"></script>
+        <script id="about-template" type="text/x-handlebars-template">
+            <div class="smallText">
+                <p>{{body}}</p>
+            </div>
+        </script>
       <script id="skills-template" type="text/x-handlebars-template">
         {{#each this}}
           <div class="item bottomLineSeparator">
