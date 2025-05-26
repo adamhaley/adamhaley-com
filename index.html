@@ -27,6 +27,21 @@
           margin: 0mm;
         }
 
+        .headshot-container {
+          position: relative;
+          display: inline-block;
+        }
+
+        .headshot-ring {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 400px;
+          height: 400px;
+          border: 2px solid #00ffff;
+          border-radius: 50%;
+        }
         </style>
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +52,10 @@
         <page size="A4">
             <div class="container">
                 <div class="leftPanel">
-                    <img src="images/headshot.jpeg"/>
+                    <div class="headshot-container">
+                        <img src="images/headshot.jpeg"/>
+                        <div class="headshot-ring"></div>
+                    </div>
                     <div class="details">
                         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
