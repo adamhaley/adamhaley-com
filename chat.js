@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reopenButton = document.querySelector('.reopen-chat-button');
     
     // Replace this with your actual webhook URL
-    const WEBHOOK_URL = 'https://n8n.ahmedia.ai/webhook/245a2818-056b-4f66-b730-116528e44bf7';
-    const RESTAURANT_WEBHOOK_URL = 'https://n8n.ahmedia.ai/webhook/edfc23ee-48e4-4d8e-a51a-30be223586f7';
-    const WEBHOOK_URL_TEST = 'https://n8n.ahmedia.ai/webhook-test/edfc23ee-48e4-4d8e-a51a-30be223586f7';
+    const WEBHOOK_URL = 'https://n8n.ahmedia.ai/webhook/3c8f2fca-5a61-4402-887c-a43f6c137e73';
     
     function createTypingIndicator() {
         const indicator = document.createElement('div');
@@ -63,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!namespace) {
                 namespace = '__default__';
             }
-            const response = await fetch(RESTAURANT_WEBHOOK_URL, {
+            const response = await fetch(WEBHOOK_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
