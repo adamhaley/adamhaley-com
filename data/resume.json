@@ -6,7 +6,7 @@
     "Start_Date": "2/1/2025",
     "End_Date": "",
     "Technologies": "n8n, Python, Langchain, OpenAI, Javascript, Ollama, docker",
-    "Description": "Created RAG Systems (Retrieval Augmented Generation) using python/langchain and n8n. Also Voice AI pipelines with Transcription and TTS. Offerings include CX:Tools - Smart chatbot for your website, Automations , and AI Consulting services. Digital Cloning and building your \"second brain\"",
+    "Description": "Created RAG Systems (Retrieval Augmented Generation) using python/langchain and n8n. Also Voice AI pipelines with Transcription and TTS. Offerings include CX:Tools - Smart chatbot for your website, Automations , and AI Consulting services. Digital Cloning and building your \"second brain\" ",
     "Category": "Tech"
   },
   {
@@ -16,7 +16,7 @@
     "Start_Date": "2/9/2023",
     "End_Date": "2/31/2025",
     "Technologies": "PHP/Laravel, MySQL, VueJS, Javascript, CSS3",
-    "Description": "·  Developed new features in PHP/Laravel codebase, refactored existing features, fixed bugs and delivered production Laravel/PHP/javascript as part of the Visitor Aware application.\n\t\t·  Worked closely with QA,Product, and Lead developer to improve the quality and robustness of the application.\n\t\t· Attended Daily Standups and Sprint Planning, Story grooming sessions\n\t\t· Created tests using PHPUnit",
+    "Description": "·  Developed new features in PHP/Laravel codebase, refactored existing features, fixed bugs and delivered production Laravel/PHP/javascript as part of  the Visitor Aware application.\n\t\t·  Worked closely with QA,Product, and Lead developer to improve the quality and robustness of the application.\n\t\t· Attended Daily Standups and Sprint Planning, Story grooming sessions\n\t\t· Created tests using PHPUnit",
     "Category": "Tech"
   },
   {
@@ -36,7 +36,7 @@
     "Start_Date": "3/1/2017",
     "End_Date": "12/18/2022",
     "Technologies": "PHP/Laravel, MySQL, VueJS, React, Javascript, CSS3, docker, Cucumber, Selenium Webdriver, Electron",
-    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n· Created POC for native frontend app using Electron\n· Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.\n· Interviewed prospective developers and helped build out team\n· Mentored junior devs on stack of technologies and approaches used on the team\n· Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, Kubernetes, AWS",
+    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n· Created POC for native frontend app using Electron\n· Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.   \n· Interviewed prospective developers and helped build out team\n· Mentored junior devs on stack of technologies and approaches used on the team\n· Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, Kubernetes, AWS",
     "Category": "Tech"
   },
   {
@@ -56,7 +56,7 @@
     "Start_Date": "5/23/2016",
     "End_Date": "9/20/2016",
     "Technologies": "Javascript, RxJS, nodeJS, HTML5, Angular, CSS3, Electron",
-    "Description": "·   \tDeveloped  app in NodeJS RxJS and Electron to listen and respond to realtime operations of “Soarin” mobile game in use at Walt Disney World in Orlando, FL. ·   \tDeveloped Menu of “Soarin” mobile app in AngularJS/ CSS\n·   \tPresented on topics in emerging tech and popular programming paradigms to the team.\n·   \tMentored Junior Devs on programming techniques, frameworks, best practices",
+    "Description": "·   \tDeveloped  app in NodeJS RxJS and Electron to listen and respond to  realtime operations of “Soarin” mobile game in use at Walt Disney World in Orlando, FL. ·   \tDeveloped Menu of “Soarin” mobile app in AngularJS/ CSS\n·   \tPresented on topics in emerging tech and popular programming paradigms to the team.\n·   \tMentored Junior Devs on programming techniques, frameworks, best practices",
     "Category": "Tech"
   },
   {
@@ -66,7 +66,7 @@
     "Start_Date": "12/1/2015",
     "End_Date": "3/20/2016",
     "Technologies": "Javascript, Backbone/Marionette, Handlebars, Laravel, PHP, MySQL, CSS3",
-    "Description": "Lead Developer on http://homefrontmap.com a rich client-side interactive experience\n·   \tLed team of 3 developers, organized sprints and ran daily standup meetings\n·   \tPlanned project in JIRA, setup and maintained GIT/bitbucket workflow\n·   \tWorked with Product Owner to establish requirements and guide project to successful completion under tight deadline.\n·   \tWrote production quality Javascript/HTML5 code for high visibility, high traffic entertainment product.\n·   \tConfigured production server on Rackspace",
+    "Description": "Lead Developer on http://homefrontmap.com a rich client-side interactive experience\n·   \tLed team of 3 developers, organized sprints and ran daily standup meetings\n·   \tPlanned project in  JIRA, setup and maintained GIT/bitbucket workflow\n·   \tWorked with Product Owner to establish requirements and guide project to successful completion under tight deadline.\n·   \tWrote production quality Javascript/HTML5 code for high visibility, high traffic entertainment product.\n·   \tConfigured production server on Rackspace",
     "Category": "Tech"
   },
   {
@@ -91,32 +91,32 @@
   },
   {
     "row_number": 11,
-    "Company": "Multiple Tech Companies",
-    "Title": "Various Tech Roles",
-    "Start_Date": "Before 7/4/2014",
-    "End_Date": "",
-    "Technologies": "PHP/MySQL, Javascript, Various frameworks",
-    "Description": "Tech roles at Deutsch; Walt Disney Television Animation; Ripe Media; Walt Disney DIMG; Added Value; and Walt Disney Studios were performed prior to 7/4/2014.",
+    "Company": "Various Companies",
+    "Title": "Senior Web Developer",
+    "Start_Date": "11/1/2004",
+    "End_Date": "7/1/2014",
+    "Technologies": "Javascript, Backbone.js, PHP/MySQL, Angular, HTML5, CSS3, node.js",
+    "Description": "Held senior developer roles at Walt Disney Studios, Added Value, Trailer Park and Deutsch, developing interactive web solutions and ad systems, defining frontend architecture, and mentoring junior developers. Additionally, created workflow tracking systems at Walt Disney Television Animation and contributed to several extensive frontend applications leveraging modern JS frameworks.",
     "Category": "Tech"
   },
   {
     "row_number": 12,
-    "Company": "Trailer Park",
-    "Title": "Web Developer/Agile Coach",
-    "Start_Date": "8/1/2014",
-    "End_Date": "8/1/2015",
-    "Technologies": "Backbone.js, coffeescript, Marionette.js, node.js, Greensock, Jquery, HTML5/CSS3, PHP,",
-    "Description": "\n·           Developed Architecture and HTML5 navigation/header/dashboard\nfor official Jurassic World website http://jurassicworld.com\n·           Created animations, transitions, interactivity from motion studies for innovative web-based UI.\n·           Mentored Team on Scrum/Agile processes, served as team “Agile Coach”          \n·           Developed (CI) system for TP 2.0 (http://www.trailerpark.com) using Atlassian Bamboo with a BDD testing layer in node-Cucumber/Web Driver",
-    "Category": "Tech"
+    "Company": "Various Companies",
+    "Title": "Professional Musician/Music Instructor",
+    "Start_Date": "7/1/1996",
+    "End_Date": "1/1/2000",
+    "Technologies": "",
+    "Description": "Performed and toured as guitarist and keyboardist with Cirque Ingenieux. Taught guitar at Musicians Institute.",
+    "Category": "Music"
   },
   {
-    "row_number": 13,
-    "Company": "Multiple Music Companies",
-    "Title": "Various Music Roles",
-    "Start_Date": "Before 7/4/2014",
-    "End_Date": "",
+    "row_number": 20,
+    "Company": "Dream World Cirque",
+    "Title": "Music Director/Guitarist",
+    "Start_Date": "9/1/2009",
+    "End_Date": "11/1/2021",
     "Technologies": "",
-    "Description": "Music roles at Cirque Ingenieux; Musicians Institute; and Dream World Cirque were performed prior to 7/4/2014.",
+    "Description": "Composer / Producer for Botuique Cirque company",
     "Category": "Music"
   }
 ]
