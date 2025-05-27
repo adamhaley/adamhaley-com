@@ -36,7 +36,7 @@
     "Start_Date": "3/1/2017",
     "End_Date": "12/18/2022",
     "Technologies": "PHP/Laravel, MySQL, VueJS, React, Javascript, CSS3, docker, Cucumber, Selenium Webdriver, Electron",
-    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n· Created POC for native frontend app using Electron\n· Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.   \n· Interviewed prospective developers and helped build out team\n· Mentored junior devs on stack of technologies and approaches used on the team\n· Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, Kubernetes, AWS",
+    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n·  Created POC for native frontend app using Electron\n·  Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.   \n·  Interviewed prospective developers and helped build out team\n·  Mentored junior devs on stack of technologies and approaches used on the team\n·  Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, Kubernetes, AWS",
     "Category": "Tech"
   },
   {
@@ -80,13 +80,33 @@
     "Category": "Tech"
   },
   {
-    "row_number": "Summary",
-    "Company": "Various Companies",
-    "Title": "Various Roles (Pre-2015)",
-    "Start_Date": "1996",
-    "End_Date": "2014",
-    "Technologies": "PHP, MySQL, Javascript, HTML5, CSS3, Backbone, Marionette, AngularJS, CodeIgniter, and more",
-    "Description": "Summary of earlier career positions spanning web development, frontend architecture, agile coaching, and musical performance. Roles included Javascript Developer at New Wave Entertainment and Deutsch; Web Developer/Agile Coach at Trailer Park; Senior Software Developer at Walt Disney Television Animation; Developer at Ripe Media; Frontend Developer at Walt Disney DIMG; Lead Frontend Developer at Added Value; Javascript Developer at Walt Disney Studios; as well as musical roles such as Guitarist/Keyboardist at Cirque Ingenieux, Guitar Instructor at Musicians Institute, and Music Director/Guitarist at Dream World Cirque. Responsibilities ranged from developing interactive web applications and setting up agile processes to mentoring teams and performing live music.",
-    "Category": "Tech, Music"
+    "row_number": 10,
+    "Company": "Multiple Tech Companies",
+    "Title": "Various Tech Roles",
+    "Start_Date": "11/1/2004",
+    "End_Date": "7/1/2014",
+    "Technologies": "Javascript, PHP, MySQL, HTML5, CSS3, Backbone/Marionette, AngularJS, CodeIgniter, grunt, jquery, TDD, BDD, require.js, d3, SASS/compass, underscore, Bootstrap, XML/XSLT",
+    "Description": "Summarized Tech Experience: Combined roles include a Javascript Developer at New Wave Entertainment (7/4/2014 - 9/1/2014) and Deutsch (3/1/2013 - 11/1/2013); Senior Software Developer at Walt Disney Television Animation (11/1/2004 - 8/1/2008); Developer at Ripe Media (2/1/2009 - 5/1/2009); Frontend Developer at Walt Disney DIMG (10/1/2010 - 4/1/2011); Lead Frontend Developer at Added Value (4/1/2012 - 10/1/2012); and a Javascript Developer at Walt Disney Studios (3/1/2014 - 7/1/2014). Responsibilities ranged from developing rich web applications and establishing frontend architectures to mentoring teams and implementing server-side solutions, utilizing a diverse set of technologies.",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 12,
+    "Company": "Trailer Park",
+    "Title": "Web Developer/Agile Coach",
+    "Start_Date": "8/1/2014",
+    "End_Date": "8/1/2015",
+    "Technologies": "Backbone.js, coffeescript, Marionette.js, node.js, Greensock, Jquery, HTML5/CSS3, PHP, ",
+    "Description": "\n·           Developed Architecture and HTML5 navigation/header/dashboard\nfor official Jurassic World website http://jurassicworld.com\n·           Created animations, transitions, interactivity from motion studies for innovative web-based UI.\n·           Mentored Team on Scrum/Agile processes, served as team “Agile Coach”          \n·           Developed (CI) system for TP 2.0 (http://www.trailerpark.com) using Atlassian Bamboo with a BDD testing layer in node-Cucumber/Web Driver",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 18,
+    "Company": "Multiple Music Roles",
+    "Title": "Various Music Positions",
+    "Start_Date": "7/1/1996",
+    "End_Date": "11/1/2021",
+    "Technologies": "",
+    "Description": "Summarized Music Experience: Aggregated roles include Guitarist/Keyboardist with Cirque Ingenieux (5/10/1997 - 7/4/1998), Guitar Instructor at Musicians Institute (7/1/1996 - 1/1/2000), and Music Director/Guitarist at Dream World Cirque (9/1/2009 - 11/1/2021). Responsibilities spanned live performance, music direction, composition, production, and private instruction.",
+    "Category": "Music"
   }
 ]
