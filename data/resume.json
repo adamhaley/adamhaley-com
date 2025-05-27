@@ -36,7 +36,7 @@
     "Start_Date": "3/1/2017",
     "End_Date": "12/18/2022",
     "Technologies": "PHP/Laravel, MySQL, VueJS, React, Javascript, CSS3, docker, Cucumber, Selenium Webdriver, Electron",
-    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n· Created POC for native frontend app using Electron\n· Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.   \n· Interviewed prospective developers and helped build out team\n· Mentored junior devs on stack of technologies and approaches used on the team\n· Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, Kubernetes, AWS",
+    "Description": "·  Developed Content Management System in PHP/MySQL using Laravel framework w/ Backpack\n· Created POC for native frontend app using Electron\n· Helped establish initial team practices, sprint schedule, standups, sprint planning meetings, planning poker, etc.   \n· Interviewed prospective developers and helped build out team\n· Mentored junior devs on stack of technologies and approaches used on the team\n· Technologies used: React, Typescript, PHP/Laravel, MySQL, node, BDD, AWS",
     "Category": "Tech"
   },
   {
@@ -92,31 +92,21 @@
   {
     "row_number": 11,
     "Company": "Various Companies",
-    "Title": "Senior Web Developer",
+    "Title": "Software Developer",
     "Start_Date": "11/1/2004",
     "End_Date": "7/1/2014",
-    "Technologies": "Javascript, Backbone.js, PHP/MySQL, Angular, HTML5, CSS3, node.js",
-    "Description": "Held senior developer roles at Walt Disney Studios, Added Value, Trailer Park and Deutsch, developing interactive web solutions and ad systems, defining frontend architecture, and mentoring junior developers. Additionally, created workflow tracking systems at Walt Disney Television Animation and contributed to several extensive frontend applications leveraging modern JS frameworks.",
+    "Technologies": "PHP/MySQL, Javascript, AngularJS, Backbone/Marionette, HTML, CSS, Node.js, Agile Methodologies",
+    "Description": "Extensive experience as software developer for multiple entertainment and media-related companies including Walt Disney Television Animation, Ripe Media, Walt Disney Studios, Deutsch, Trailer Park, Walt Disney DIMG, and Added Value. Developed and maintained frontend/backend systems, production workflow, established coding standards, mentored junior developers, implemented Agile methodologies, and ensured successful projects launches under tight deadlines.",
     "Category": "Tech"
   },
   {
-    "row_number": 12,
+    "row_number": 18,
     "Company": "Various Companies",
-    "Title": "Professional Musician/Music Instructor",
-    "Start_Date": "7/1/1996",
-    "End_Date": "1/1/2000",
-    "Technologies": "",
-    "Description": "Performed and toured as guitarist and keyboardist with Cirque Ingenieux. Taught guitar at Musicians Institute.",
-    "Category": "Music"
-  },
-  {
-    "row_number": 20,
-    "Company": "Dream World Cirque",
-    "Title": "Music Director/Guitarist",
-    "Start_Date": "9/1/2009",
+    "Title": "Professional Musician / Instructor",
+    "Start_Date": "5/10/1997",
     "End_Date": "11/1/2021",
     "Technologies": "",
-    "Description": "Composer / Producer for Botuique Cirque company",
+    "Description": "Extensive music experience: Guitarist/Keyboardist on Cirque Ingenieux North American Tour; Guitar Instructor at Musicians Institute; Composer/Producer and Music Director/Guitarist for Dream World Cirque boutique cirque company.",
     "Category": "Music"
   }
 ]
