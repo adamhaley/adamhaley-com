@@ -70,7 +70,17 @@
     "Category": "Tech"
   },
   {
-    "row_number": 9,
+    "row_number": 8,
+    "Company": "Trailer Park",
+    "Title": "Senior Software Engineer",
+    "Start_Date": "10/1/2014",
+    "End_Date": "10/1/2015",
+    "Technologies": "Javascript, Backbone/Marionette, Handlebars, Laravel, PHP, MySQL, CSS3",
+    "Description": "·           Developed Architecture and HTML5 navigation/header/dashboard for official Jurassic World website http://jurassicworld.com ·           Created animations, transitions, interactivity from motion studies for innovative web-based UI. ·           Mentored Team on Scrum/Agile processes, served as team \"Agile Coach\"           ·           Developed (CI) system for TP 2.0 (http://www.trailerpark.com) using Atlassian Bamboo with a BDD testing layer in node-Cucumber/Web Driver",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 10,
     "Company": "Trigger Digital",
     "Title": "Javascript Developer",
     "Start_Date": "2/1/2015",
@@ -80,7 +90,7 @@
     "Category": "Tech"
   },
   {
-    "row_number": 10,
+    "row_number": 11,
     "Company": "New Wave Entertainment",
     "Title": "Javascript Developer",
     "Start_Date": "7/4/2014",
