@@ -91,22 +91,102 @@
   },
   {
     "row_number": 11,
-    "Company": "Various Companies",
-    "Title": "Software Developer",
+    "Company": "Deutsch",
+    "Title": "Javascript Developer",
+    "Start_Date": "3/1/2013",
+    "End_Date": "11/1/2013",
+    "Technologies": "Javascript, Backbone/Marionette, jquery , grunt, html5, css3, Tumblr",
+    "Description": "·   \tDeveloped extensive Javascript / CSS3 for the web-based portion of smiledrive and parts of vw.com 3.0\nhttp://www.vw.com\n·   \tCreated server-side solutions using node.js and Python\n·   \tMentored Junior developers in best coding practices and architecture.\n·   \tDesigned and set up MVC-based frontend architecture using Backbone.js, underscore.js, Mustache.js, LESS CSS.\n·   \thttp://smiledrive.vw.com\n·   \tnode.js, backbone.js, require.js, Google App Engine, Python\n",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 12,
+    "Company": "Trailer Park",
+    "Title": "Web Developer/Agile Coach",
+    "Start_Date": "8/1/2014",
+    "End_Date": "8/1/2015",
+    "Technologies": "Backbone.js, coffeescript, Marionette.js, node.js, Greensock, Jquery, HTML5/CSS3, PHP, ",
+    "Description": "\n·           Developed Architecture and HTML5 navigation/header/dashboard\nfor official Jurassic World website http://jurassicworld.com\n·           Created animations, transitions, interactivity from motion studies for innovative web-based UI.\n·           Mentored Team on Scrum/Agile processes, served as team “Agile Coach”          \n·           Developed (CI) system for TP 2.0 (http://www.trailerpark.com) using Atlassian Bamboo with a BDD testing layer in node-Cucumber/Web Driver",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 13,
+    "Company": "Walt Disney Television Animation",
+    "Title": "Senior Software Developer ",
     "Start_Date": "11/1/2004",
+    "End_Date": "8/1/2008",
+    "Technologies": "PHP/MySQL, XML/XSLT, CSS",
+    "Description": "·   \tArchitected INSIGHT – an animation production workflow tracking system.\n·   \tLead a team of developers in creating the InSIGHT web based production system for Disney TV Animation. \n·   \tDeveloped and maintained an in-house PHP MVC  framework. Researched and tested emerging technologies, standards, and design patterns for use in TVA’s web development process.\n·   \tEstablished best practices and coding guidelines.\n·   \tWorked with stakeholders gathering requirements, managing expectations, and estimating time to complete projects. Handcoded XHTML/CSS/Javascript,PHP, and XSLT transforms.",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 14,
+    "Company": "Ripe Media",
+    "Title": "Developer, Putiton.com ",
+    "Start_Date": "2/1/2009",
+    "End_Date": "5/1/2009",
+    "Technologies": "PHP/MySQL, CodeIgniter, HTML, CSS,",
+    "Description": "Handcoded PHP/XHTML/JS to launch Award-winning artist showcase/social networking site Putiton.com under tight deadlines.\n·           Worked with design team, management, and two other programmers to successfully launch the site.",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 15,
+    "Company": "Walt Disney DIMG (",
+    "Title": "Frontend Developer",
+    "Start_Date": "10/1/2010",
+    "End_Date": "4/1/2011",
+    "Technologies": "HTML, CSS, Javascript",
+    "Description": "·   \tImplemented a re-vamped the Ad Slug solution using CSS and JS to be deployed on over 1,300 disney.go.com urls.\n·   \tHandled various site updating tasks for Disney.go.com family of websites.",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 16,
+    "Company": "Added Value",
+    "Title": "Lead Frontend Developer",
+    "Start_Date": "4/1/2012",
+    "End_Date": "10/1/2012",
+    "Technologies": "Javascript, TDD, BDD, scrum, jquery, jasmine, require.js, d3, Backbone.js",
+    "Description": "·           Created frontend architecture for TimeView Data visualization platform\n·           Developed RC-Scorecard project\n·           Created Responsive strategy in CSS3 using media queries\n·           Mentored team on frontend technologies and techniques/lead workshops on CSS3, and Javascript\n·           agile, xp, tdd, bdd, scrum, jquery, jasmine",
+    "Category": "Tech"
+  },
+  {
+    "row_number": 17,
+    "Company": "Walt Disney Studios",
+    "Title": "Javascript Developer",
+    "Start_Date": "3/1/2014",
     "End_Date": "7/1/2014",
-    "Technologies": "PHP/MySQL, Javascript, AngularJS, Backbone/Marionette, HTML, CSS, Node.js, Agile Methodologies",
-    "Description": "Extensive experience as software developer for multiple entertainment and media-related companies including Walt Disney Television Animation, Ripe Media, Walt Disney Studios, Deutsch, Trailer Park, Walt Disney DIMG, and Added Value. Developed and maintained frontend/backend systems, production workflow, established coding standards, mentored junior developers, implemented Agile methodologies, and ensured successful projects launches under tight deadlines.",
+    "Technologies": "AngularJS, CSS3, SASS/compass, underscore, Bootstrap",
+    "Description": "   \tWrote and tested AngularJS and Javascript code, LESS/CSS for “Bulk” Global Screenings Solution for scheduling Theatrical Screenings of Disney Movies\n·   \tIntegrated with a large Backend Dev team (.NET Engineers)\n·   \tContributed to daily Stand-ups, Sprint Retrospectives, Story Grooming sessions\n·   \tCreated innovativeUI solutions",
     "Category": "Tech"
   },
   {
     "row_number": 18,
-    "Company": "Various Companies",
-    "Title": "Professional Musician / Instructor",
+    "Company": "Cirque Ingenieux",
+    "Title": "Guitarist/Keyboardist",
     "Start_Date": "5/10/1997",
+    "End_Date": "7/4/1998",
+    "Technologies": "",
+    "Description": "Played guitar and Keyboards, triggering sound effects on Cirque Ingenieux 1997-1998 North American Bus & Truck Tour",
+    "Category": "Music"
+  },
+  {
+    "row_number": 19,
+    "Company": "Musicians Institute",
+    "Title": "Guitar Instructor",
+    "Start_Date": "7/1/1996",
+    "End_Date": "1/1/2000",
+    "Technologies": "",
+    "Description": "Taught Guitar private lessons and \"Open Counselling\" ",
+    "Category": "Music"
+  },
+  {
+    "row_number": 20,
+    "Company": "Dream World Cirque",
+    "Title": "Music Director/Guitarist",
+    "Start_Date": "9/1/2009",
     "End_Date": "11/1/2021",
     "Technologies": "",
-    "Description": "Extensive music experience: Guitarist/Keyboardist on Cirque Ingenieux North American Tour; Guitar Instructor at Musicians Institute; Composer/Producer and Music Director/Guitarist for Dream World Cirque boutique cirque company.",
+    "Description": "Composer / Producer for Botuique Cirque company",
     "Category": "Music"
   }
 ]
