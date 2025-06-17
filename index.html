@@ -255,7 +255,7 @@
                   {{#each this}}
                     <div class="skill">
                       <div>
-                        <a href="#"><span>{{this}}</span></a>
+                        <a href="#" onclick="askAboutSkill('{{this}}'); return false;"><span>{{this}}</span></a>
                       </div>
                     </div>
                   {{/each}}
@@ -324,6 +324,46 @@
               document.getElementById('about-container').innerHTML = html;
             });
         };
+
+        // Function to handle skill clicks
+        function askAboutSkill(skill) {
+            // Show the chat container if it's hidden
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            
+            // Make sure the chat container is visible
+            chatContainer.style.display = 'flex';
+            chatContainer.classList.remove('hidden');
+            reopenButton.classList.add('hidden');
+
+            // Get the chat input and set its value
+            const chatInput = document.getElementById('chat-input');
+            chatInput.value = `What is your experience with ${skill}?`;
+
+            // Focus the input
+            chatInput.focus();
+
+            // Trigger the send button click
+            document.getElementById('send-button').click();
+        }
+
+        // Add event listener for the close button
+        document.querySelector('.close-button').addEventListener('click', function() {
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            chatContainer.style.display = 'none';
+            chatContainer.classList.add('hidden');
+            reopenButton.classList.remove('hidden');
+        });
+
+        // Add event listener for the reopen button
+        document.querySelector('.reopen-chat-button').addEventListener('click', function() {
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            chatContainer.style.display = 'flex';
+            chatContainer.classList.remove('hidden');
+            reopenButton.classList.add('hidden');
+        });
 
         // Load all sections
         loadWorkExperience();
