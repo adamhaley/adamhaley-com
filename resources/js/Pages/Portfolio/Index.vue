@@ -4,17 +4,17 @@
       <div>
         <h1 class="text-4xl font-bold text-gray-900 mb-6">ADAM HALEY: Case Studies</h1>
         <p class="text-lg text-gray-600 max-w-3xl">
-          Full stack web developer with over 15 years of experience building interactive web applications. 
-          Specializing in JavaScript, PHP, and modern frameworks like Vue and Laravel. 
+          Full stack web developer with over 15 years of experience building interactive web applications.
+          Specializing in JavaScript, PHP, and modern frameworks like Vue and Laravel.
           Passionate about creating elegant solutions to complex problems.
           Let's talk about how I can help bring your ideas to life.
         </p>
       </div>
-      
+
       <!-- Contact Card -->
       <div class="ml-8 bg-white rounded-lg shadow-lg p-4 flex flex-col items-center">
-        <img 
-          :src="asset('storage/ah.jpg')" 
+        <img
+          :src="asset('storage/headshot.jpeg')"
           alt="Adam Haley"
           class="w-32 h-32 rounded-lg object-cover shadow-md mb-4"
         />
@@ -39,11 +39,11 @@
         </div>
       </div>
     </div>
-    
+
     <div class="space-y-24">
-      <ProjectSection 
-        v-for="(project, index) in projects" 
-        :key="project.id" 
+      <ProjectSection
+        v-for="(project, index) in projects"
+        :key="project.id"
         :project="project"
         :reverse="index % 2 !== 0"
       />
@@ -66,4 +66,4 @@ const props = defineProps({
 const asset = (path) => {
   return window.location.origin + '/' + path
 }
-</script> 
+</script>
