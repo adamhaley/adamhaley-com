@@ -6,9 +6,9 @@ use App\Filament\Resources\TrackResource\Pages;
 use App\Models\Album;
 use App\Models\Track;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class TrackResource extends Resource
@@ -25,7 +25,7 @@ class TrackResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make()
+                Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Select::make('album_id')
                             ->label('Album')

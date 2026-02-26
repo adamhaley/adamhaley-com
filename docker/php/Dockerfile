@@ -1,4 +1,4 @@
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 # System deps
 RUN apk add --no-cache \
@@ -9,7 +9,8 @@ RUN apk add --no-cache \
     unzip \
     libpq-dev \
     oniguruma-dev \
-    icu-dev
+    icu-dev \
+    libzip-dev
 
 # PHP extensions
 RUN docker-php-ext-install \
@@ -17,7 +18,8 @@ RUN docker-php-ext-install \
     pdo_mysql \
     intl \
     mbstring \
-    bcmath
+    bcmath \
+    zip
 
 # Install Node.js (LTS) and Yarn
 RUN apk add --no-cache nodejs npm \

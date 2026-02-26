@@ -3,17 +3,18 @@
 namespace App\Filament\Resources\TrackResource\Pages;
 
 use App\Filament\Resources\TrackResource;
-use Filament\Pages\Actions;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListTracks extends ListRecords
 {
     protected static string $resource = TrackResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

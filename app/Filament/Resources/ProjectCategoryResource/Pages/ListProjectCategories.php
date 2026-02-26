@@ -3,17 +3,18 @@
 namespace App\Filament\Resources\ProjectCategoryResource\Pages;
 
 use App\Filament\Resources\ProjectCategoryResource;
-use Filament\Pages\Actions;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListProjectCategories extends ListRecords
 {
     protected static string $resource = ProjectCategoryResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

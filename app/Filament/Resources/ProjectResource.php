@@ -6,9 +6,9 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class ProjectResource extends Resource
@@ -25,7 +25,7 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make()
+                Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Select::make('category_id')
                             ->label('Category')

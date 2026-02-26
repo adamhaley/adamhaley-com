@@ -6,9 +6,9 @@ use App\Filament\Resources\ProjectCategoryResource\Pages;
 use App\Filament\Resources\ProjectCategoryResource\RelationManagers;
 use App\Models\ProjectCategory;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class ProjectCategoryResource extends Resource
@@ -25,7 +25,7 @@ class ProjectCategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make()
+                Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()

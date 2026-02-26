@@ -6,16 +6,16 @@ use App\Filament\Resources\MediaCategoryResource\Pages;
 use App\Filament\Resources\MediaCategoryResource\RelationManagers;
 use App\Models\MediaCategory;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class MediaCategoryResource extends Resource
 {
     protected static ?string $model = MediaCategory::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'Media';
 
@@ -25,7 +25,7 @@ class MediaCategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make()
+                Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
