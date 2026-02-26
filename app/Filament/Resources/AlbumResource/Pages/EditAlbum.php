@@ -16,5 +16,10 @@ class EditAlbum extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return AlbumResource::getUrl('index');
+    }
 }
 

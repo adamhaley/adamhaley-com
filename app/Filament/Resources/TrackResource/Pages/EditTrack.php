@@ -16,5 +16,10 @@ class EditTrack extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return TrackResource::getUrl('index');
+    }
 }
 

@@ -16,5 +16,10 @@ class EditMediaCategory extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return MediaCategoryResource::getUrl('index');
+    }
 }
 

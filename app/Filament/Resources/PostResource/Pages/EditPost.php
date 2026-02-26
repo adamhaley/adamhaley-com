@@ -16,5 +16,10 @@ class EditPost extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return PostResource::getUrl('index');
+    }
 }
 

@@ -16,5 +16,10 @@ class EditProject extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): ?string
+    {
+        return ProjectResource::getUrl('index');
+    }
 }
 
