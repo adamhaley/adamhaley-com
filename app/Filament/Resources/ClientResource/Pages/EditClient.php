@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\ClientResource\Pages;
 
 use App\Filament\Resources\ClientResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditClient extends EditRecord
+class EditClient extends BaseEditRecord
 {
     protected static string $resource = ClientResource::class;
 
@@ -17,9 +17,5 @@ class EditClient extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return ClientResource::getUrl('index');
-    }
 }
 

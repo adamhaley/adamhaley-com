@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\ProjectCategoryResource\Pages;
 
 use App\Filament\Resources\ProjectCategoryResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditProjectCategory extends EditRecord
+class EditProjectCategory extends BaseEditRecord
 {
     protected static string $resource = ProjectCategoryResource::class;
 
@@ -15,11 +15,6 @@ class EditProjectCategory extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
-    }
-
-    protected function getRedirectUrl(): ?string
-    {
-        return ProjectCategoryResource::getUrl('index');
     }
 }
 

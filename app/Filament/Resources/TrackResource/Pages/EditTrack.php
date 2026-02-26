@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\TrackResource\Pages;
 
 use App\Filament\Resources\TrackResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditTrack extends EditRecord
+class EditTrack extends BaseEditRecord
 {
     protected static string $resource = TrackResource::class;
 
@@ -17,9 +17,5 @@ class EditTrack extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return TrackResource::getUrl('index');
-    }
 }
 

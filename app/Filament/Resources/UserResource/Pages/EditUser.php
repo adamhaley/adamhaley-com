@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditUser extends EditRecord
+class EditUser extends BaseEditRecord
 {
     protected static string $resource = UserResource::class;
 
@@ -17,9 +17,5 @@ class EditUser extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return UserResource::getUrl('index');
-    }
 }
 

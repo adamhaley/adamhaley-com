@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditPost extends EditRecord
+class EditPost extends BaseEditRecord
 {
     protected static string $resource = PostResource::class;
 
@@ -17,9 +17,5 @@ class EditPost extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return PostResource::getUrl('index');
-    }
 }
 

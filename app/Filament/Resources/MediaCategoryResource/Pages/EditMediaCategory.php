@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\MediaCategoryResource\Pages;
 
 use App\Filament\Resources\MediaCategoryResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditMediaCategory extends EditRecord
+class EditMediaCategory extends BaseEditRecord
 {
     protected static string $resource = MediaCategoryResource::class;
 
@@ -17,9 +17,5 @@ class EditMediaCategory extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return MediaCategoryResource::getUrl('index');
-    }
 }
 

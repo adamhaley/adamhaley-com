@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\AlbumResource\Pages;
 
 use App\Filament\Resources\AlbumResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditAlbum extends EditRecord
+class EditAlbum extends BaseEditRecord
 {
     protected static string $resource = AlbumResource::class;
 
@@ -17,9 +17,5 @@ class EditAlbum extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return AlbumResource::getUrl('index');
-    }
 }
 

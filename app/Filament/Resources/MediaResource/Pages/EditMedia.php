@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\MediaResource\Pages;
 
 use App\Filament\Resources\MediaResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditMedia extends EditRecord
+class EditMedia extends BaseEditRecord
 {
     protected static string $resource = MediaResource::class;
 
@@ -15,11 +15,6 @@ class EditMedia extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
-    }
-
-    protected function getRedirectUrl(): ?string
-    {
-        return MediaResource::getUrl('index');
     }
 }
 

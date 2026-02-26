@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\ProjectResource\Pages;
 
 use App\Filament\Resources\ProjectResource;
+use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 
-class EditProject extends EditRecord
+class EditProject extends BaseEditRecord
 {
     protected static string $resource = ProjectResource::class;
 
@@ -17,9 +17,5 @@ class EditProject extends EditRecord
         ];
     }
 
-    protected function getRedirectUrl(): ?string
-    {
-        return ProjectResource::getUrl('index');
-    }
 }
 
