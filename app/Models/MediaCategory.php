@@ -40,7 +40,7 @@ class MediaCategory extends Model
      */
     public function media()
     {
-        return $this->hasMany('App\Models\Medium', 'category_id', 'id');
+        return $this->hasMany('App\Models\Media', 'category_id', 'id');
     }
 
 
