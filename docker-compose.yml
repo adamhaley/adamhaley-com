@@ -4,9 +4,7 @@ services:
       context: .
       dockerfile: docker/php/Dockerfile
     volumes:
-      - /opt/homebrew/var/www/adamhaley-com:/var/www/html
-    depends_on:
-      - mysql
+      - .:/var/www/html
 
   web:
     image: nginx:1.25-alpine
@@ -25,8 +23,6 @@ services:
       MYSQL_DATABASE: adamhaley_com
       MYSQL_ROOT_PASSWORD: ""
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-    ports:
-      - "3306:3306"
     volumes:
       - mysqldata:/var/lib/mysql
 

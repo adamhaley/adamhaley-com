@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.4.0",
         "doctrine/dbal": "^3.9.4",
-        "filament/filament": "^3.0",
+        "filament/filament": "^3.3",
         "guzzlehttp/guzzle": "^7.9.2",
         "inertiajs/inertia-laravel": "^2.0.1",
         "laravel/framework": "^10.23",
