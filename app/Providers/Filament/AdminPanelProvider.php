@@ -25,8 +25,10 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->id('admin')
             ->path('admin')
+            ->brandLogo(asset('skins/ice/images/AHorb.jpg'))
+            ->brandLogoHeight('50px')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#16bfe0'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
