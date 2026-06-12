@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -28,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('skins/ice/images/AHorb.jpg'))
             ->brandLogoHeight('50px')
             ->login()
+            ->defaultThemeMode(ThemeMode::Light)
             ->colors([
                 'primary' => Color::hex('#16bfe0'),
             ])
