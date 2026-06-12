@@ -2,30 +2,32 @@
 
 namespace App\Filament\Resources;
 
+use BackedEnum;
 use App\Filament\Resources\ProjectCategoryResource\Pages;
 use App\Filament\Resources\ProjectCategoryResource\RelationManagers;
 use App\Models\ProjectCategory;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
+use Filament\Schemas\Schema;
 use Filament\Tables;
+use Filament\Tables\Table;
+use UnitEnum;
 
 class ProjectCategoryResource extends Resource
 {
     protected static ?string $model = ProjectCategory::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-folder';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-folder';
 
-    protected static ?string $navigationGroup = 'Projects';
+    protected static string | UnitEnum | null $navigationGroup = 'Projects';
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()
+                \Filament\Schemas\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
@@ -64,11 +66,11 @@ class ProjectCategoryResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -88,4 +90,3 @@ class ProjectCategoryResource extends Resource
         ];
     }
 }
-

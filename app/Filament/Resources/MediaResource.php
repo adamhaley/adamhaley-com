@@ -2,32 +2,34 @@
 
 namespace App\Filament\Resources;
 
+use BackedEnum;
 use App\Filament\Resources\MediaResource\Pages;
 use App\Models\Media;
 use App\Models\MediaCategory;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
+use Filament\Schemas\Schema;
 use Filament\Tables;
+use Filament\Tables\Table;
+use UnitEnum;
 
 class MediaResource extends Resource
 {
     protected static ?string $model = Media::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-photo';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationGroup = 'Media';
+    protected static string | UnitEnum | null $navigationGroup = 'Media';
 
     protected static ?int $navigationSort = 2;
 
     protected static ?string $pluralModelLabel = 'Media Files';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()
+                \Filament\Schemas\Components\Section::make()
                     ->schema([
                         Forms\Components\Select::make('category_id')
                             ->label('Category')
@@ -67,11 +69,11 @@ class MediaResource extends Resource
                     ->options(MediaCategory::pluck('name', 'id')),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -91,4 +93,3 @@ class MediaResource extends Resource
         ];
     }
 }
-

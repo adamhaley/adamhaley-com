@@ -2,27 +2,29 @@
 
 namespace App\Filament\Resources;
 
+use BackedEnum;
 use App\Filament\Resources\ClientResource\Pages;
 use App\Models\Client;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
+use Filament\Schemas\Schema;
 use Filament\Tables;
+use Filament\Tables\Table;
+use UnitEnum;
 
 class ClientResource extends Resource
 {
     protected static ?string $model = Client::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-building-office';
 
-    protected static ?string $navigationGroup = 'CRM';
+    protected static string | UnitEnum | null $navigationGroup = 'CRM';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()
+                \Filament\Schemas\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
@@ -72,11 +74,11 @@ class ClientResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -96,4 +98,3 @@ class ClientResource extends Resource
         ];
     }
 }
-

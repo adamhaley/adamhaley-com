@@ -2,30 +2,32 @@
 
 namespace App\Filament\Resources;
 
+use BackedEnum;
 use App\Filament\Resources\AlbumResource\Pages;
 use App\Filament\Resources\AlbumResource\RelationManagers;
 use App\Models\Album;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
+use Filament\Schemas\Schema;
 use Filament\Tables;
+use Filament\Tables\Table;
+use UnitEnum;
 
 class AlbumResource extends Resource
 {
     protected static ?string $model = Album::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-musical-note';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-musical-note';
 
-    protected static ?string $navigationGroup = 'Music';
+    protected static string | UnitEnum | null $navigationGroup = 'Music';
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()
+                \Filament\Schemas\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
@@ -63,11 +65,11 @@ class AlbumResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\DeleteBulkAction::make(),
             ])
             ->defaultSort('release_date', 'desc');
     }
@@ -88,4 +90,3 @@ class AlbumResource extends Resource
         ];
     }
 }
-

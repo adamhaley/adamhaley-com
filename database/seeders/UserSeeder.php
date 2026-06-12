@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -12,14 +13,17 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        //create default user with admin privileges
-        //truncate users
-        \App\Models\User::truncate();
+        $email = env('SEED_ADMIN_EMAIL', 'adamhaley@gmail.com');
+        $password = env('SEED_ADMIN_PASSWORD', 'password');
+        $resetPassword = (bool) env('SEED_ADMIN_RESET_PASSWORD', false);
 
-        $user = new \App\Models\User();
+        $user = User::firstOrNew(['email' => $email]);
         $user->name = 'admin';
-        $user->email = 'adamhaley@gmail.com';
-        $user->password = \Hash::make('password');
+
+        if (! $user->exists || $resetPassword) {
+            $user->password = Hash::make($password);
+        }
+
         $user->save();
     }
 }

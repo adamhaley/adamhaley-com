@@ -2,18 +2,39 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('category_id') }}
-            {{ Form::text('category_id', $medium->category_id, ['class' => 'form-control' . ($errors->has('category_id') ? ' is-invalid' : ''), 'placeholder' => 'Category Id']) }}
+            <label for="category_id">{{ __('Category Id') }}</label>
+            <input
+                id="category_id"
+                name="category_id"
+                type="text"
+                value="{{ old('category_id', $medium->category_id) }}"
+                class="form-control{{ $errors->has('category_id') ? ' is-invalid' : '' }}"
+                placeholder="Category Id"
+            >
             {!! $errors->first('category_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('name') }}
-            {{ Form::text('name', $medium->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            <label for="name">{{ __('Name') }}</label>
+            <input
+                id="name"
+                name="name"
+                type="text"
+                value="{{ old('name', $medium->name) }}"
+                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                placeholder="Name"
+            >
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('path') }}
-            {{ Form::text('path', $medium->path, ['class' => 'form-control' . ($errors->has('path') ? ' is-invalid' : ''), 'placeholder' => 'Path']) }}
+            <label for="path">{{ __('Path') }}</label>
+            <input
+                id="path"
+                name="path"
+                type="text"
+                value="{{ old('path', $medium->path) }}"
+                class="form-control{{ $errors->has('path') ? ' is-invalid' : '' }}"
+                placeholder="Path"
+            >
             {!! $errors->first('path', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

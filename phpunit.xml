@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnDefect="false" stopOnFailure="false" cacheResult="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.4/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnDefect="false" stopOnFailure="false" cacheResult="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
   <coverage/>
   <testsuites>
-    <testsuite name="All">
-      <directory suffix="Test.php">./tests</directory>
-    </testsuite>
     <testsuite name="Feature">
       <directory suffix="Test.php">./tests/Feature</directory>
     </testsuite>
@@ -15,7 +12,7 @@
   <php>
     <server name="APP_ENV" value="testing" force="true"/>
     <server name="DB_CONNECTION" value="mysql" force="true"/>
-    <server name="DB_DATABASE_TESTING" value="adamhaley_testing"/>
+    <server name="DB_DATABASE" value="adamhaley_testing" force="true"/>
     <server name="DB_SECURITY_DATABASE" value="adamhaley_testing"/>
     <server name="APP_DEBUG" value="true"/>
     <server name="CACHE_DRIVER" value="array"/>
