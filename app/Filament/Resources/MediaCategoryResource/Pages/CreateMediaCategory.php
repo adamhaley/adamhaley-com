@@ -3,10 +3,9 @@
 namespace App\Filament\Resources\MediaCategoryResource\Pages;
 
 use App\Filament\Resources\MediaCategoryResource;
-use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\Pages\BaseCreateRecord;
 
-class CreateMediaCategory extends CreateRecord
+class CreateMediaCategory extends BaseCreateRecord
 {
     protected static string $resource = MediaCategoryResource::class;
 }
-

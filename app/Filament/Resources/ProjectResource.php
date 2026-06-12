@@ -39,11 +39,13 @@ class ProjectResource extends Resource
                             ->maxLength(255),
                         Forms\Components\Textarea::make('description')
                             ->required()
-                            ->rows(4),
+                            ->rows(4)
+                            ->columnSpanFull(),
                         Forms\Components\FileUpload::make('image')
                             ->image()
                             ->directory('projects')
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('link')
                             ->url()
                             ->required()
@@ -54,10 +56,14 @@ class ProjectResource extends Resource
                             ->maxLength(255),
                         Forms\Components\TagsInput::make('tags')
                             ->required()
-                            ->separator(','),
+                            ->separator(',')
+                            ->columnSpanFull(),
                         Forms\Components\DatePicker::make('date')
                             ->required(),
-                    ])->columns(2),
+                    ])->columns([
+                        'default' => 1,
+                        'md' => 2,
+                    ]),
             ]);
     }
 

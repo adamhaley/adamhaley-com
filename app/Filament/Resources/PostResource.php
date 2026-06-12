@@ -42,11 +42,16 @@ class PostResource extends Resource
                         Forms\Components\FileUpload::make('image')
                             ->image()
                             ->directory('posts')
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         Forms\Components\TagsInput::make('tags')
                             ->required()
-                            ->separator(','),
-                    ])->columns(2),
+                            ->separator(',')
+                            ->columnSpanFull(),
+                    ])->columns([
+                        'default' => 1,
+                        'md' => 2,
+                    ]),
             ]);
     }
 

@@ -31,7 +31,8 @@ class ClientResource extends Resource
                             ->maxLength(255),
                         Forms\Components\Textarea::make('description')
                             ->required()
-                            ->rows(3),
+                            ->rows(3)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('email')
                             ->email()
                             ->required()
@@ -42,12 +43,16 @@ class ClientResource extends Resource
                             ->maxLength(255),
                         Forms\Components\Textarea::make('address')
                             ->required()
-                            ->rows(2),
+                            ->rows(2)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('url')
                             ->url()
                             ->required()
                             ->maxLength(255),
-                    ])->columns(2),
+                    ])->columns([
+                        'default' => 1,
+                        'md' => 2,
+                    ]),
             ]);
     }
 

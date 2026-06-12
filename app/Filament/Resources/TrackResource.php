@@ -43,19 +43,26 @@ class TrackResource extends Resource
                             ->default(1),
                         Forms\Components\Textarea::make('description')
                             ->required()
-                            ->rows(3),
+                            ->rows(3)
+                            ->columnSpanFull(),
                         Forms\Components\Textarea::make('lyrics')
                             ->required()
-                            ->rows(8),
+                            ->rows(8)
+                            ->columnSpanFull(),
                         Forms\Components\FileUpload::make('image')
                             ->image()
                             ->directory('tracks')
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         Forms\Components\FileUpload::make('file')
                             ->directory('tracks/audio')
                             ->required()
-                            ->acceptedFileTypes(['audio/mpeg', 'audio/mp3', 'audio/wav']),
-                    ])->columns(2),
+                            ->acceptedFileTypes(['audio/mpeg', 'audio/mp3', 'audio/wav'])
+                            ->columnSpanFull(),
+                    ])->columns([
+                        'default' => 1,
+                        'md' => 2,
+                    ]),
             ]);
     }
 

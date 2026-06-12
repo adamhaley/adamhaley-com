@@ -2,11 +2,11 @@
 
 namespace App\Filament\Resources\Pages;
 
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\CreateRecord;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
 
-class BaseEditRecord extends EditRecord
+class BaseCreateRecord extends CreateRecord
 {
     protected Width | string | null $maxContentWidth = Width::Full;
 
@@ -15,10 +15,5 @@ class BaseEditRecord extends EditRecord
         $schema->columns(1);
 
         return parent::defaultForm($schema);
-    }
-
-    protected function getRedirectUrl(): ?string
-    {
-        return $this->getResource()::getUrl('index');
     }
 }
