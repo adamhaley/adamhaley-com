@@ -100,6 +100,13 @@ class ExportContent extends Command
         File::put($path, json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES).PHP_EOL);
 
         $this->info("Exported {$projects->count()} projects and {$clients->count()} clients to {$path}");
+        $this->newLine();
+        $this->line('Suggested rsync commands:');
+        $this->line("rsync -avz {$path} your-server:/home/adam/adamhaley-com/{$path}");
+
+        if ($payload['assets']['public']['projects'] !== []) {
+            $this->line('rsync -avz storage/app/public/projects/ your-server:/home/adam/adamhaley-com/storage/app/public/projects/');
+        }
 
         return self::SUCCESS;
     }
