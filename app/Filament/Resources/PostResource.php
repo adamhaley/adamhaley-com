@@ -41,7 +41,9 @@ class PostResource extends Resource
                             ->columnSpan('full'),
                         Forms\Components\FileUpload::make('image')
                             ->image()
+                            ->disk('public')
                             ->directory('posts')
+                            ->visibility('public')
                             ->required()
                             ->columnSpanFull(),
                         Forms\Components\TagsInput::make('tags')
@@ -60,6 +62,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
+                    ->disk('public')
                     ->size(50),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
