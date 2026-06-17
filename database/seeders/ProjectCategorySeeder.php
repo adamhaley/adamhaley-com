@@ -20,6 +20,11 @@ class ProjectCategorySeeder extends Seeder
         ]);
 
         ProjectCategory::firstOrCreate([
+            'name' => 'AI Engineering',
+            'description' => 'AI Automation, Engineering projects. Includes n8n workflows, AI prompt engineering, and more.',
+        ]);
+
+        ProjectCategory::firstOrCreate([
             'name' => 'Music',
             'description' => 'Music Projects',
         ]);
