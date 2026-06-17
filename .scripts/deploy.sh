@@ -30,8 +30,8 @@ yarn run prod
 # Run database migrations
 php artisan migrate --force
 
-#seed the database
-php artisan db:seed
+# Seed the database without an interactive production prompt.
+php artisan db:seed --force
 
 # Exit maintenance mode
 php artisan up
