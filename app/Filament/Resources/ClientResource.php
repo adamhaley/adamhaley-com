@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use BackedEnum;
 use App\Filament\Resources\ClientResource\Pages;
 use App\Models\Client;
+use App\Models\Project;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -49,6 +50,13 @@ class ClientResource extends Resource
                             ->url()
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\Select::make('projects')
+                            ->relationship('projects', 'name')
+                            ->multiple()
+                            ->preload()
+                            ->searchable()
+                            ->getOptionLabelFromRecordUsing(fn (Project $record): string => $record->name)
+                            ->columnSpanFull(),
                     ])->columns([
                         'default' => 1,
                         'md' => 2,
@@ -71,6 +79,10 @@ class ClientResource extends Resource
                 Tables\Columns\TextColumn::make('url')
                     ->limit(30)
                     ->url(fn ($record) => $record->url, true),
+                Tables\Columns\TextColumn::make('projects.name')
+                    ->label('Projects')
+                    ->badge()
+                    ->separator(','),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),

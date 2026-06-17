@@ -55,5 +55,11 @@ class Project extends Model
         return $this->hasOne('App\Models\ProjectCategory', 'id', 'category_id');
     }
 
-
+    /**
+     * Many-to-Many: A project can have many clients.
+     */
+    public function clients()
+    {
+        return $this->belongsToMany(Client::class)->withTimestamps();
+    }
 }

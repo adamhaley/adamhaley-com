@@ -43,7 +43,9 @@ class ProjectResource extends Resource
                             ->columnSpanFull(),
                         Forms\Components\FileUpload::make('image')
                             ->image()
+                            ->disk('public')
                             ->directory('projects')
+                            ->visibility('public')
                             ->required()
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('link')
@@ -60,6 +62,12 @@ class ProjectResource extends Resource
                             ->columnSpanFull(),
                         Forms\Components\DatePicker::make('date')
                             ->required(),
+                        Forms\Components\Select::make('clients')
+                            ->relationship('clients', 'name')
+                            ->multiple()
+                            ->preload()
+                            ->searchable()
+                            ->columnSpanFull(),
                     ])->columns([
                         'default' => 1,
                         'md' => 2,
@@ -72,6 +80,7 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
+                    ->disk('public')
                     ->size(50),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
@@ -79,6 +88,10 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('projectCategory.name')
                     ->label('Category')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('clients.name')
+                    ->label('Clients')
+                    ->badge()
+                    ->separator(','),
                 Tables\Columns\TextColumn::make('date')
                     ->date()
                     ->sortable(),

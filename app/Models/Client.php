@@ -41,6 +41,11 @@ class Client extends Model
      */
     protected $fillable = ['name','description','email','phone','address','url'];
 
-
-
+    /**
+     * Many-to-Many: A client can belong to many projects.
+     */
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class)->withTimestamps();
+    }
 }

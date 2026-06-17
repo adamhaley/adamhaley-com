@@ -21,6 +21,9 @@ php artisan clear-compiled
 # Recreate cache
 php artisan optimize
 
+# Ensure public disk files are web-accessible.
+[ -L public/storage ] || php artisan storage:link
+
 # npm install
 yarn install
 
