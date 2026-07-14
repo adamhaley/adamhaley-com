@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,13 +66,3 @@ Route::get('/blog', function () {
 //portfolio
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 
-//baackend admin routes
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-});
-
-require __DIR__.'/auth.php';
