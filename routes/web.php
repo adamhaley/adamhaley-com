@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('index');
 })->name('splash');
 
+Route::view('/resume', 'resume')->name('resume');
+
 /*
 Route::get('/admin', function () {
     return view('admin');

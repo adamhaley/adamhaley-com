@@ -1,0 +1,44 @@
+{
+  "Backend Development": [
+    "PHP",
+    "Python",
+    "Laravel",
+    "PHPUnit",
+    "MySQL",
+    "WordPress"
+  ],
+  "Frontend Development": [
+    "JavaScript",
+    "Vue.js",
+    "React",
+    "AngularJS",
+    "Backbone.js",
+    "Handlebars.js",
+    "LESS",
+    "Stylus",
+    "CSS3",
+    "HTML5",
+    "responsive design"
+  ],
+  "AI & Automation": [
+    "LangChain",
+    "n8n",
+    "Retrieval-Augmented Generation (RAG)",
+    "Voice AI",
+    "TTS",
+    "Transcription",
+    "Digital Cloning"
+  ],
+  "DevOps": [
+    "Git",
+    "Bitbucket",
+    "CI/CD",
+    "Atlassian Bamboo",
+    "AWS",
+    "PHPUnit",
+    "Jasmine",
+    "Cucumber.js",
+    "BDD",
+    "TDD"
+  ]
+}

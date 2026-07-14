@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+        body {
+          background: rgb(204,204,204); 
+          width: 21cm;
+          height: 29.7cm;
+          margin: 0 auto;
+        }
+
+        page {
+          background: white;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.5cm;
+          position: relative;
+        }
+
+        page[size="A4"] {  
+          width: 21cm;
+          height: 29.7cm; 
+        }
+
+        @page {
+          size: 21cm 29.7cm;
+          margin: 0mm;
+        }
+
+        .headshot-container {
+          position: relative;
+          display: inline-block;
+        }
+
+        .headshot-container img {
+          border: 3px solid #00ffff;
+        }
+
+        .headshot-ring {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -54%);
+          width: 300px;
+          height: 300px;
+          border: 2px solid rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+        }
+
+        /* Chat Styles */
+        .chat-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 300px;
+          height: 400px;
+          background-color: #ffffff;
+          border: 2px solid #00ffff;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          z-index: 1000;
+          opacity: 1;
+        }
+
+        .chat-messages {
+          flex-grow: 1;
+          overflow-y: auto;
+          padding: 15px;
+          font-family: 'Open Sans', sans-serif;
+          background-color: #ffffff;
+        }
+
+        .chat-input-container {
+          display: flex;
+          padding: 10px;
+          border-top: 1px solid #eee;
+          background-color: #f9f9f9;
+          border-radius: 0 0 8px 8px;
+        }
+
+        .chat-input {
+          flex-grow: 1;
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          margin-right: 8px;
+          font-family: 'Open Sans', sans-serif;
+          background-color: #ffffff;
+        }
+
+        .send-button, .close-button, .reopen-chat-button {
+          background-color: #ffffff;
+          border: none;
+          color: #00ffff;
+          cursor: pointer;
+          padding: 8px;
+          transition: color 0.3s ease;
+        }
+
+        .send-button:hover, .close-button:hover, .reopen-chat-button:hover {
+          color: #00cccc;
+        }
+
+        .close-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+
+        .reopen-chat-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #ffffff;
+          border: 2px solid #00ffff;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .chat-container.hidden {
+          display: none;
+        }
+
+        .reopen-chat-button.hidden {
+          display: none;
+        }
+        </style>
+        <link rel="stylesheet" href="{{ asset('resume-assets/index.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&family=Open+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Adam Haley" />
+        <meta property="og:description" content="Adam Haley: Full Stack Developer and Tech Consultant" />
+        <meta property="og:image" content="https://adamhaley.com/images/og.png" />
+        <meta property="og:url" content="https://adamhaley.com" />
+        <meta property="og:type" content="website" />
+         
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Adam Haley" />
+        <meta name="twitter:description" content="Adam Haley: Full Stack Developer and Tech Consultant" />
+        <meta name="twitter:image" content="https://adamhaley.com" />
+
+
+
+   </head>
+    <body>
+        <page size="A4">
+            <div class="container">
+                <div class="leftPanel">
+                    <div class="headshot-container">
+                        <img src="{{ asset('resume-assets/images/headshot.jpeg') }}"/>
+                        <div class="headshot-ring"></div>
+                    </div>
+                    <div class="details">
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+                        <div class="item bottomLineSeparator">
+                          <h2>
+                            CONTACT
+                          </h2>
+                          <div class="smallText">
+                            <p>
+                              <i class="fa fa-phone contactIcon" aria-hidden="true"></i>
+                              <a href="tel:(323)384-3493"><span>(323) 384-3493</span></a>
+                            </p>
+                            <p>
+                              <i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
+                              <a href="mailto:adam@adamhaley.com" class="email">adam@adamhaley.com</a>
+                            </p>
+                            <p>
+                              <i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
+                              <a href="https://www.google.com/maps/place/5161+Lankershim+Blvd,+North+Hollywood,+CA+91601/@34.1642827,-118.3773033,17z/data=!3m1!4b1!4m6!3m5!1s0x80c295f3e0ae641f:0x3f30c2aef55c6020!8m2!3d34.1642783!4d-118.3747284!16s%2Fg%2F11bw40ywyy?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" target="_new"><span>Los Angeles, CA</span></a>
+                            </p>
+                            <p>
+                              <i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+                              <a href="https://www.linkedin.com/in/adamhaley/" target="_new">in/adamhaley</a>
+                            </p>
+                            <p class="lastParagrafNoMarginBottom">
+                              <i class="fa fa-github contactIcon" aria-hidden="true"></i>
+                              <a href="https://github.com/adamhaley" target="_new">
+                                adamhaley
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="item bottomLineSeparator">
+                          <h2>
+                            SKILLS
+                          </h2>
+                          <div id="skills-container"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightPanel">
+                    <div>
+                        <h1>
+                        Adam Haley
+                        </h1>
+                        <div class="smallText">
+                            <h3>
+                            Full Stack Developer / Consultant
+                            </h3>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>About me</h2>
+                        <div id="about-container"></div>
+                    </div>
+                    <div class="workExperience">
+                      <h2>Work experience</h2>
+                      <ul id="work-experience"></ul>
+                    </div>
+                </div>
+            </div>
+                <div class="chat-container">
+                    <button class="close-button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="chat-messages" id="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Type your message..." class="chat-input">
+                        <button id="send-button" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="reopen-chat-button">
+                    <i class="fas fa-comments"></i>
+                </button>
+            </page>
+            <script src="{{ asset('resume-assets/chat.js') }}"></script>
+            @verbatim
+            <script id="about-template" type="text/x-handlebars-template">
+                <div class="smallText">
+                    <p>{{body}}</p>
+                </div>
+            </script>
+          <script id="skills-template" type="text/x-handlebars-template">
+            {{#each this}}
+              <div class="item bottomLineSeparator">
+                <h2>{{@key}}</h2>
+                <div class="smallText">
+                  {{#each this}}
+                    <div class="skill">
+                      <div>
+                        <a href="#" onclick="askAboutSkill('{{this}}'); return false;"><span>{{this}}</span></a>
+                      </div>
+                    </div>
+                  {{/each}}
+                </div>
+              </div>
+            {{/each}}
+          </script>
+          <script id="work-experience-template" type="text/x-handlebars-template">
+              {{#each jobs}}
+                <li>
+                  <div class="jobPosition smallText">
+                    <span class="bolded">{{Title}}</span>
+                    <span>{{formatDate Start_Date}} - {{formatDate End_Date}}</span>
+                  </div>
+                  <div class="projectName bolded smallText">
+                    <span>{{Company}}</span>
+                  </div>
+                  <div class="smallText">
+                    <p>{{Description}}</p>
+                  </div>
+                </li>
+              {{/each}}
+          </script>
+            @endverbatim
+          <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+          <script>
+            // Register a Handlebars helper to format dates
+            Handlebars.registerHelper('formatDate', function(dateStr) {
+              if (!dateStr) return 'Present';
+              const date = new Date(dateStr);
+              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            });
+
+            // Function to load and render work experience
+            const loadWorkExperience = () => {
+          fetch('/resume-assets/data/resume.json')
+            .then(response => response.json())
+            .then(data => {
+              const jobs = data.filter(job => job.Category === "Tech");
+              const source = document.getElementById('work-experience-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template({ jobs });
+              document.getElementById('work-experience').innerHTML = html;
+            });
+        };
+
+        // Function to load and render skills
+        const loadSkills = () => {
+          fetch('/resume-assets/data/skills.json')
+            .then(response => response.json())
+            .then(data => {
+              const source = document.getElementById('skills-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template(data);
+              document.getElementById('skills-container').innerHTML = html;
+            });
+        };
+
+        // Function to load and render about section
+        const loadAbout = () => {
+          fetch('/resume-assets/data/about.json')
+            .then(response => response.json())
+            .then(data => {
+              const source = document.getElementById('about-template').innerHTML;
+              const template = Handlebars.compile(source);
+              const html = template(data);
+              document.getElementById('about-container').innerHTML = html;
+            });
+        };
+
+        // Function to handle skill clicks
+        function askAboutSkill(skill) {
+            // Show the chat container if it's hidden
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            
+            // Make sure the chat container is visible
+            chatContainer.style.display = 'flex';
+            chatContainer.classList.remove('hidden');
+            reopenButton.classList.add('hidden');
+
+            // Get the chat input and set its value
+            const chatInput = document.getElementById('chat-input');
+            chatInput.value = `What is your experience with ${skill}?`;
+
+            // Focus the input
+            chatInput.focus();
+
+            // Trigger the send button click
+            document.getElementById('send-button').click();
+        }
+
+        // Add event listener for the close button
+        document.querySelector('.close-button').addEventListener('click', function() {
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            chatContainer.style.display = 'none';
+            chatContainer.classList.add('hidden');
+            reopenButton.classList.remove('hidden');
+        });
+
+        // Add event listener for the reopen button
+        document.querySelector('.reopen-chat-button').addEventListener('click', function() {
+            const chatContainer = document.querySelector('.chat-container');
+            const reopenButton = document.querySelector('.reopen-chat-button');
+            chatContainer.style.display = 'flex';
+            chatContainer.classList.remove('hidden');
+            reopenButton.classList.add('hidden');
+        });
+
+        // Load all sections
+        loadWorkExperience();
+        loadSkills();
+        loadAbout();
+      </script>
+    </body>
+</html>
