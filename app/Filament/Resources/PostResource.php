@@ -10,6 +10,7 @@ use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\ViewAction;
 use Filament\Forms;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
@@ -83,9 +84,12 @@ class PostResource extends Resource
                         static::manageImagesAction(),
                     ])
                     ->schema([
-                        TextEntry::make('images_count')
+                        ImageEntry::make('images.path')
                             ->label('Images')
-                            ->state(fn (Post $record): string => (string) $record->images()->count()),
+                            ->disk('public')
+                            ->size(80)
+                            ->stacked()
+                            ->wrap(),
                     ]),
                 Section::make('Editing Pipeline')
                     ->afterHeader([
@@ -128,11 +132,12 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('Image')
+                Tables\Columns\ImageColumn::make('images.path')
+                    ->label('Images')
                     ->disk('public')
                     ->size(50)
-                    ->state(fn (Post $record): ?string => $record->images->first()?->path),
+                    ->stacked()
+                    ->limit(3),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
