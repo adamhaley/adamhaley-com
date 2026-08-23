@@ -2,11 +2,8 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.4/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnDefect="false" stopOnFailure="false" cacheResult="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
   <coverage/>
   <testsuites>
-    <testsuite name="Feature">
-      <directory suffix="Test.php">./tests/Feature</directory>
-    </testsuite>
-    <testsuite name="Unit">
-      <directory suffix="Test.php">./tests/Unit</directory>
+    <testsuite name="Tests">
+      <directory suffix="Test.php">./tests</directory>
     </testsuite>
   </testsuites>
   <php>
