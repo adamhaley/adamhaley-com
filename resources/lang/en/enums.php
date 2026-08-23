@@ -1,0 +1,13 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    App\Enums\ProspectStatus::class => [
+        'new' => 'New',
+        'contacted' => 'Contacted',
+        'qualified' => 'Qualified',
+        'converted' => 'Converted',
+        'rejected' => 'Rejected',
+    ],
+];
