@@ -1,0 +1,340 @@
+{
+  "name": "Scrape Upwork Leads - Simplified",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Upwork Leads\n\n- Runs every 6 hours\n- runs Apify Upwork Extractor Actor to get latest 50 job postings by search term\n- adds to memory (prevents dupes across runs)\n- formats digest email of all job leads\n- posts each new job to the Prospects API (adamhaley.com)",
+        "height": 448,
+        "width": 1716,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        -288
+      ],
+      "id": "86f3a92c-5592-4dab-b1d1-9e9e7603a81e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@ahmedia.ai",
+        "toEmail": "adamhaley@gmail.com",
+        "subject": "New Upwork Jobs!",
+        "emailFormat": "both",
+        "text": "={{ $json.textBody }}",
+        "html": "={{ $json.htmlBody }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1104,
+        0
+      ],
+      "id": "6777438a-11d4-46f3-bfbd-decfa4a330c7",
+      "name": "Send email1",
+      "webhookId": "cdf3d8b4-6492-46e1-8b1c-bb296b7f9e8b",
+      "credentials": {
+        "smtp": {
+          "id": "184zfe9H1Rf34NpO",
+          "name": "AHMedia SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        0
+      ],
+      "id": "54a05d21-ee00-46db-b602-5f51a2261c42",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/actors/upwork-vibe~upwork-job-scraper/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"addons.enableClientActivity\": false,\n    \"addons.enableClientDetails\": false,\n    \"addons.enableJobAttachments\": false,\n    \"budget.allowUnspecifiedBudget\": false,\n    \"budget.avgHourlyRate.max\": \"150\",\n    \"budget.avgHourlyRate.min\": \"5\",\n    \"budget.connectsPrice.max\": 100,\n    \"budget.connectsPrice.min\": 1,\n    \"budget.fixedPrice.max\": \"100000\",\n    \"budget.fixedPrice.min\": \"1000\",\n    \"budget.hourlyRate.max\": \"150\",\n    \"budget.hourlyRate.min\": \"40\",\n    \"budget.hourlyWorkloads\": [\n        \"UNSPECIFIED\",\n        \"LESS_THAN_30_HOURS\",\n        \"MORE_THAN_30_HOURS\"\n    ],\n    \"budget.jobDurations\": [\n        \"UNSPECIFIED\",\n        \"UP_TO_ONE_MONTH\",\n        \"UP_TO_THREE_MONTHS\",\n        \"UP_TO_SIX_MONTHS\",\n        \"MORE_THAN_SIX_MONTHS\"\n    ],\n    \"budget.minClientHireRate\": 0,\n    \"budget.noAvgHourlyRatePaid\": false,\n    \"budget.noHireRate\": false,\n    \"budget.onlyContractToHire\": false,\n    \"client.companySizeRange\": [\n        \"UNSPECIFIED\",\n        \"SOLO_ENTERPRENEUR\",\n        \"UP_TO_10_EMPLOYEES\",\n        \"UP_TO_100_EMPOLOYEES\",\n        \"UP_TO_500_EMPLOYEES\",\n        \"UP_TO_1K_EMPLOYEES\",\n        \"MORE_THAN_1K_EMPLOYEES\"\n    ],\n    \"client.hireHistory\": [\n        \"NONE\",\n        \"UP_TO\",\n        \"MORE_THAN\"\n    ],\n    \"client.includeWithNoFeedback\": false,\n    \"client.paymentMethodVerified\": false,\n    \"client.phoneNumberVerified\": false,\n    \"excludeKeywords.matchDescription\": true,\n    \"excludeKeywords.matchSkills\": true,\n    \"excludeKeywords.matchTitle\": true,\n    \"fromDate\": \"{{ $json.from_date }}\",\n    \"includeKeywords.keywords\":[\n      \"n8n\",\n      \"laravel\",\n      \"nextjs\",\n      \"hermes\",\n      \"obsidian\"\n    ],\n    \"includeKeywords.matchDescription\": true,\n    \"includeKeywords.matchSkills\": true,\n    \"includeKeywords.matchTitle\": true,\n    \"jobCategories\": [\n    \n    ],\n    \"limit\": 50,\n    \"notifications.limit\": 3,\n    \"notifications.shouldSendRunMetadata\": true,\n    \"toDate\": \"{{ $json.to_date }}\",\n    \"vendor.excludeWithQuestions\": false,\n    \"vendor.includeFeatured\": false,\n    \"vendor.includeWithoutCountryPreference\": false\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "90099b53-d71e-4a9e-be69-7ba1ec93feaa",
+      "name": "APIFY API",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "S4qRBvkXzqUMUPNr",
+          "name": "ADAMHALEY APIFY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "63c60969-d04d-4cfa-b92d-1acb6212ea11",
+              "name": "from_date",
+              "value": "={{ $now.minus(1,'days').format('yyyy-MM-dd') }}",
+              "type": "string"
+            },
+            {
+              "id": "232c5224-18ee-44b0-a77a-6ebab800c9d5",
+              "name": "to_date",
+              "value": "={{ $now.plus(1,'days').format('yyyy-MM-dd') }}",
+              "type": "string"
+            },
+            {
+              "id": "7d77e641-b8c8-46fb-99c4-f7298bf37d05",
+              "name": "keywords",
+              "value": "[\"n8n\",\"laravel\"]",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        0
+      ],
+      "id": "535d7e9f-1e14-4632-a9b8-8961ee4ba0c5",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "jsCode": "  const allJobs = $input.all().map(i => i.json);\n  return [{ json: {\n    jobIds: allJobs.map(j => String(j.uid)),\n    allJobs\n  }}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        432,
+        0
+      ],
+      "id": "265e1b77-7f67-4a9a-9060-275a8ff6c6f6",
+      "name": "Aggregate Job Ids"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": " -- Each run: insert all scraped IDs, skip existing ones, return only new ones\n-- jobIds must be JSON-stringified here; n8n 2.29.8 flattened raw array params\n  INSERT INTO seen_upwork_jobs (job_id)\n  SELECT jsonb_array_elements_text($1::jsonb)\n  ON CONFLICT (job_id) DO NOTHING\n  RETURNING job_id;",
+        "options": {
+          "queryReplacement": "={{ JSON.stringify($json.jobIds) }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        656,
+        0
+      ],
+      "id": "e619dbe8-ae51-47fb-81b1-0ab302f7b92d",
+      "name": "Add Job To Memory (prevents cross-run dupes)",
+      "credentials": {
+        "postgres": {
+          "id": "ZOMC6R2jV2fQy9Mx",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code node — formats Apify Upwork job results into an HTML digest email.\n// Input: items from the Apify output (each item's `json` is one job, or the\n//        first item's `json` is the full array — handles both shapes).\n// Input: new job_ids from Postgres RETURNING; full\n//job data from 'Aggregate Job Ids' node. \n\n // Get new job IDs from Postgres RETURNING output\n  const newJobIds = new Set($input.all().map(i => i.json.job_id));\n\n  // Get full job objects from the aggregate node\n  const allJobs = $('Aggregate Job Ids').first().json.allJobs;\n\n  // Filter to only new jobs\n  let jobs = allJobs.filter(job => newJobIds.has(String(job.uid)));\n\n  if (jobs.length === 0) return [];\n\n// ── Helpers ────────────────────────────────────────────────────────────────\n\nfunction formatBudget(budget) {\n  if (!budget) return 'Not specified';\n  if (budget.fixedBudget && budget.fixedBudget > 0) {\n    return `$${budget.fixedBudget.toLocaleString()} fixed`;\n  }\n  if (budget.hourlyRate) {\n    const { min, max } = budget.hourlyRate;\n    if (min && max) return `$${min}–$${max}/hr`;\n    if (min) return `$${min}+/hr`;\n  }\n  return 'Not specified';\n}\n\nfunction formatDate(iso) {\n  if (!iso) return '';\n  return new Date(iso).toLocaleDateString('en-US', {\n    month: 'short', day: 'numeric', year: 'numeric',\n  });\n}\n\nfunction truncate(text, maxLen = 300) {\n  if (!text || text.length <= maxLen) return text ?? '';\n  return text.slice(0, maxLen).replace(/\\s+\\S*$/, '') + '…';\n}\n\nfunction scoreColor(score) {\n  if (score >= 4.5) return '#16a34a'; // green\n  if (score >= 3.5) return '#d97706'; // amber\n  return '#dc2626';                   // red\n}\n\nfunction clientTrust(client) {\n  const tags = [];\n  if (client.paymentMethodVerified) tags.push('✓ Payment verified');\n  if (client.stats?.totalSpent > 0) {\n    tags.push(`$${(client.stats.totalSpent / 1000).toFixed(0)}k spent`);\n  }\n  if (client.stats?.totalHires > 0) tags.push(`${client.stats.totalHires} hires`);\n  if (client.stats?.hireRate > 0)    tags.push(`${client.stats.hireRate}% hire rate`);\n  if (client.stats?.feedbackRate > 0) {\n    tags.push(`★ ${client.stats.feedbackRate.toFixed(1)} (${client.stats.feedbackCount})`);\n  }\n  if (client.countryCode) tags.push(`🌍 ${client.countryCode}`);\n  return tags;\n}\n\n// ── CSS ────────────────────────────────────────────────────────────────────\n\nconst css = `\n  body { margin:0; padding:0; background:#f1f5f9; font-family:'Helvetica Neue',Arial,sans-serif; }\n  .wrapper { max-width:680px; margin:32px auto; background:#fff; border-radius:12px;\n             box-shadow:0 2px 8px rgba(0,0,0,.08); overflow:hidden; }\n  .header { background:#14532d; padding:28px 32px; }\n  .header h1 { margin:0; color:#fff; font-size:22px; font-weight:700; }\n  .header p  { margin:6px 0 0; color:#bbf7d0; font-size:13px; }\n  .jobs { padding:24px 32px; }\n  .job  { border:1px solid #e2e8f0; border-radius:10px; padding:20px;\n          margin-bottom:20px; background:#fff; }\n  .job:last-child { margin-bottom:0; }\n  .job-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }\n  .job-title  { font-size:16px; font-weight:700; color:#1e293b; margin:0; flex:1; }\n  .score-badge { flex-shrink:0; font-size:12px; font-weight:700; color:#fff;\n                 padding:3px 9px; border-radius:20px; white-space:nowrap; }\n  .meta { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }\n  .tag { font-size:12px; background:#f1f5f9; color:#475569; padding:3px 10px;\n         border-radius:20px; }\n  .tag.green { background:#dcfce7; color:#166534; }\n  .tag.blue  { background:#dbeafe; color:#1e40af; }\n  .description { font-size:14px; color:#475569; line-height:1.6; margin:12px 0; }\n  .client-tags { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }\n  .client-tag { font-size:11px; background:#f8fafc; border:1px solid #e2e8f0;\n                color:#64748b; padding:2px 8px; border-radius:12px; }\n  .apply-btn { display:inline-block; margin-top:14px; background:#15803d;\n               color:#fff !important; text-decoration:none; padding:9px 20px;\n               border-radius:8px; font-size:13px; font-weight:600; }\n  .footer { background:#f8fafc; border-top:1px solid #e2e8f0;\n            padding:16px 32px; text-align:center; }\n  .footer p { margin:0; font-size:12px; color:#94a3b8; }\n`;\n\n// ── Per-job card ───────────────────────────────────────────────────────────\n\nfunction jobCard(job) {\n  const budget   = formatBudget(job.budget);\n  const posted   = formatDate(job.publishedAt);\n  const score    = job.customJobScore ?? 0;\n  const allSkills = job.skills ?? [];\n  const skillText = allSkills.length\n    ? allSkills.slice(0, 5).join(', ') + (allSkills.length > 5 ? ` +${allSkills.length - 5} more` : '')\n    : '';\n  const connects = job.applicationCost ? `${job.applicationCost} connects` : '';\n  const trust    = clientTrust(job.client ?? {});\n  const expLevel = job.vendor?.experienceLevel\n    ? job.vendor.experienceLevel.charAt(0) + job.vendor.experienceLevel.slice(1).toLowerCase()\n    : '';\n\n  const metaTags = [\n    budget       ? `<span class=\"tag green\">${budget}</span>` : '',\n    job.category ? `<span class=\"tag\">${job.category}</span>` : '',\n    expLevel     ? `<span class=\"tag\">${expLevel}</span>` : '',\n    connects     ? `<span class=\"tag\">${connects}</span>` : '',\n    posted       ? `<span class=\"tag\">Posted ${posted}</span>` : '',\n  ].filter(Boolean).join('');\n\n  const trustHtml = trust.map(t => `<span class=\"client-tag\">${t}</span>`).join('');\n\n  return `\n    <div class=\"job\">\n      <div class=\"job-header\">\n        <p class=\"job-title\">${job.title}</p>\n        <span class=\"score-badge\" style=\"background:${scoreColor(score)}\">\n          Score ${score.toFixed(1)}\n        </span>\n      </div>\n      <div class=\"meta\">${metaTags}</div>\n      ${skillText ? `<p style=\"margin:4px 0 8px;font-size:12px;color:#64748b;\">${skillText}</p>` : ''}\n      <p class=\"description\">${truncate(job.description)}</p>\n      ${trustHtml ? `<div class=\"client-tags\">${trustHtml}</div>` : ''}\n      <a href=\"${job.externalLink}\" class=\"apply-btn\">View Job →</a>\n    </div>\n  `;\n}\n\n// ── Assemble email ─────────────────────────────────────────────────────────\n\nconst today     = new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });\nconst jobCards  = jobs.map(jobCard).join('');\nconst jobCount  = jobs.length;\n\nconst htmlBody = `<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <title>Upwork Job Digest</title>\n  <style>${css}</style>\n</head>\n<body>\n  <div class=\"wrapper\">\n    <div class=\"header\">\n      <h1>Upwork Job Digest</h1>\n      <p>${jobCount} new job${jobCount !== 1 ? 's' : ''} matched · ${today}</p>\n    </div>\n    <div class=\"jobs\">\n      ${jobCards}\n    </div>\n    <div class=\"footer\">\n      <p>Sourced automatically via Apify · Unsubscribe anytime</p>\n    </div>\n  </div>\n</body>\n</html>`;\n\n// Plain-text fallback\nconst textBody = jobs.map((job, i) => {\n  const budget = formatBudget(job.budget);\n  const posted = formatDate(job.publishedAt);\n  const score  = (job.customJobScore ?? 0).toFixed(1);\n  const lines  = [\n    `${i + 1}. ${job.title}`,\n    `   Score: ${score}  |  Budget: ${budget}  |  Posted: ${posted}`,\n    job.category ? `   Category: ${job.category}` : '',\n    job.vendor?.experienceLevel ? `   Level: ${job.vendor.experienceLevel}` : '',\n    job.applicationCost ? `   Connects: ${job.applicationCost}` : '',\n    (job.skills ?? []).length ? `   Skills: ${job.skills.join(', ')}` : '',\n    '',\n    truncate(job.description, 200),\n    '',\n    `   Apply: ${job.externalLink}`,\n    '-'.repeat(60),\n  ];\n  return lines.filter(l => l !== null).join('\\n');\n}).join('\\n\\n');\n\n// ── Output (compatible with n8n Email node) ────────────────────────────────\n\nreturn [{\n  json: {\n    subject:  `Upwork Digest: ${jobCount} new job${jobCount !== 1 ? 's' : ''} · ${today}`,\n    htmlBody,\n    textBody,\n    jobCount,\n  },\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        0
+      ],
+      "id": "bd49ed04-8e03-4adc-8c93-6260a5623d70",
+      "name": "Format Email"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Same new-jobs filter as 'Format Email', reused so we only post prospects\n// that weren't already seen in a prior run (dedupe already happened at the\n// Postgres RETURNING step upstream).\nconst newJobIds = new Set($input.all().map(i => i.json.job_id));\nconst allJobs = $('Aggregate Job Ids').first().json.allJobs;\nconst jobs = allJobs.filter(job => newJobIds.has(String(job.uid)));\n\nreturn jobs.map(job => ({\n  json: {\n    source: 'upwork',\n    source_external_id: String(job.uid),\n    name: job.title,\n    website: job.externalLink,\n    summary: job.description,\n    raw_payload: job\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        224
+      ],
+      "id": "a3c5e7f1-2b4d-4a6e-8c9f-1d3e5b7a9c2f",
+      "name": "Prepare New Prospects"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://adamhaley.com/api/prospects",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1104,
+        224
+      ],
+      "id": "b4d6f8a2-3c5e-4b7f-9d1a-2e4f6a8b0c3d",
+      "name": "Post to Prospects API",
+      "notesInFlow": true,
+      "notes": "Auth credential is a placeholder (REPLACE_ME). Create an HTTP Header Auth credential named e.g. 'Prospects API Token' with header 'Authorization' and value 'Bearer <N8N_TOKEN>', then attach it here after import.",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_ME",
+          "name": "Prospects API Token"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2026-07-12T06:00:52.006-07:00",
+          "Readable date": "July 12th 2026, 6:00:52 am",
+          "Readable time": "6:00:52 am",
+          "Day of week": "Sunday",
+          "Year": "2026",
+          "Month": "July",
+          "Day of month": "12",
+          "Hour": "06",
+          "Minute": "00",
+          "Second": "52",
+          "Timezone": "America/Los_Angeles (UTC-07:00)"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "APIFY API": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Job Ids",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "APIFY API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Job Ids": {
+      "main": [
+        [
+          {
+            "node": "Add Job To Memory (prevents cross-run dupes)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Job To Memory (prevents cross-run dupes)": {
+      "main": [
+        [
+          {
+            "node": "Format Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare New Prospects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Email": {
+      "main": [
+        [
+          {
+            "node": "Send email1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare New Prospects": {
+      "main": [
+        [
+          {
+            "node": "Post to Prospects API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "CFxyw7s6FYHGw941",
+    "saveExecutionProgress": true
+  },
+  "versionId": "427f7df2-e66e-4034-bd6f-6a14893c9555",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9eba4434b08a3b38c7a52d54228c736501f146e2a8d1b314568ff999759dcb0e"
+  },
+  "nodeGroups": [],
+  "id": "JnrONQYhuv2Tz2GL",
+  "tags": []
+}

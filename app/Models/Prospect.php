@@ -66,4 +66,9 @@ class Prospect extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function markStatus(ProspectStatus $status): bool
+    {
+        return $this->update(['status' => $status]);
+    }
 }

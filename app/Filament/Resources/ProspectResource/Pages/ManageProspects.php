@@ -3,17 +3,17 @@
 namespace App\Filament\Resources\ProspectResource\Pages;
 
 use App\Filament\Resources\ProspectResource;
-use App\Filament\Resources\Pages\BaseEditRecord;
-use Filament\Actions\DeleteAction;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditProspect extends BaseEditRecord
+class ManageProspects extends ManageRecords
 {
     protected static string $resource = ProspectResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            CreateAction::make(),
         ];
     }
 }
