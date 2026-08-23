@@ -3,20 +3,18 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
-use App\Filament\Resources\Pages\BaseEditRecord;
 use Filament\Actions\CreateAction;
-use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditPost extends BaseEditRecord
+class ManagePosts extends ManageRecords
 {
     protected static string $resource = PostResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            CreateAction::make()
+                ->slideOver(),
         ];
     }
-
 }
-
