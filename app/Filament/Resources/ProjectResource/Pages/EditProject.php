@@ -14,6 +14,7 @@ class EditProject extends BaseEditRecord
     protected function getHeaderActions(): array
     {
         return [
+            ProjectResource::manageImagesAction(),
             DeleteAction::make(),
         ];
     }

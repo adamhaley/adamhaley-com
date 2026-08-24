@@ -6,9 +6,13 @@ use BackedEnum;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Models\Project;
 use App\Models\ProjectCategory;
+use App\Models\ProjectImage;
+use Filament\Actions\Action;
 use Filament\Forms;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables;
 use Filament\Tables\Table;
 use UnitEnum;
@@ -82,6 +86,12 @@ class ProjectResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                     ->disk('public')
                     ->size(50),
+                Tables\Columns\ImageColumn::make('images.path')
+                    ->label('Gallery')
+                    ->disk('public')
+                    ->size(50)
+                    ->stacked()
+                    ->limit(3),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
@@ -112,6 +122,49 @@ class ProjectResource extends Resource
                 \Filament\Actions\DeleteBulkAction::make(),
             ])
             ->defaultSort('date', 'desc');
+    }
+
+    public static function manageImagesAction(): Action
+    {
+        return Action::make('manageImages')
+            ->label('Manage Images')
+            ->icon(Heroicon::Photo)
+            ->color('gray')
+            ->outlined()
+            ->schema([
+                Forms\Components\Repeater::make('images')
+                    ->label('Images')
+                    ->schema([
+                        Forms\Components\FileUpload::make('path')
+                            ->label('Image')
+                            ->image()
+                            ->disk('public')
+                            ->directory('projects')
+                            ->visibility('public')
+                            ->required(),
+                    ])
+                    ->addActionLabel('Add image')
+                    ->reorderable()
+                    ->columnSpanFull(),
+            ])
+            ->fillForm(fn (Project $record): array => [
+                'images' => $record->images->map(fn (ProjectImage $image): array => ['path' => $image->path])->all(),
+            ])
+            ->action(function (array $data, Project $record): void {
+                $record->images()->delete();
+
+                collect($data['images'] ?? [])->values()->each(
+                    fn (array $image, int $index) => $record->images()->create([
+                        'path' => $image['path'],
+                        'sort_order' => $index,
+                    ])
+                );
+
+                Notification::make()
+                    ->title('Images updated')
+                    ->success()
+                    ->send();
+            });
     }
 
     public static function getRelations(): array

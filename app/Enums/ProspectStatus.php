@@ -16,7 +16,7 @@ enum ProspectStatus: string implements HasColor, HasLabel
     case Contacted = 'contacted';
     case Qualified = 'qualified';
     case Converted = 'converted';
-    case Rejected = 'rejected';
+    case Disqualified = 'disqualified';
 
     public function getColor(): string
     {
@@ -25,7 +25,7 @@ enum ProspectStatus: string implements HasColor, HasLabel
             self::Contacted => 'info',
             self::Qualified => 'warning',
             self::Converted => 'success',
-            self::Rejected => 'danger',
+            self::Disqualified => 'danger',
         };
     }
 }

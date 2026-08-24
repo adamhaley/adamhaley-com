@@ -8,6 +8,6 @@ return [
         'contacted' => 'Contacted',
         'qualified' => 'Qualified',
         'converted' => 'Converted',
-        'rejected' => 'Rejected',
+        'disqualified' => 'Disqualified',
     ],
 ];

@@ -64,7 +64,7 @@ class ClientControllerTest extends TestCase
     }
 
     #[Test]
-    public function it_upserts_a_client_with_a_matching_external_id(): void
+    public function it_matches_a_client_with_the_same_external_id_instead_of_duplicating(): void
     {
         Sanctum::actingAs(User::factory()->create(), ['clients:manage']);
 
@@ -80,9 +80,50 @@ class ClientControllerTest extends TestCase
         ]);
 
         $this->assertSame(1, Client::where('source', 'contract_import')->count());
+    }
+
+    #[Test]
+    public function it_does_not_overwrite_an_existing_field_on_a_matched_client(): void
+    {
+        Sanctum::actingAs(User::factory()->create(), ['clients:manage']);
+
+        $this->postJson('/api/clients', [
+            'source' => 'contract_import',
+            'source_external_id' => 'company-123',
+            'name' => 'Original Name',
+        ]);
+        $this->postJson('/api/clients', [
+            'source' => 'contract_import',
+            'source_external_id' => 'company-123',
+            'name' => 'Renamed From Import',
+        ]);
+
         $this->assertDatabaseHas('clients', [
             'source_external_id' => 'company-123',
-            'name' => 'Client v2',
+            'name' => 'Original Name',
+        ]);
+    }
+
+    #[Test]
+    public function it_fills_a_blank_field_on_a_matched_client(): void
+    {
+        Sanctum::actingAs(User::factory()->create(), ['clients:manage']);
+
+        $this->postJson('/api/clients', [
+            'source' => 'contract_import',
+            'source_external_id' => 'company-123',
+            'name' => 'Client v1',
+        ]);
+        $this->postJson('/api/clients', [
+            'source' => 'contract_import',
+            'source_external_id' => 'company-123',
+            'name' => 'Client v1',
+            'email' => 'billing@acme.test',
+        ]);
+
+        $this->assertDatabaseHas('clients', [
+            'source_external_id' => 'company-123',
+            'email' => 'billing@acme.test',
         ]);
     }
 

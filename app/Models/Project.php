@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Project
@@ -20,11 +22,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property ProjectCategory $projectCategory
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, ProjectImage> $images
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Project extends Model
 {
+    use HasFactory;
 
     static $rules = [
 		'category_id' => 'required',
@@ -61,5 +65,10 @@ class Project extends Model
     public function clients()
     {
         return $this->belongsToMany(Client::class)->withTimestamps();
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(ProjectImage::class)->orderBy('sort_order');
     }
 }
