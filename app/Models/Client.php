@@ -2,44 +2,60 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 /**
  * Class Client
  *
- * @property $id
- * @property $name
- * @property $description
- * @property $email
- * @property $phone
- * @property $address
- * @property $url
- * @property $created_at
- * @property $updated_at
+ * @property int $id
+ * @property string $uuid
+ * @property string|null $source
+ * @property non-empty-string|null $source_external_id
+ * @property string $name
+ * @property string|null $description
+ * @property string|null $email
+ * @property string|null $phone
+ * @property string|null $address
+ * @property string|null $url
+ * @property array<string, mixed>|null $raw_payload
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Project> $projects
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Prospect> $prospects
  *
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Client extends Model
 {
+    use HasFactory;
 
-    static $rules = [
-		'name' => 'required',
-		'description' => 'required',
-		'email' => 'required',
-		'phone' => 'required',
-		'address' => 'required',
-		'url' => 'required',
-    ];
+    protected $guarded = [];
 
     protected $perPage = 10;
 
     /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
+     * @return array<string, string>
      */
-    protected $fillable = ['name','description','email','phone','address','url'];
+    protected function casts(): array
+    {
+        return [
+            'raw_payload' => 'array',
+        ];
+    }
+
+    protected static function booted(): void
+    {
+        static::creating(function (Client $client): void {
+            $client->uuid ??= (string) Str::uuid();
+        });
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 
     /**
      * Many-to-Many: A client can belong to many projects.
@@ -47,5 +63,10 @@ class Client extends Model
     public function projects()
     {
         return $this->belongsToMany(Project::class)->withTimestamps();
+    }
+
+    public function prospects()
+    {
+        return $this->hasMany(Prospect::class);
     }
 }
