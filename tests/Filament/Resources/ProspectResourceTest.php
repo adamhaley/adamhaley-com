@@ -46,4 +46,16 @@ class ProspectResourceTest extends TestCase
             ->mountTableAction('view', $prospect)
             ->assertSuccessful();
     }
+
+    #[Test]
+    public function it_sorts_by_most_recently_created_by_default(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $older = Prospect::factory()->create(['name' => 'Older Lead', 'created_at' => now()->subDay()]);
+        $newer = Prospect::factory()->create(['name' => 'Newer Lead', 'created_at' => now()]);
+
+        Livewire::test(ManageProspects::class)
+            ->assertSuccessful()
+            ->assertSeeInOrder([$newer->name, $older->name]);
+    }
 }

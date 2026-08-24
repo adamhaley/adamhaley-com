@@ -193,6 +193,7 @@ class ProspectResource extends Resource
                 Tables\Filters\SelectFilter::make('source')
                     ->options(fn () => Prospect::query()->distinct()->pluck('source', 'source')),
             ])
+            ->defaultSort('created_at', 'desc')
             ->recordActions([
                 ViewAction::make()
                     ->modalCancelActionLabel('Close')
