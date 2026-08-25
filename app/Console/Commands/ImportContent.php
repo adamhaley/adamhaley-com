@@ -187,7 +187,7 @@ class ImportContent extends Command
         }
 
         foreach ($payload['projects'] as $index => $project) {
-            foreach (['category_id', 'name', 'description', 'image', 'link', 'github', 'tags', 'date'] as $field) {
+            foreach (['category_id', 'name', 'description', 'image', 'link', 'github', 'tags', 'start_date'] as $field) {
                 if (! array_key_exists($field, $project) || blank($project[$field])) {
                     throw ValidationException::withMessages([
                         'projects' => "Project at index {$index} is missing required field [{$field}].",

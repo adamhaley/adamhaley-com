@@ -67,7 +67,8 @@ class ExportContent extends Command
                 'link' => $project->link,
                 'github' => $project->github,
                 'tags' => $project->tags,
-                'date' => (string) $project->date,
+                'start_date' => (string) $project->start_date,
+                'end_date' => $project->end_date !== null ? (string) $project->end_date : null,
                 'client_emails' => $project->clients
                     ->pluck('email')
                     ->filter()

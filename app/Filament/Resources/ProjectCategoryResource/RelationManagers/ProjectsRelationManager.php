@@ -29,8 +29,13 @@ class ProjectsRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('date')
+                Tables\Columns\TextColumn::make('start_date')
+                    ->label('Start')
                     ->date(),
+                Tables\Columns\TextColumn::make('end_date')
+                    ->label('End')
+                    ->date()
+                    ->placeholder('Ongoing'),
             ])
             ->filters([
                 //

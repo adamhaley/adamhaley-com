@@ -7,9 +7,11 @@ use App\Filament\Resources\ProjectResource\Pages\CreateProject;
 use App\Filament\Resources\ProjectResource\Pages\EditProject;
 use App\Filament\Resources\ProjectResource\Pages\ListProjects;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\User;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Livewire\Livewire;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
@@ -55,6 +57,55 @@ class ProjectResourceTest extends TestCase
 
         Livewire::test(EditProject::class, ['record' => $project->getKey()])
             ->assertSuccessful();
+    }
+
+    #[Test]
+    public function it_rejects_an_end_date_before_the_start_date(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $category = ProjectCategory::factory()->create();
+
+        Livewire::test(CreateProject::class)
+            ->fillForm([
+                'category_id' => $category->id,
+                'name' => 'Date Range Project',
+                'description' => 'A project used to test date range validation.',
+                'image' => UploadedFile::fake()->image('test.jpg'),
+                'link' => 'https://example.com',
+                'github' => 'https://github.com/example/example',
+                'tags' => ['tag'],
+                'start_date' => '2026-01-10',
+                'end_date' => '2026-01-01',
+            ])
+            ->call('create')
+            ->assertHasFormErrors(['end_date']);
+    }
+
+    #[Test]
+    public function it_allows_a_blank_end_date_for_an_ongoing_project(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $category = ProjectCategory::factory()->create();
+
+        Livewire::test(CreateProject::class)
+            ->fillForm([
+                'category_id' => $category->id,
+                'name' => 'Ongoing Project',
+                'description' => 'A project used to test an optional end date.',
+                'image' => UploadedFile::fake()->image('test.jpg'),
+                'link' => 'https://example.com',
+                'github' => 'https://github.com/example/example',
+                'tags' => ['tag'],
+                'start_date' => '2026-01-10',
+                'end_date' => null,
+            ])
+            ->call('create')
+            ->assertHasNoFormErrors();
+
+        $this->assertDatabaseHas('projects', [
+            'name' => 'Ongoing Project',
+            'end_date' => null,
+        ]);
     }
 
     #[Test]
