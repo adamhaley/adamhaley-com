@@ -79,8 +79,10 @@ class ProjectResource extends Resource
                             ->required()
                             ->separator(',')
                             ->columnSpanFull(),
-                        Forms\Components\DatePicker::make('date')
+                        Forms\Components\DatePicker::make('start_date')
                             ->required(),
+                        Forms\Components\DatePicker::make('end_date')
+                            ->afterOrEqual('start_date'),
                         Forms\Components\Select::make('clients')
                             ->relationship('clients', 'name')
                             ->multiple()
@@ -117,8 +119,14 @@ class ProjectResource extends Resource
                     ->label('Clients')
                     ->badge()
                     ->separator(','),
-                Tables\Columns\TextColumn::make('date')
+                Tables\Columns\TextColumn::make('start_date')
+                    ->label('Start')
                     ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('end_date')
+                    ->label('End')
+                    ->date()
+                    ->placeholder('Ongoing')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('link')
                     ->limit(30)
@@ -136,7 +144,7 @@ class ProjectResource extends Resource
             ->bulkActions([
                 \Filament\Actions\DeleteBulkAction::make(),
             ])
-            ->defaultSort('date', 'desc');
+            ->defaultSort('start_date', 'desc');
     }
 
     public static function manageImagesAction(): Action

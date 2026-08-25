@@ -17,7 +17,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property $link
  * @property $github
  * @property $tags
- * @property $date
+ * @property $start_date
+ * @property $end_date
  * @property $created_at
  * @property $updated_at
  *
@@ -38,7 +39,8 @@ class Project extends Model
 		'link' => 'required',
 		'github' => 'required',
 		'tags' => 'required',
-		'date' => 'required',
+		'start_date' => 'required',
+		'end_date' => 'nullable',
     ];
 
     protected $perPage = 10;
@@ -48,7 +50,7 @@ class Project extends Model
      *
      * @var array
      */
-    protected $fillable = ['category_id','name','description','image','link','github','tags','date'];
+    protected $fillable = ['category_id','name','description','image','link','github','tags','start_date','end_date'];
 
 
     /**

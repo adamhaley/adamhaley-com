@@ -26,7 +26,8 @@ class ProjectFactory extends Factory
             'link' => $this->faker->url(),
             'github' => $this->faker->url(),
             'tags' => implode(',', $this->faker->words(3)),
-            'date' => $this->faker->date(),
+            'start_date' => $this->faker->date(),
+            'end_date' => $this->faker->optional()->date(),
         ];
     }
 }
