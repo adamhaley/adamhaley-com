@@ -109,6 +109,22 @@ class ProjectResourceTest extends TestCase
     }
 
     #[Test]
+    public function it_persists_the_category_filter_in_the_session_across_visits(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $category = ProjectCategory::factory()->create();
+        $matching = Project::factory()->create(['category_id' => $category->id]);
+        $other = Project::factory()->create();
+
+        Livewire::test(ListProjects::class)
+            ->filterTable('category_id', $category->id);
+
+        Livewire::test(ListProjects::class)
+            ->assertCanSeeTableRecords([$matching])
+            ->assertCanNotSeeTableRecords([$other]);
+    }
+
+    #[Test]
     public function it_mounts_the_manage_images_action_for_a_project_with_existing_images(): void
     {
         $this->actingAs(User::factory()->create());
