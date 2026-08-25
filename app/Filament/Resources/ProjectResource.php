@@ -9,8 +9,10 @@ use App\Models\ProjectCategory;
 use App\Models\ProjectImage;
 use Filament\Actions\Action;
 use Filament\Forms;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables;
@@ -51,6 +53,19 @@ class ProjectResource extends Resource
                             ->directory('projects')
                             ->visibility('public')
                             ->required()
+                            ->columnSpanFull(),
+                        Actions::make([
+                            static::manageImagesAction(),
+                        ])
+                            ->visible(fn (?Project $record): bool => $record !== null)
+                            ->columnSpanFull(),
+                        ImageEntry::make('images.path')
+                            ->label('Gallery')
+                            ->disk('public')
+                            ->size(60)
+                            ->stacked()
+                            ->limit(5)
+                            ->visible(fn (?Project $record): bool => $record !== null && $record->images->isNotEmpty())
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('link')
                             ->url()

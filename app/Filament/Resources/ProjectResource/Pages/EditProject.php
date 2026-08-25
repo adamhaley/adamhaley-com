@@ -4,7 +4,6 @@ namespace App\Filament\Resources\ProjectResource\Pages;
 
 use App\Filament\Resources\ProjectResource;
 use App\Filament\Resources\Pages\BaseEditRecord;
-use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 
 class EditProject extends BaseEditRecord
@@ -14,7 +13,6 @@ class EditProject extends BaseEditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ProjectResource::manageImagesAction(),
             DeleteAction::make(),
         ];
     }
