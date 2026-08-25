@@ -25,4 +25,14 @@ class ProjectTest extends TestCase
             $project->images->pluck('path')->all(),
         );
     }
+
+    #[Test]
+    public function it_saves_a_description_longer_than_255_characters(): void
+    {
+        $description = str_repeat('a', 500);
+
+        $project = Project::factory()->create(['description' => $description]);
+
+        $this->assertSame($description, $project->fresh()->description);
+    }
 }
