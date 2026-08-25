@@ -3,6 +3,7 @@
 namespace Tests\Filament\Resources;
 
 use App\Filament\Resources\ProjectResource;
+use App\Filament\Resources\ProjectResource\Pages\CreateProject;
 use App\Filament\Resources\ProjectResource\Pages\EditProject;
 use App\Filament\Resources\ProjectResource\Pages\ListProjects;
 use App\Models\Project;
@@ -35,6 +36,15 @@ class ProjectResourceTest extends TestCase
         Livewire::test(ListProjects::class)
             ->assertSuccessful()
             ->assertSee('Rendered Project');
+    }
+
+    #[Test]
+    public function it_renders_the_create_page(): void
+    {
+        $this->actingAs(User::factory()->create());
+
+        Livewire::test(CreateProject::class)
+            ->assertSuccessful();
     }
 
     #[Test]
