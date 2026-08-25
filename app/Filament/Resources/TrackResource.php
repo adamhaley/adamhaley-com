@@ -69,6 +69,8 @@ class TrackResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->persistFiltersInSession()
+            ->deferFilters(false)
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->size(40),

@@ -99,6 +99,8 @@ class ProjectResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->persistFiltersInSession()
+            ->deferFilters(false)
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->disk('public')

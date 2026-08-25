@@ -2,6 +2,7 @@
 
 namespace Tests\Filament\Resources;
 
+use App\Enums\ProspectStatus;
 use App\Filament\Resources\ProspectResource;
 use App\Filament\Resources\ProspectResource\Pages\ManageProspects;
 use App\Models\Prospect;
@@ -57,5 +58,34 @@ class ProspectResourceTest extends TestCase
         Livewire::test(ManageProspects::class)
             ->assertSuccessful()
             ->assertSeeInOrder([$newer->name, $older->name]);
+    }
+
+    #[Test]
+    public function it_applies_filters_immediately_without_an_apply_button(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $newProspect = Prospect::factory()->create(['status' => ProspectStatus::New]);
+        $disqualifiedProspect = Prospect::factory()->create(['status' => ProspectStatus::Disqualified]);
+
+        Livewire::test(ManageProspects::class)
+            ->assertCanSeeTableRecords([$newProspect, $disqualifiedProspect])
+            ->filterTable('status', ProspectStatus::New->value)
+            ->assertCanSeeTableRecords([$newProspect])
+            ->assertCanNotSeeTableRecords([$disqualifiedProspect]);
+    }
+
+    #[Test]
+    public function it_persists_table_filters_in_the_session_across_visits(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $newProspect = Prospect::factory()->create(['status' => ProspectStatus::New]);
+        $disqualifiedProspect = Prospect::factory()->create(['status' => ProspectStatus::Disqualified]);
+
+        Livewire::test(ManageProspects::class)
+            ->filterTable('status', ProspectStatus::New->value);
+
+        Livewire::test(ManageProspects::class)
+            ->assertCanSeeTableRecords([$newProspect])
+            ->assertCanNotSeeTableRecords([$disqualifiedProspect]);
     }
 }

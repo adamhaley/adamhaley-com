@@ -164,6 +164,8 @@ class ProspectResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->persistFiltersInSession()
+            ->deferFilters(false)
             ->columns([
                 Tables\Columns\TextColumn::make('source')
                     ->badge()
