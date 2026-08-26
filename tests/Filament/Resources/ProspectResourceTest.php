@@ -55,7 +55,7 @@ class ProspectResourceTest extends TestCase
         $prospect = Prospect::factory()->create(['status' => ProspectStatus::New]);
 
         Livewire::test(ManageProspects::class)
-            ->callTableAction('view', $prospect)
+            ->mountTableAction('view', $prospect)
             ->assertSuccessful();
 
         $this->assertSame(ProspectStatus::Viewed, $prospect->fresh()->status);
