@@ -71,4 +71,13 @@ class Prospect extends Model
     {
         return $this->update(['status' => $status]);
     }
+
+    public function markViewedIfNew(): bool
+    {
+        if ($this->status !== ProspectStatus::New) {
+            return false;
+        }
+
+        return $this->markStatus(ProspectStatus::Viewed);
+    }
 }

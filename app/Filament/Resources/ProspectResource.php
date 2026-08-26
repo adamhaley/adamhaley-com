@@ -104,6 +104,7 @@ class ProspectResource extends Resource
                             ->placeholder('—'),
                         TextEntry::make('summary')
                             ->placeholder('—')
+                            ->extraAttributes(['class' => 'whitespace-pre-line'])
                             ->columnSpanFull(),
                         TextEntry::make('created_at')
                             ->dateTime(),
@@ -199,7 +200,8 @@ class ProspectResource extends Resource
             ->recordActions([
                 ViewAction::make()
                     ->modalCancelActionLabel('Close')
-                    ->slideOver(),
+                    ->slideOver()
+                    ->before(fn (Prospect $record) => $record->markViewedIfNew()),
             ])
             ->bulkActions([
                 \Filament\Actions\DeleteBulkAction::make(),

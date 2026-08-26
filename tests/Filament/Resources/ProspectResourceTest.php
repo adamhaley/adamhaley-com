@@ -49,6 +49,19 @@ class ProspectResourceTest extends TestCase
     }
 
     #[Test]
+    public function it_marks_a_new_prospect_as_viewed_when_opened(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $prospect = Prospect::factory()->create(['status' => ProspectStatus::New]);
+
+        Livewire::test(ManageProspects::class)
+            ->callTableAction('view', $prospect)
+            ->assertSuccessful();
+
+        $this->assertSame(ProspectStatus::Viewed, $prospect->fresh()->status);
+    }
+
+    #[Test]
     public function it_sorts_by_most_recently_created_by_default(): void
     {
         $this->actingAs(User::factory()->create());
