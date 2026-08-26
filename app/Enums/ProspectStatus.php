@@ -13,6 +13,7 @@ enum ProspectStatus: string implements HasColor, HasLabel
     use TranslatesLabels;
 
     case New = 'new';
+    case Viewed = 'viewed';
     case Contacted = 'contacted';
     case Qualified = 'qualified';
     case Converted = 'converted';
@@ -22,7 +23,8 @@ enum ProspectStatus: string implements HasColor, HasLabel
     {
         return match ($this) {
             self::New => 'gray',
-            self::Contacted => 'info',
+            self::Viewed => 'info',
+            self::Contacted => 'primary',
             self::Qualified => 'warning',
             self::Converted => 'success',
             self::Disqualified => 'danger',

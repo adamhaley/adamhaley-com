@@ -23,4 +23,24 @@ class ProspectTest extends TestCase
 
         $this->assertSame(ProspectStatus::Qualified, $prospect->fresh()->status);
     }
+
+    #[Test]
+    public function it_marks_viewed_when_new(): void
+    {
+        $prospect = Prospect::factory()->create(['status' => ProspectStatus::New]);
+
+        $prospect->markViewedIfNew();
+
+        $this->assertSame(ProspectStatus::Viewed, $prospect->fresh()->status);
+    }
+
+    #[Test]
+    public function it_does_not_mark_viewed_when_not_new(): void
+    {
+        $prospect = Prospect::factory()->create(['status' => ProspectStatus::Qualified]);
+
+        $prospect->markViewedIfNew();
+
+        $this->assertSame(ProspectStatus::Qualified, $prospect->fresh()->status);
+    }
 }
