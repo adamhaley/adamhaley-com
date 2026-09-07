@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ClientController;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ProspectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,9 @@ Route::middleware(['auth:sanctum', 'abilities:prospects:manage'])->group(functio
 Route::middleware(['auth:sanctum', 'abilities:clients:manage'])->group(function () {
     Route::get('/clients', [ClientController::class, 'index']);
     Route::post('/clients', [ClientController::class, 'store']);
+});
+
+Route::middleware(['auth:sanctum', 'abilities:posts:manage'])->group(function () {
+    Route::get('/posts', [PostController::class, 'index']);
+    Route::post('/posts', [PostController::class, 'store']);
 });
